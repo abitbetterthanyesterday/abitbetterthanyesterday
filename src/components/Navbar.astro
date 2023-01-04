@@ -1,11 +1,23 @@
 ---
+import {generateRoutes} from '../routes';
+const currentUrl = new URL(Astro.request.url).pathname;
+const routes = generateRoutes(currentUrl)
+import { DarkLightModeToggleButton } from './DarkLightModeToggleButton';
 ---
 
-<nav class="flex justify-start p-8 gap-8">
+<nav class="flex justify-between items-center p-8 gap-8">
 	<p class="text-xl font-extrabold">Alo</p>
-   <div class="flex items-center justify-center gap-x-4">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/blog">Blog</a>
+
+   <div class="flex items-center justify-center gap-x-4 rounded-md border px-2 py-2"  >
+		{routes.map(({url, navTitle, isActive}) =>
+      <a  href={url} class={isActive && 'text-red-500'}>{navTitle}</a>
+		)}
    </div>
+
+	<DarkLightModeToggleButton client:load/>
 </nav>
+
+<script>
+
+</script>
+
