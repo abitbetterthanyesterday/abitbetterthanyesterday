@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../../content/*.(md|mdx)");
+  return allPosts.map((post) => ({
+    params: { post: post.frontmatter.title.split(" ").join("-").toLowerCase() },
+    props: { post },
+  }));
+}
+const {
+  Content,
+  frontmatter: { title },
+} = Astro.props.post;
+---
+
+<BaseLayout title={title}>
+  <header>{title}</header>
+  <article>
+    <Content />
+  </article>
+</BaseLayout>

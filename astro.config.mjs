@@ -7,5 +7,11 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-   integrations: [lit(), tailwind(), mdx()],
+   integrations: [
+      lit(),
+      tailwind({
+         config: { applyBaseStyles: false },
+      }),
+      mdx(),
+   ],
 });

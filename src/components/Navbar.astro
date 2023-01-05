@@ -8,15 +8,22 @@ import { DarkLightModeToggleButton } from './DarkLightModeToggleButton';
 <nav class="flex justify-between items-center p-8 gap-8">
 	<p class="text-xl font-extrabold">Alo</p>
 
-   <div class="flex items-center justify-center gap-x-4 rounded-md border px-2 py-2"  >
+   <div class="flex items-center justify-center gap-x-4 rounded-md border px-2 py-2 relative overflow-hidden"  >
 		{routes.map(({url, navTitle, isActive}) =>
-      <a  href={url} class={isActive && 'text-red-500'}>{navTitle}</a>
+      <a  href={url} class={`z-10 ${isActive && 'link--active'} grow-1 shrink-1`}>{navTitle}</a>
 		)}
    </div>
 
 	<DarkLightModeToggleButton client:load/>
 </nav>
 
+<style>
+	.link--active{
+		color: var(--body);
+		background-color: var(--body-lighter);
+	}
+
+</style>
 <script>
 
 </script>

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--bg: #041C32;
+		--bg-light: #04293A;
+		--bg-lighter: #064663;
+		--body: #ECB365
+	}
+
+	* {
+		@apply leading-relaxed text-slate-100;
+	}
+
+	body,
+	html {
+		background-color: var(--bg);
+		font-family: system-ui, sans-serif;
+	}
+
+
+	h1 {
+		@apply text-4xl mb-2 mt-2;
+	}
+
+	h2 {
+		@apply text-2xl mb-1 mt-3;
+	}
+
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+}
