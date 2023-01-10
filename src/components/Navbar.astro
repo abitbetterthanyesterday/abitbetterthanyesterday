@@ -1,12 +1,12 @@
 ---
 import {generateRoutes} from '../routes';
+import ThemeToggle from './ThemeToggle.astro';
 const currentUrl = new URL(Astro.request.url).pathname;
 const routes = generateRoutes(currentUrl)
-import { DarkLightModeToggleButton } from './DarkLightModeToggleButton';
 ---
 
-<nav class="flex justify-between items-center p-8 gap-8">
-	<p class="text-xl font-extrabold">Alo</p>
+<nav class="grid grid-cols-3 justify-items-center items-center py-8">
+	<p class="justify-self-start text-xl font-extrabold">Alo @ aBitBetterThanYesterday</p>
 
    <div class="flex items-center justify-center gap-x-4 rounded-md border px-2 py-2 relative overflow-hidden"  >
 		{routes.map(({url, navTitle, isActive}) =>
@@ -14,7 +14,7 @@ import { DarkLightModeToggleButton } from './DarkLightModeToggleButton';
 		)}
    </div>
 
-	<DarkLightModeToggleButton client:load/>
+	<ThemeToggle/>
 </nav>
 
 <style>
@@ -22,9 +22,5 @@ import { DarkLightModeToggleButton } from './DarkLightModeToggleButton';
 		color: var(--body);
 		background-color: var(--body-lighter);
 	}
-
 </style>
-<script>
-
-</script>
 

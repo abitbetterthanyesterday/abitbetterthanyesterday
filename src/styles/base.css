@@ -3,34 +3,49 @@
 @tailwind utilities;
 
 @layer base {
-	:root {
-		--bg: #041C32;
-		--bg-light: #04293A;
-		--bg-lighter: #064663;
-		--body: #ECB365
-	}
+  :root {
+    --bg: #041c32;
+    --bg-light: #04293a;
+    --bg-lighter: #064663;
+    --body: #ecb365;
+  }
 
-	* {
-		@apply leading-relaxed text-slate-100;
-	}
+  body,
+  html {
+    background-color: var(--bg);
+    font-family: system-ui, sans-serif;
+    @apply leading-relaxed text-slate-100;
+  }
 
-	body,
-	html {
-		background-color: var(--bg);
-		font-family: system-ui, sans-serif;
-	}
+  h1,h2,h3,h4,h5,h6{
+	@apply leading-tight;
+  }
 
+  h1 {
+    @apply text-6xl leading-tight mt-6 mb-8;
+  }
 
-	h1 {
-		@apply text-4xl mb-2 mt-2;
-	}
+  h2 {
+    @apply text-5xl mb-4 mt-12;
+  }
 
-	h2 {
-		@apply text-2xl mb-1 mt-3;
-	}
+  h3 {
+    @apply text-4xl mb-3 mt-10;
+  }
 
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  h4 {
+	@apply text-3xl mb-3 mt-10;
+  }
+
+  h5 {
+	@apply text-2xl mb-3 mt-10;
+  }
+
+  h6 {
+	@apply text-xl mb-3 mt-10;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
 }
