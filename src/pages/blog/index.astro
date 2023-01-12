@@ -21,9 +21,13 @@ const allTags = [
   <h2>All posts</h2>
   {
     allPosts.map((post) => (
-      <a href={`/blog/${titleToSlug(post.frontmatter.title)}`}>
-        <h1>{post.frontmatter.title}</h1>
-      </a>
+      <ul>
+        <li class="text-lg list-outside hover:text-indigo-500">
+          <a href={`/blog/${titleToSlug(post.frontmatter.title)}`}>
+            {post.frontmatter.title}
+          </a>
+        </li>
+      </ul>
     ))
   }
 </BaseLayout>

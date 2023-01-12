@@ -10,18 +10,35 @@
     --body: #ecb365;
   }
 
-  body,
   html {
-    background-color: var(--bg);
+    @apply bg-gradient-to-tr from-slate-900 to-slate-800;
+    font-size: 100%;
+  }
+
+  body{
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(255,90,255,.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,90,255,.05) 1px, transparent 1px);
+  }
+
+  * {
     font-family: system-ui, sans-serif;
     @apply leading-relaxed text-slate-100;
   }
 
-  h1,h2,h3,h4,h5,h6{
-	@apply leading-tight;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header {
+    @apply leading-tight  bg-gradient-to-r from-indigo-500 to-blue-300 bg-clip-text text-transparent ;
   }
 
-  h1 {
+  h1,
+  header {
     @apply text-6xl leading-tight mt-6 mb-8;
   }
 
@@ -34,18 +51,45 @@
   }
 
   h4 {
-	@apply text-3xl mb-3 mt-10;
+    @apply text-3xl mb-3 mt-10;
   }
 
   h5 {
-	@apply text-2xl mb-3 mt-10;
+    @apply text-2xl mb-3 mt-10;
   }
 
   h6 {
-	@apply text-xl mb-3 mt-10;
+    @apply text-xl mb-3 mt-10;
   }
-  code {
+
+  p{
+    @apply text-lg py-4;
+  }
+
+  pre {
+    @apply p-8 mb-8 rounded-lg shadow-lg shadow-indigo-900/20;
+    background: linear-gradient(to bottom right, #282c34, 80%, #393d45);
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
+
+    pre span{
+      @apply leading-loose;
+    }
+
+    code {
+      counter-reset: step;
+      counter-increment: step 0;
+    }
+    
+    code > span::before {
+      content: counter(step);
+      counter-increment: step;
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115,138,148,.4);
+      white-space: nowrap;
+    }
 }
