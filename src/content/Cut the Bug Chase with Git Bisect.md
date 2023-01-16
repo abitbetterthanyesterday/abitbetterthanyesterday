@@ -4,11 +4,45 @@ status: publish
 tags:
   - Development
   - Git
-created_at: 2022-12-23 08:51
-last_modified_at: 2023-01-05 17:08
+created_at: 2022-12-22T22:51:00.000Z
+last_modified_at: 2023-01-05T07:08:00.000Z
 draft: false
 lang: en-AU
+description: >-
+
+
+  Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
+
+  Me: _"Sure, when did it stop compiling?"_
+
+  Manager: _"Sometimes in the last 
+
+
+   2 months
+  "_
+
+
+  !Drawing 2022-12-23 08
+
+  52
+
+  10
+
+  excalidraw
+
+
+  In an ideal world, you have test suites running often and covering your code
+  base thoroughly
+
+
+
+  This allows you to be notified of issues quickly and act upon them
+
+
+  Often, you can catch the
+slug: cut-the-bug-chase-with-git-bisect
 ---
+
 
 Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
 Me: _"Sure, when did it stop compiling?"_
@@ -149,27 +183,3 @@ We use `webpack` to compile our package, so it is easily testable with a script.
 
 ```
 // build.sh
----
-#!/usr/bin/sh
-webpack --config ./webpack.prod.ts
----
-
-// Webpack returns 0 if successful, so it is inline with Git Bisect
-```
-
-Now, all I had to do was:
-
-```
-git bisect bad
-git bisect good 123asd
-git bisect run ./build.sh
-```
-
-All you need to do now, is to enjoy a coffee knowing that the computer is doing the heavy lifting for you.
-
-Find the commit and... curse because the commit is humongus!
-
-**Time to discuss the idea of atomic commit with the team!**
-
-See you soon,
-Alo.

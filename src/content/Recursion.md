@@ -1,12 +1,31 @@
 ---
-title: "Recursion"
+title: Recursion
 status: publish
 tags:
-- Computer Science
-created_at: 2023-01-12 10:11
-last_modified_at: 2023-01-12 10:11
+  - Computer Science
+created_at: 2023-01-12T00:11:00.000Z
+last_modified_at: 2023-01-12T00:11:00.000Z
 lang: en-AU
+description: >-
+
+
+  Recursion is a programming technique where a function calls itself multiple
+  times in order to solve a problem
+
+
+
+  The idea is that the problem can be broken down into multiple subproblems that
+  are resolved the same way
+
+
+
+  To do so, we create a function that breaks down the problem into smaller
+  chunks and call itself with new 'chunk' until it reaches the base case
+   
+  The base case is the point where 
+slug: recursion
 ---
+
 
 Recursion is a programming technique where a function calls itself multiple times in order to solve a problem.
 
@@ -15,7 +34,7 @@ The idea is that the problem can be broken down into multiple subproblems that a
 To do so, we create a function that breaks down the problem into smaller chunks and call itself with new 'chunk' until it reaches the base case. 
 The base case is the point where the function returns a value rather than calling itself. 
 
-As you can imagine, the function can't call itself indefinitely, otherwise, it would overflow the stack!
+As you can imagine, the function can't call itself indefinitely, otherwise, [[Stack Overflow|it would overflow the stack!]]
 
 A simple example is how to calculate the factorial of a number.
 
@@ -48,8 +67,8 @@ factorial(5)
 
 ## Performance: Iteration vs. Recursion
 
-Recursive solutions tend to be a lot less performant than [their iterative counter part.](./iteration)
-On that simple factorial calculation, the iterative counterpart is [up to **15 times faster** on my laptop](./benchmarking-using-deno).
+Recursive solutions tend to be a lot less performant than [[Iteration|their iterative counter part.]]
+On that simple factorial calculation, the iterative counterpart is [[Benchmarking using Deno|up to **15 times faster** on my laptop]].
 
 So why would you use a recursive solution?
 - Some problems are inherently recursive by nature, like navigating through data tree structure such a reading files of a folder and subfolders,

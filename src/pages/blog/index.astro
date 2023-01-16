@@ -1,7 +1,10 @@
 ---
+// TODO define Note
+type Note = Record<string, any>;
+import ArticleSummaryCard from "../../components/ArticleSummaryCard.astro";
+import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { titleToSlug } from "../../utils/slug";
-const allPosts = await Astro.glob("../../content/*.(md|mdx)");
+const allPosts = await Astro.glob<Note>("../../content/*.(md|mdx)");
 const allTags = [
   ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
 ];
@@ -12,22 +15,23 @@ const allTags = [
   <ul>
     {
       allTags.map((tag) => (
-        <li class="inline-block">
-          <a>{tag}</a>
+        <li class="inline-block mx-2 scale-100">
+          <Tag tag={tag} />
         </li>
       ))
     }
   </ul>
   <h2>All posts</h2>
-  {
-    allPosts.map((post) => (
-      <ul>
-        <li class="text-lg list-outside hover:text-indigo-500">
-          <a href={`/blog/${titleToSlug(post.frontmatter.title)}`}>
-            {post.frontmatter.title}
-          </a>
-        </li>
-      </ul>
-    ))
-  }
+  <ul>
+    {
+      allPosts.map(({ frontmatter: { title, description, slug, tags } }) => (
+        <ArticleSummaryCard
+          title={title}
+          tags={tags}
+          slug={slug}
+          description={description}
+        />
+      ))
+    }
+  </ul>
 </BaseLayout>
