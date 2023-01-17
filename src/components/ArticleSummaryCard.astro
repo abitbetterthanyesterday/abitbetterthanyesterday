@@ -5,13 +5,14 @@ const { title, tags, slug, description } = Astro.props;
 ---
 
 <article
-  class="border border-indigo-700/30 rounded-3xl p-8 px-16 my-9 hover:border-indigo-700 hover:shadow-indigo-700/20 hover:shadow-md hover:bg-indigo-900/30 shadow-sm shadow-indigo-700/5 transition-all bg-indigo-900/10 hover:ml-4"
+  class="my-9 rounded-3xl border border-indigo-700/30 bg-indigo-900/10 p-8 px-16 shadow-sm shadow-indigo-700/5 transition-all hover:ml-4 hover:border-indigo-700 hover:bg-indigo-900/30 hover:shadow-md hover:shadow-indigo-700/20"
 >
   <a href={`blog/${slug}`}>
     <div class="flex gap-2">
       {tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
     <h1 class="mt-5 mb-1">{title}</h1>
-    <p class="pl-4 max-w-prose">{description}</p>
+
+    <p class="max-w-prose pl-4">{description}</p>
   </a>
 </article>
