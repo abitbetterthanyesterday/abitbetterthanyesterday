@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #041c32;
+    --bg-light: #04293a;
+    --bg-lighter: #064663;
+    --body: #ecb365;
+  }
+
+  html {
+    @apply bg-gradient-to-tr from-slate-900 to-slate-800;
+    font-size: 100%;
+  }
+
+  body{
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(255,90,255,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,90,255,.04) 1px, transparent 1px);
+  }
+
+  * {
+    font-family: system-ui, sans-serif;
+    @apply leading-relaxed text-slate-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header {
+    /* @apply leading-tight  bg-gradient-to-r from-indigo-500 to-blue-300 bg-clip-text text-transparent ; */
+    @apply leading-tight       ;
+  }
+
+  h1,
+  header {
+    @apply text-6xl leading-tight mt-6 mb-8;
+  }
+
+  h2 {
+    @apply text-5xl mb-4 mt-12;
+  }
+
+  h3 {
+    @apply text-4xl mb-3 mt-10;
+  }
+
+  h4 {
+    @apply text-3xl mb-3 mt-10;
+  }
+
+  h5 {
+    @apply text-2xl mb-3 mt-10;
+  }
+
+  h6 {
+    @apply text-xl mb-3 mt-10;
+  }
+
+  p{
+    @apply text-lg py-4;
+  }
+
+  pre {
+    @apply p-6 my-8 rounded-lg shadow-lg shadow-indigo-800/5;
+    background: linear-gradient(to bottom right, #282c34, 80%, #393d45);
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+
+  code {
+    @apply border-2 border-indigo-50/20 font-light font-mono px-2 py-1 rounded text-indigo-50 text-sm relative bottom-1/2;
+  }
+
+    pre span{
+      @apply leading-loose;
+    }
+
+    pre code {
+      @apply bg-transparent py-0 px-0 text-base bottom-0 border-0 font-normal;
+      counter-reset: step;
+      counter-increment: step 0;
+    }
+    
+    pre code > span::before {
+      content: counter(step);
+      counter-increment: step;
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115,138,148,.4);
+      white-space: nowrap;
+    }
+}

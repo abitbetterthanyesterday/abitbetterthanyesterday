@@ -1,9 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("../content/*.(md|mdx)");
 ---
 
 <BaseLayout title="Welcome to Astro.">
-	<h1>
-		Home</h1>
-		<a href="https://colorhunt.co/palette/041c3204293a064663ecb365">Color palette</a>
+  <h1 class="text-7xl font-mono tracking-tight font-extrabold">
+    aBitBetterThanYesterday
+  </h1>
+  <p>I am Aloys. I am a developer currently based in Brisbane.</p>
+  <p>I share my thoughts and learning here.</p>
+  <p>If you want to know more about me, check out the about page.</p>
+  <h3>Latest articles</h3>
+  <div>
+    {allPosts.slice(0, 5).map((post) => <h4>{post.frontmatter.title}</h4>)}
+  </div>
+  <a href="https://colorhunt.co/palette/041c3204293a064663ecb365"
+    >Color palette</a
+  >
 </BaseLayout>
