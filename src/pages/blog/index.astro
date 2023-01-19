@@ -12,26 +12,32 @@ const allTags = [
 
 <BaseLayout title="about">
   <h1>Blog</h1>
-  <ul>
+  <div>
+  <input type='text' class="bg-brand-primary-light px-5 py-3 text-xl rounded-xl placeholder:text-white-input" placeholder="Search"/>
+</div>
+<h2 class="text-lg uppercase font-bold  text-brand-white-subtle tracking-wider">Topics</h2>
+  <ul class="flex gap-4 ">
     {
       allTags.map((tag) => (
-        <li class="inline-block mx-2 scale-100">
+        <li>
           <Tag tag={tag} />
         </li>
       ))
     }
   </ul>
-  <h2>All posts</h2>
-  <ul>
+
+  <div class="grid grid-cols-3 gap-6 py-8">
     {
-      allPosts.map(({ frontmatter: { title, description, slug, tags } }) => (
+      allPosts.map(({ frontmatter: { title, description, slug, tags}  }, index) => {
+         return <div class="opacity-0 animate-fade relative flex" style={{animationDelay: `${index*200}ms`}}>
         <ArticleSummaryCard
           title={title}
           tags={tags}
           slug={slug}
           description={description}
         />
-      ))
+</div>
+      })
     }
-  </ul>
+  </d>
 </BaseLayout>

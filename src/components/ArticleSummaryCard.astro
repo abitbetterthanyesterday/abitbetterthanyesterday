@@ -1,18 +1,40 @@
 ---
 import Tag from "./Tag.astro";
 
-const { title, tags, slug, description } = Astro.props;
+const { title, tags, slug } = Astro.props;
 ---
 
 <article
-  class="my-9 rounded-3xl border border-indigo-700/30 bg-brand-primaryLight p-8 px-16 shadow-sm shadow-indigo-700/5 transition-all hover:ml-4 hover:border-indigo-700 hover:bg-indigo-900/30 hover:shadow-md hover:shadow-indigo-700/20"
+  class="group/card hover:border-secondary bg-brand-primary-dark/51  rounded-3xl border-transparent  bg-brand-primary-dark p-4 transition-all border-4 hover:border-brand-accent hover:bg-brand-primary-light box-border duration-300"
 >
-  <a href={`blog/${slug}`}>
-    <div class="flex gap-2">
-      {tags.map((tag: string) => <Tag tag={tag} />)}
-    </div>
-    <h1 class="mt-5 mb-1">{title}</h1>
+  <a href={`blog/${slug}`} class="flex h-full flex-col gap-8">
+      <img
 
-    <p class="max-w-prose pl-4">{description}</p>
+        class="bg-primary-light aspect-video w-full rounded-xl border-brand-primary-light bg-brand-primary-light group-hover/card:scale-105 duration-300 transition-all delay-100 group-hover/card:border-brand-accent border-2 border-transparent overflow-hidden group-hover/card:bottom-1 relative bottom-0" 
+        src=`https://picsum.photos/seed/${slug}/900/514`
+      />
+    <div class="flex-grow">
+      <div class="flex justify-start gap-2">
+        {tags.map((tag: string) => <Tag tag={tag} />)}
+      </div>
+      <h1 class="mt-0 mb-0 py-12 text-5xl">{title}</h1>
+    </div>
+    <div class="-m-4 flex justify-between text-brand-white-subtle">
+      <div
+        class="text-brand-text-subtle flex flex-grow border-t-4 border-r-2 border-brand-primary p-5"
+      >
+        12 min
+      </div>
+      <div
+        class="flex flex-grow border-t-4 border-l-2 border-r-2 border-brand-primary p-5"
+      >
+        x
+      </div>
+      <div
+        class="flex flex-grow border-t-4 border-l-2 border-brand-primary p-5"
+      >
+        x
+      </div>
+    </div>
   </a>
 </article>
