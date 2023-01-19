@@ -11,20 +11,16 @@
   }
 
   html {
-    @apply bg-gradient-to-tr from-slate-900 to-slate-800;
+    @apply bg-brand-primary; 
     font-size: 100%;
   }
 
   body{
-    background-size: 40px 40px;
-    background-image:
-      linear-gradient(to right, rgba(255,90,255,.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,90,255,.04) 1px, transparent 1px);
   }
 
   * {
     font-family: system-ui, sans-serif;
-    @apply leading-relaxed text-slate-100;
+    @apply leading-relaxed text-brand-white-body;
   }
 
   h1,
@@ -35,7 +31,7 @@
   h6,
   header {
     /* @apply leading-tight  bg-gradient-to-r from-indigo-500 to-blue-300 bg-clip-text text-transparent ; */
-    @apply leading-tight       ;
+    @apply leading-tight text-brand-white-title;
   }
 
   h1,

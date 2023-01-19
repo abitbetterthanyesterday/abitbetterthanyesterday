@@ -1,4 +1,5 @@
 ---
+import Tag from '../../components/Tag.astro';
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -10,12 +11,16 @@ export async function getStaticPaths() {
 }
 const {
   Content,
-  frontmatter: { title },
+  frontmatter: { title, tags },
 } = Astro.props.post;
 ---
 
 <BaseLayout title={title}>
-  <header class="mx-auto max-w-5xl">{title}</header>
+   <a href="/blog" class="bg-brand-secondary text-brand-secondary-light uppercase tracking-wide font-light rounded-xl py-2 px-4 hover:bg-brand-secondary-light transition cursor-pointer hover:text-brand-secondary-dark text-lg">Go back</a>
+  <header class="mx-auto max-w-5xl ">{title}</header>
+  <div class="flex">
+   {tags.map((tag:string)=> <Tag tag={tag}/>)}
+  </div>
   <article class="max-w-5xl mx-auto bg-slate-900 bg-opacity-5">
     <Content />
   </article>
