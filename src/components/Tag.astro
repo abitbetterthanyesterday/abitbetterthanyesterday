@@ -1,9 +1,9 @@
 ---
-const { tag } = Astro.props;
+const { tag, size = "md" } = Astro.props;
 ---
 
 <div
-  class="bg-brand-primary-light text-white-subtle rounded-xl px-4 py-1 uppercase font-light tracking-widest shadow-sm shadow-indigo-700/5 cursor-pointer border-2 border-brand-primary group-hover/card:bg-brand-primary transition-all"
+  class={`bg-brand-primary-light text-white-subtle rounded-xl px-4 py-1 uppercase font-light tracking-widest shadow-sm shadow-indigo-700/5 cursor-pointer border-2 border-brand-primary group-hover/card:bg-brand-primary transition-all text-${size}`}
 >
   {tag}
 </div>
