@@ -5,36 +5,33 @@ const { title, tags, slug } = Astro.props;
 ---
 
 <article
-  class="group/card hover:border-secondary bg-brand-primary-dark/51  rounded-3xl border-transparent  bg-brand-primary-dark p-4 transition-all border-4 hover:border-brand-accent hover:bg-brand-primary-light box-border duration-300"
->
-  <a href={`blog/${slug}`} class="flex h-full flex-col gap-8">
-      <img
+  class="group/card border-transparent transition-all hover:border-amber-300
+  border-2
+  box-border
+  rounded-3xl
+overflow-hidden
 
-        class="bg-primary-light aspect-video w-full rounded-xl border-brand-primary-light bg-brand-primary-light group-hover/card:scale-105 duration-300 transition-all delay-100 group-hover/card:border-brand-accent border-2 border-transparent overflow-hidden group-hover/card:bottom-1 relative bottom-0" 
+  "
+>
+  <a href={`blog/${slug}`} class="flex h-full flex-col gap-8
+  hover:border-secondary   border-transparent shadow-md transition-all  hover:shadow-amber-300/5 dark:bg-brand-primary-dark
+  
+  ">
+    <div
+      class="relative overflow-hidden  before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-brand-primary-dark/50 group-hover/card:before:from-brand-primary-dark/5 group-hover/card:before:to-brand-primary-dark before:to-brand-primary-dark dark before:content-[''] -mb-20 z-0"
+    >
+      <img
+        class="bg-primary-light w-full transition duration-1000 group-hover/card:scale-105 grayscale group-hover/card:grayscale-0 h-56 bg-brand-primary-dark"
         src=`https://picsum.photos/seed/${slug}/900/514`
       />
-    <div class="flex-grow">
+    </div>
+    <div class="flex-grow p-8 relative z-10 grayscale group-hover/card:grayscale-0">
       <div class="flex justify-start gap-2">
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
-      <h1 class="mt-0 mb-0 py-12 text-5xl">{title}</h1>
-    </div>
-    <div class="-m-4 flex justify-between text-brand-white-subtle">
-      <div
-        class="text-brand-text-subtle flex flex-grow border-t-4 border-r-2 border-brand-primary p-5"
-      >
-        12 min
-      </div>
-      <div
-        class="flex flex-grow border-t-4 border-l-2 border-r-2 border-brand-primary p-5"
-      >
-        x
-      </div>
-      <div
-        class="flex flex-grow border-t-4 border-l-2 border-brand-primary p-5"
-      >
-        x
-      </div>
+      <h1 class="group-hover/card:text-gold-500 mt-0 mb-0 py-12 text-5xl">
+        {title}
+      </h1>
     </div>
   </a>
 </article>

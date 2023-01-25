@@ -5,6 +5,8 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
 ---
 
 <BaseLayout title="Welcome to Astro.">
+
+    <main class="max-w-4xl mx-auto flex-grow py-8 px-4 prose dark:prose-invert">
   <section>
     <h1
       class="text-5xl uppercase font-mono border-2 border-white p-2 tracking-tight bg-emerald-900/50 shadow-sm shadow-emerald-900/90 text-center mb-0"
@@ -69,4 +71,5 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
       >See more</a
     >
   </section>
+  </main>
 </BaseLayout>
