@@ -16,12 +16,17 @@ const {
 ---
 
 <BaseLayout title={title}>
-   <a href="/blog" class="bg-brand-secondary text-brand-secondary-light uppercase tracking-wide font-light rounded-xl py-2 px-4 hover:bg-brand-secondary-light transition cursor-pointer hover:text-brand-secondary-dark text-lg">Go back</a>
-  <header class="mx-auto max-w-5xl ">{title}</header>
+  <header class="prose dark:prose-invert mx-auto lg:prose-lg w-full py-12">
+   <a href="/blog" class="bg-brand-secondary text-brand-secondary-light uppercase tracking-wide font-light rounded-xl py-2 px-4 hover:bg-brand-secondary-light transition cursor-pointer hover:text-brand-secondary-dark text-lg no-underline my-12">Go back</a>
+   <h1 class="prose-h1:mt-2" >
+   {title}
+   </h1>
   <div class="flex">
    {tags.map((tag:string)=> <Tag tag={tag}/>)}
   </div>
-  <article class="max-w-5xl mx-auto bg-slate-900 bg-opacity-5">
+</header>
+
+  <article class="mx-auto bg-slate-900 bg-opacity-5 prose dark:prose-invert lg:prose-lg">
     <Content />
   </article>
 </BaseLayout>

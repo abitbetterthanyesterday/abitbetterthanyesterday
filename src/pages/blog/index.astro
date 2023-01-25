@@ -11,6 +11,7 @@ const allTags = [
 ---
 
 <BaseLayout title="about">
+   <main class="max-w-7xl mx-auto">
   <h1>Blog</h1>
   <div>
   <input type='text' class="bg-brand-primary-light px-5 py-3 text-xl rounded-xl placeholder:text-white-input" placeholder="Search"/>
@@ -26,7 +27,7 @@ const allTags = [
     }
   </ul>
 
-  <div class="grid grid-cols-3 gap-6 py-8">
+  <div class="grid grid-cols-3 gap-12 py-24">
     {
       allPosts.map(({ frontmatter: { title, description, slug, tags}  }, index) => {
          return <div class="opacity-0 animate-fade relative flex" style={{animationDelay: `${index*200}ms`}}>
@@ -36,8 +37,9 @@ const allTags = [
           slug={slug}
           description={description}
         />
-</div>
+      </div>
       })
     }
-  </d>
+    </div>
+    </main>
 </BaseLayout>
