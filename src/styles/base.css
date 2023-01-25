@@ -20,7 +20,7 @@
 
 
   code {
-    @apply border-2 border-indigo-50/20 font-light font-mono px-2 py-1 rounded text-indigo-50 text-sm relative bottom-1/2;
+   @apply border-2 border-indigo-50/20 font-light font-mono px-1 pb-px pt-1 rounded text-indigo-50 text-sm relative bottom-1/2;
   }
 
     pre span{
