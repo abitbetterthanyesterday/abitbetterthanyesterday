@@ -6,20 +6,29 @@ const routes = generateRoutes(currentUrl);
 ---
 
 <nav
-  class="grid grid-cols-3 justify-items-center items-center py-8 container mx-auto"
+  class="max-w-7xl mx-auto grid grid-cols-3 justify-between w-full pt-4 sm:pt-12 pb-24 px-0 sm:px-12"
 >
-  <p class="justify-self-start text-xl font-extrabold">
-    Alo @ aBitBetterThanYesterday
-  </p>
+  <div
+    class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800"
+  >
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
 
   <div
-    class="flex items-center justify-center gap-x-4 rounded-md border px-2 py-2 relative overflow-hidden"
+    class="flex items-center justify-center gap-x-3 px-2 py-2 relative overflow-hidden sm:flex-row flex-col"
   >
     {
       routes.map(({ url, navTitle, isActive }) => (
         <a
           href={url}
-          class={`z-10 ${isActive && "link--active"} grow-1 shrink-1`}
+          class={`grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider ${
+            isActive
+              ? "dark:border-amber-500 border-emerald-800 dark:text-slate-50/100 text-slate-800/100 font-bold"
+              : "border-transparent hover:border-amber-500/20 "
+          } border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition`}
         >
           {navTitle}
         </a>
@@ -27,12 +36,54 @@ const routes = generateRoutes(currentUrl);
     }
   </div>
 
-  <!-- <ThemeToggle/> -->
-</nav>
+  <div class="flex justify-end">
+    <button
+      id="dark-mode-toggle"
+      class="border-2 border-transparent rounded-lg p-2 cursor-pointer transition hover:scale-105"
+    >
+      <span class="text-slate-800 dark:hidden block hover:text-emerald-800"
+        ><i data-feather="moon"></i>
+      </span>
+      <span class="dark:block hidden hover:text-amber-500"
+        ><i data-feather="sun"></i>
+      </span>
+    </button>
+  </div>
 
-<style>
-  .link--active {
-    color: var(--body);
-    background-color: var(--body-lighter);
-  }
-</style>
+  <script>
+    /* Literally stolen from the astro docs :) */
+    type Theme = "dark" | "light";
+    const theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })() as Theme;
+
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    window.localStorage.setItem("theme", theme);
+
+    const handleToggleClick = () => {
+      const element = document.documentElement;
+      element.classList.toggle("dark");
+
+      const isDark = element.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    document
+      .getElementById("dark-mode-toggle")
+      ?.addEventListener("click", handleToggleClick);
+  </script>
+</nav>

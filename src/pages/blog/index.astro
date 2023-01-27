@@ -11,35 +11,50 @@ const allTags = [
 ---
 
 <BaseLayout title="about">
-   <main class="max-w-7xl mx-auto">
-  <h1>Blog</h1>
-  <div>
-  <input type='text' class="bg-brand-primary-light px-5 py-3 text-xl rounded-xl placeholder:text-white-input" placeholder="Search"/>
-</div>
-<h2 class="text-lg uppercase font-bold  text-brand-white-subtle tracking-wider">Topics</h2>
-  <ul class="flex gap-4 ">
-    {
-      allTags.map((tag) => (
-        <li>
-          <Tag tag={tag} />
-        </li>
-      ))
-    }
-  </ul>
-
-  <div class="grid grid-cols-3 gap-12 py-24">
-    {
-      allPosts.map(({ frontmatter: { title, description, slug, tags}  }, index) => {
-         return <div class="opacity-0 animate-fade relative flex" style={{animationDelay: `${index*200}ms`}}>
-        <ArticleSummaryCard
-          title={title}
-          tags={tags}
-          slug={slug}
-          description={description}
-        />
-      </div>
-      })
-    }
+  <main class="max-w-7xl mx-auto">
+    <h1>Blog</h1>
+    <div>
+      <input
+        type="text"
+        class="bg-brand-primary-light px-5 py-3 text-xl rounded-xl placeholder:text-white-input"
+        placeholder="Search"
+      />
     </div>
-    </main>
+    <h2
+      class="text-lg uppercase font-bold text-brand-white-subtle tracking-wider"
+    >
+      Topics
+    </h2>
+    <ul class="flex gap-4">
+      {
+        allTags.map((tag) => (
+          <li>
+            <Tag tag={tag} />
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 py-24">
+      {
+        allPosts.map(
+          ({ frontmatter: { title, description, slug, tags } }, index) => {
+            return (
+              <div
+                class="opacity-0 animate-fade relative flex"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <ArticleSummaryCard
+                  title={title}
+                  tags={tags}
+                  slug={slug}
+                  description={description}
+                />
+              </div>
+            );
+          }
+        )
+      }
+    </div>
+  </main>
 </BaseLayout>

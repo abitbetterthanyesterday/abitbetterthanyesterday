@@ -5,27 +5,23 @@ const { title, tags, slug } = Astro.props;
 ---
 
 <article
-  class="group/card border-transparent transition-all hover:border-amber-300
-  border-2
-  box-border
-  rounded-3xl
-overflow-hidden
-
-  "
+  class="group/card border-transparent transition-all hover:border-amber-300 border-2 box-border rounded-3xl overflow-hidden"
 >
-  <a href={`blog/${slug}`} class="flex h-full flex-col gap-8
-  hover:border-secondary   border-transparent shadow-md transition-all  hover:shadow-amber-300/5 dark:bg-brand-primary-dark
-  
-  ">
+  <a
+    href={`blog/${slug}`}
+    class="flex h-full flex-col gap-8 hover:border-secondary border-transparent shadow-md transition-all hover:shadow-amber-300/5 dark:bg-brand-primary-dark"
+  >
     <div
-      class="relative overflow-hidden  before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-brand-primary-dark/50 group-hover/card:before:from-brand-primary-dark/5 group-hover/card:before:to-brand-primary-dark before:to-brand-primary-dark dark before:content-[''] -mb-20 z-0"
+      class="relative overflow-hidden before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-brand-primary-dark/50 group-hover/card:before:from-brand-primary-dark/5 group-hover/card:before:to-brand-primary-dark before:to-brand-primary-dark dark before:content-[''] -mb-20 z-0"
     >
       <img
         class="bg-primary-light w-full transition duration-1000 group-hover/card:scale-105 grayscale group-hover/card:grayscale-0 h-56 bg-brand-primary-dark"
         src=`https://picsum.photos/seed/${slug}/900/514`
       />
     </div>
-    <div class="flex-grow p-8 relative z-10 grayscale group-hover/card:grayscale-0">
+    <div
+      class="flex-grow p-3 sm:p-8 relative z-10 grayscale group-hover/card:grayscale-0"
+    >
       <div class="flex justify-start gap-2">
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
