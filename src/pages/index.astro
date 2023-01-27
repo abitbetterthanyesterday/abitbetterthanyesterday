@@ -5,71 +5,82 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
 ---
 
 <BaseLayout title="Welcome to Astro.">
+  <main
+    class="max-w-4xl mx-auto flex-grow py-8 prose dark:prose-invert flex flex-col gap-8"
+  >
+    <section class="font-[Comfortaa] sm:text-right mx-auto">
+      <h1 class="text-5xl uppercase tracking-wide shadow-emerald-900/90 mb-0">
+        A Bit Better Than Yesterday<span class="text-amber-500">.</span>
+      </h1>
+      <h2
+        class="text-base font-extralight lowercase whitespace-nowrap text-whitetracking-wider mt-2 w-full mb-0 pr-1 text-slate-50/70"
+      >
+        Learning and sharing, one bit at a time
+      </h2>
+    </section>
 
-    <main class="max-w-4xl mx-auto flex-grow py-8 px-4 prose dark:prose-invert">
-  <section>
-    <h1
-      class="text-5xl uppercase font-mono border-2 border-white p-2 tracking-tight bg-emerald-900/50 shadow-sm shadow-emerald-900/90 text-center mb-0"
-    >
-      A Bit Better Than Yesterday
-    </h1>
-    <h2
-      class="text-base font-extralight lowercase whitespace-nowrap text-whitetracking-wider mt-2 w-full text-right mb-0"
-    >
-      Growing one bit at a time.
-    </h2>
-  </section>
-
-  <section>
-    <h2 class="leading-tighter max-w-prose pt-4">
+    <section>
+      <br class="leading-tighter max-w-prose" />
       <h2 class="font-bold">
         Welcome <span class="text-5xl animate-bounce">👋</span>
       </h2>
       <p>
-        I am <span class="font-extrabold text-orange-600 font-sans">Aloys</span
-        >, a developer currently based in Brisbane, in Australia.
+        I am <span
+          class="font-extrabold tracking-wide border-b border-amber-500 font-[Comfortaa]"
+          >Aloys</span
+        >, a developer based in Brisbane, in Australia.
       </p>
       <p>
-        <code>A bit better than yesterday</code> is my personal web corner, where
-        I share my thoughts, learning, opinions and projects.
+        <span class="font-extrabold border-b border-amber-500 font-[Comfortaa]"
+          >A Bit Better Than Yesterday</span
+        > is my personal web corner, where I share my thoughts, learning, opinions
+        and projects.
       </p>
       <p>
         You might also come across some non-code related stuff, such as my
-        passion for outdoors sports. Turns out there is more than coding to
-        life!
+        passion for outdoors sports. <br />Turns out there is more than coding
+        to life!
       </p>
-    </h2>
-  </section>
+    </section>
 
-  <section>
-    <h2 class="font-bold">Latest articles</h2>
-    <ul class="py-4">
-      {
-        allPosts.slice(0, 5).map((post) => (
-          <li
-            class="border-b border-emerald-900 py-1
+    <section class="prose-a:no-underline">
+      <h2>Latest articles</h2>
+      <ul class="px-0">
+        {
+          allPosts.slice(0, 5).map((post) => (
+            <li
+              class="border-b border-emerald-900/50 py-1
               flex items-center justify-between"
-          >
-            <a href={`blog/${post.frontmatter.slug}`}>
-              {post.frontmatter.title}
+            >
+              <a href={`blog/${post.frontmatter.slug}`}>
+                {post.frontmatter.title}
 
-              <div class="flex gap-2">
-                {post.frontmatter.tags.map((tag: string) => (
-                  <a href="/tag">
-                    <Tag tag={tag} size="xs" />
-                  </a>
-                ))}
-              </div>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <a
-      href="/blog"
-      class="bg-emerald-900 py-2 px-4 rounded-md inline-block mt-4 tracking-wide"
-      >See more</a
-    >
-  </section>
+                <div class="flex gap-2">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <a href="/tag">
+                      <Tag tag={tag} />
+                    </a>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a
+        href="/blog"
+        class="bg-emerald-900 py-2 px-4 rounded-md mt-4 tracking-wide no-underline justify-self-start inline-block align-vertical group hover:bg-emerald-800"
+        >See all the articles published<i
+          class="inline bottom-px relative group-hover:animate-bounce group-hover:bottom-0 transition ml-2"
+          data-feather="arrow-right"></i>
+      </a>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <p class="opacity-50">
+        I have been quite busy lately, but stay tune I will add some showcases
+        of the work I have conducted over the years.
+      </p>
+    </section>
   </main>
 </BaseLayout>
