@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-37FXCHFA">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="generator" content="Astro v2.0.2">
+    <title>Benchmarking using Deno</title>
+    <script src="../../node_modules/feather-icons/dist/feather.js"></script>
+    
+  <link rel="stylesheet" href="/_astro/about.c88f82ea.css" /><script type="module">const t=(()=>typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme"):window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")();t==="light"?document.documentElement.classList.remove("dark"):document.documentElement.classList.add("dark");window.localStorage.setItem("theme",t);const a=()=>{const e=document.documentElement;e.classList.toggle("dark");const o=e.classList.contains("dark");localStorage.setItem("theme",o?"dark":"light")};document.getElementById("dark-mode-toggle")?.addEventListener("click",a);
+</script></head>
+  <body class="flex flex-col min-h-screen min-w-screen bg-slate-200 dark:bg-brand-primary dark:text-slate-50 px-5 astro-37FXCHFA">
+    <nav class="max-w-7xl mx-auto grid grid-cols-3 justify-between w-full pt-4 sm:pt-12 pb-24 px-0 xs:px-12">
+  <div class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800">
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center gap-x-3 px-2 py-2 relative overflow-hidden sm:flex-row flex-col">
+    <a href="/" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          Home
+        </a><a href="/about" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          About
+        </a><a href="/blog" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          Blog
+        </a>
+  </div>
+
+  <div class="flex justify-end">
+    <button id="dark-mode-toggle" class="border-2 border-transparent rounded-lg p-2 cursor-pointer transition hover:scale-105">
+      <span class="text-slate-800 dark:hidden block hover:text-emerald-800"><i data-feather="moon"></i>
+      </span>
+      <span class="dark:block hidden hover:text-amber-500"><i data-feather="sun"></i>
+      </span>
+    </button>
+  </div>
+
+  
+</nav>
+    <header class="prose mx-auto w-full py-12 dark:prose-invert lg:prose-lg">
+    <a href="/blog" class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark">Go back</a>
+    <h1 class="prose-h1:mt-2">
+      Benchmarking using Deno
+    </h1>
+    <div class="flex">
+      <div class="bg-emerald-600 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-xl px-3 py-1 uppercase font-light tracking-widest shadow-sm shadow-emerald-700/5 cursor-pointer  text-xs">
+  Development
+</div><div class="bg-emerald-600 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-xl px-3 py-1 uppercase font-light tracking-widest shadow-sm shadow-emerald-700/5 cursor-pointer  text-xs">
+  Deno
+</div>
+    </div>
+  </header><article class="prose mx-auto bg-slate-900 bg-opacity-5 dark:prose-invert lg:prose-lg">
+    <p>We are on page <code>= this</code></p>
+<p>Deno is great</p>
+<p>I absolutely love it, and I love the fact that it will push <code>node</code> to become
+better</p>
+<p>Deno comes with some really cool out of the box tools, such as a benchmarking
+tool</p>
+<p>Benchmarking is important if you want to measure the impact of a code change
+on the performance of your code base</p>
+<h2 id="i-always-advocate-to-avoid-performance-optimisation-unless-performanceslug-benchmarking-using-deno">I always advocate to avoid performance optimisation unless performance
+slug: benchmarking-using-deno</h2>
+<p>We are on page <code>= this</code>.
+Deno is great.
+I absolutely love it, and I love the fact that it will push <code>node</code> to become better.</p>
+<p>Deno comes with some really cool out of the box tools, such as a benchmarking tool.</p>
+<p>Benchmarking is important if you want to measure the impact of a code change on the performance of your code base.</p>
+<p>I always advocate to avoid performance optimisation unless performance becomes an issue when developping an application.
+However, when developping libraries, performance is very important and could be a question of life and death for a package.</p>
+<p><a href="https://deno.land/manual@v1.29.1/tools/benchmarker"><code>Deno bench</code></a> is the utility ship with <code>deno</code> to run benchmarks.
+It is very easy to setup and run benchmarking.</p>
+<p>Let’s benchmark our recursive and iterative solutions to compute a factorial.</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #7F848E">// factorial.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">isPositiveInteger</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">:</span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF">):</span><span style="color: #E5C07B">Boolean</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">=></span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Number</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">isInteger</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">&#x26;&#x26;</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">n</span><span style="color: #56B6C2">></span><span style="color: #D19A66">0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">validateArgument</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">):</span><span style="color: #E5C07B">void</span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">!</span><span style="color: #61AFEF">isPositiveInteger</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">)){</span></span>
+<span class="line"><span style="color: #ABB2BF">		</span><span style="color: #C678DD">throw</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Invalid argument: provide a positive integer.'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">	}</span></span>
+<span class="line"><span style="color: #ABB2BF">	</span><span style="color: #C678DD">return</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">recursive</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">:</span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF">): </span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #61AFEF">validateArgument</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF">      </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">   } </span><span style="color: #C678DD">else</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">      </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">recursive</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #56B6C2">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">   }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">iterative</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">:</span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF">):</span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #61AFEF">validateArgument</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">result</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> (</span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">i</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">; </span><span style="color: #E06C75">i</span><span style="color: #56B6C2">&#x3C;=</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">; </span><span style="color: #E06C75">i</span><span style="color: #56B6C2">++</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF">       </span><span style="color: #E06C75">result</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">i</span><span style="color: #ABB2BF">; </span></span>
+<span class="line"><span style="color: #ABB2BF">   }</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">result</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<p>As a standard, the benchmarking files are suffixed of <code>_bench</code>, for example <code>main_bench.ts</code>.</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #7F848E">// factorial_bench.ts</span></span>
+<span class="line"><span style="color: #C678DD">import</span><span style="color: #ABB2BF"> { </span><span style="color: #E06C75">iterative</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">recursive</span><span style="color: #ABB2BF"> } </span><span style="color: #C678DD">from</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"./main.ts"</span><span style="color: #ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E">/* We use group to tell deno that these two function are part of the same benchmark group.</span></span>
+<span class="line"><span style="color: #7F848E">The `baseline` argument allow us to ask deno to do a comparaison, such as bar() is 10x faster than foo(). </span></span>
+<span class="line"><span style="color: #7F848E">See documentation for more information.</span></span>
+<span class="line"><span style="color: #7F848E">*/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E5C07B">Deno</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">bench</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"iterative"</span><span style="color: #ABB2BF">, {</span><span style="color: #E06C75">group</span><span style="color: #ABB2BF">:</span><span style="color: #98C379">'factorial'</span><span style="color: #ABB2BF">, </span><span style="color: #E06C75">baseline</span><span style="color: #ABB2BF">:</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">}, () </span><span style="color: #C678DD">=></span><span style="color: #ABB2BF">{</span></span>
+<span class="line"><span style="color: #ABB2BF">  </span><span style="color: #61AFEF">iterative</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">10_000</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E5C07B">Deno</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">bench</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"recursive"</span><span style="color: #ABB2BF">, {</span><span style="color: #E06C75">group</span><span style="color: #ABB2BF">:</span><span style="color: #98C379">'factorial'</span><span style="color: #ABB2BF">}, () </span><span style="color: #C678DD">=></span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #61AFEF">recursive</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">10_000</span><span style="color: #ABB2BF">);</span></span>
+<span class="line"><span style="color: #ABB2BF">});</span></span></code></pre>
+<p>Now, we simply run the benchmark runner using <code>deno bench</code></p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #7F848E"># > deno bench</span></span>
+<span class="line"><span style="color: #ABB2BF">cpu: 11th Gen Intel(R) Core(TM) i7-11370H @ 3.30GHz</span></span>
+<span class="line"><span style="color: #ABB2BF">runtime: deno 1.29.2 (x86_64-unknown-linux-gnu)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">file:///home/abr/temp/refactor/main_bench.ts</span></span>
+<span class="line"><span style="color: #ABB2BF">benchmark      </span><span style="color: #C678DD">time</span><span style="color: #ABB2BF"> (avg)             (min … max)       p75       p99      p995</span></span></code></pre>
+  </article>
+    <footer class="flex justify-center items-center p-8 gap-8 py-16">
+  <div class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800">
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
+  <div class="flex gap-4">
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="mail"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      email
+    </p>
+  </div>
+</div>
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="github"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      Github
+    </p>
+  </div>
+</div>
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="twitter"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      Twitter
+    </p>
+  </div>
+</div>
+  </div>
+</footer>
+  <script>
+    // @ts-ignore
+    feather.replace();
+  </script>
+</body></html>
