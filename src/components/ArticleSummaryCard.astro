@@ -5,29 +5,43 @@ const { title, tags, slug } = Astro.props;
 ---
 
 <article
-  class="group/card border-transparent transition-all hover:border-amber-300 border-2 box-border rounded-3xl overflow-hidden"
+  class="group/card border-transparent transition-all hover:border-emerald-500 dark:hover:border-amber-300 box-border shadow-md relative rounded-3xl"
 >
-  <a
-    href={`blog/${slug}`}
-    class="flex h-full flex-col gap-8 hover:border-secondary border-transparent shadow-md transition-all hover:shadow-amber-300/5 dark:bg-brand-primary-dark"
+  <div
+    class="w-0 h-0 absolute group-hover/card:h-[calc(100%_+_3px)] group-hover/card:w-[calc(100%_+_3px)] z-0 -left-[1.5px] -bottom-[1.5px] rounded-3xl origin-center overflow-hidden"
   >
     <div
-      class="relative overflow-hidden before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-brand-primary-dark/50 group-hover/card:before:from-brand-primary-dark/5 group-hover/card:before:to-brand-primary-dark before:to-brand-primary-dark dark before:content-[''] -mb-20 z-0"
+      class="dark:bg-gradient-to-r dark:from-amber-900 dark:via-orange-300 dark:to-yellow-300 absolute aspect-square rounded-full h-[150%] -right-[45%] -top-[25%] animate-spin from-emerald-300 bg-gradient-to-r to-emerald-800"
+      style="animation-duration: 2000ms"
+    >
+    </div>
+  </div>
+  <a
+    href={`blog/${slug}`}
+    class="flex h-full flex-col gap-8 transition-all dark:bg-brand-primary-dark bg-white overflow-hidden rounded-3xl relative z-10"
+  >
+    <div
+      class="relative overflow-hidden before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-white/20 dark:before:from-brand-primary-dark/50 dark:group-hover/card:before:from-brand-primary-dark/5 dark:group-hover/card:before:to-brand-primary-dark before:to-white dark:before:to-brand-primary-dark before:content-[''] -mb-20 z-0"
     >
       <img
-        class="bg-primary-light w-full transition duration-1000 group-hover/card:scale-105 grayscale group-hover/card:grayscale-0 h-56 bg-brand-primary-dark"
+        class="bg-primary-light w-full transition duration-1000 group-hover/card:scale-105 grayscale group-hover/card:grayscale-0 h-56 bg-brand-primary-dark bg-white"
         src=`https://picsum.photos/seed/${slug}/900/514`
       />
     </div>
     <div
-      class="flex-grow p-3 sm:p-8 relative z-10 grayscale group-hover/card:grayscale-0"
+      class="flex-grow p-3 sm:p-8 z-10 grayscale group-hover/card:grayscale-0 relative"
     >
-      <div class="flex justify-start gap-2">
+      <div class="flex justify-start gap-2 relative z-10">
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
-      <h1 class="group-hover/card:text-gold-500 mt-0 mb-0 py-12 text-5xl">
-        {title}
-      </h1>
+      <div class="py-12">
+        <h2 class="text-slate-400">5th September 2013 - 10 minutes read</h2>
+        <h1
+          class="group-hover/card:text-emerald-700 dark:group-hover/card:text-amber-400 dark:text-slate-300 mt-0 mb-0 text-5xl prose"
+        >
+          {title}
+        </h1>
+      </div>
     </div>
   </a>
 </article>

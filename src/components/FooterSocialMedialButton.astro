@@ -1,0 +1,20 @@
+---
+const { icon, title } = Astro.props;
+---
+
+<div class="group relative flex flex-cols items-center justify-center">
+  <div
+    class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group"
+  >
+    <i data-feather={icon}></i>
+  </div>
+  <div
+    class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden"
+  >
+    <p
+      class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50"
+    >
+      {title}
+    </p>
+  </div>
+</div>

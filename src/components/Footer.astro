@@ -1,7 +1,19 @@
 ---
-
+import FooterSocialMedialButton from "./FooterSocialMedialButton.astro";
 ---
 
-<footer class="flex justify-center items-center p-8">
-	Alo - 2022
+<footer class="flex justify-center items-center p-8 gap-8 py-16">
+  <div
+    class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800"
+  >
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
+  <div class="flex gap-4">
+    <FooterSocialMedialButton title="email" icon="mail" />
+    <FooterSocialMedialButton title="Github" icon="github" />
+    <FooterSocialMedialButton title="Twitter" icon="twitter" />
+  </div>
 </footer>
