@@ -12,19 +12,15 @@ const allTags = [
 
 <BaseLayout title="about">
   <main class="max-w-7xl mx-auto">
-    <h1>Blog</h1>
-    <div>
+    <div class="relative mb-8">
+      <i class="absolute h-6 top-3 left-4 text-slate-400" data-feather="search"
+      ></i>
       <input
         type="text"
-        class="bg-brand-primary-light px-5 py-3 text-xl rounded-xl placeholder:text-white-input"
+        class="bg-slate-300 dark:bg-brand-primary-light px-5 py-3 text-md rounded-xl placeholder:text-slate-400/95 text-slate-800 pl-12 outline-emerald-600 shadow-inner"
         placeholder="Search"
       />
     </div>
-    <h2
-      class="text-lg uppercase font-bold text-brand-white-subtle tracking-wider"
-    >
-      Topics
-    </h2>
     <ul class="flex gap-4">
       {
         allTags.map((tag) => (
@@ -35,7 +31,7 @@ const allTags = [
       }
     </ul>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 py-24">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 py-12">
       {
         allPosts.map(
           ({ frontmatter: { title, description, slug, tags } }, index) => {

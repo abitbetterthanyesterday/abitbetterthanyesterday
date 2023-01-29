@@ -6,7 +6,7 @@ const routes = generateRoutes(currentUrl);
 ---
 
 <nav
-  class="max-w-7xl mx-auto grid grid-cols-3 justify-between w-full pt-4 sm:pt-12 pb-24 px-0 sm:px-12"
+  class="max-w-7xl mx-auto grid grid-cols-3 justify-between w-full pt-4 sm:pt-12 pb-24 px-0 xs:px-12"
 >
   <div
     class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800"
@@ -27,7 +27,7 @@ const routes = generateRoutes(currentUrl);
           class={`grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider ${
             isActive
               ? "dark:border-amber-500 border-emerald-800 dark:text-slate-50/100 text-slate-800/100 font-bold"
-              : "border-transparent hover:border-amber-500/20 "
+              : "border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20"
           } border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition`}
         >
           {navTitle}
