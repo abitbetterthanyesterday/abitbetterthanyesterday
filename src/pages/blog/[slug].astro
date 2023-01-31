@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Tag from "../../components/Tag.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title}>
+  <header class="prose mx-auto w-full py-12 dark:prose-invert lg:prose-lg">
+    <a
+      href="/blog"
+      class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark"
+      >Go back</a
+    >
+    <h1 class="prose-h1:mt-2">
+      {entry.data.title}
+    </h1>
+    <div class="flex">
+      {entry.data.tags.map((tag: string) => <Tag tag={tag} />)}
+    </div>
+  </header>
+
+  <article
+    class="prose mx-auto bg-slate-900 bg-opacity-5 dark:prose-invert lg:prose-lg"
+  >
+    <Content />
+  </article>
+</BaseLayout>

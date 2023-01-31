@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-37FXCHFA">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="generator" content="Astro v2.0.2">
+    <title>Recursion</title>
+    <script src="../../node_modules/feather-icons/dist/feather.js"></script>
+    
+  <link rel="stylesheet" href="/_astro/about.c88f82ea.css" /><script type="module">const t=(()=>typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme"):window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")();t==="light"?document.documentElement.classList.remove("dark"):document.documentElement.classList.add("dark");window.localStorage.setItem("theme",t);const a=()=>{const e=document.documentElement;e.classList.toggle("dark");const o=e.classList.contains("dark");localStorage.setItem("theme",o?"dark":"light")};document.getElementById("dark-mode-toggle")?.addEventListener("click",a);
+</script></head>
+  <body class="flex flex-col min-h-screen min-w-screen bg-slate-200 dark:bg-brand-primary dark:text-slate-50 px-5 astro-37FXCHFA">
+    <nav class="max-w-7xl mx-auto grid grid-cols-3 justify-between w-full pt-4 sm:pt-12 pb-24 px-0 xs:px-12">
+  <div class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800">
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center gap-x-3 px-2 py-2 relative overflow-hidden sm:flex-row flex-col">
+    <a href="/" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          Home
+        </a><a href="/about" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          About
+        </a><a href="/blog" class="grow-1 shrink-1 text-slate-800/60 uppercase dark:text-slate-50/60 tracking-wider border-transparent dark:hover:border-amber-500/20 hover:border-emerald-800/20 border-b-4 hover:text-slate-800 dark:hover:text-slate-50 px-2 py-px transition">
+          Blog
+        </a>
+  </div>
+
+  <div class="flex justify-end">
+    <button id="dark-mode-toggle" class="border-2 border-transparent rounded-lg p-2 cursor-pointer transition hover:scale-105">
+      <span class="text-slate-800 dark:hidden block hover:text-emerald-800"><i data-feather="moon"></i>
+      </span>
+      <span class="dark:block hidden hover:text-amber-500"><i data-feather="sun"></i>
+      </span>
+    </button>
+  </div>
+
+  
+</nav>
+    <header class="prose mx-auto w-full py-12 dark:prose-invert lg:prose-lg">
+    <a href="/blog" class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark">Go back</a>
+    <h1 class="prose-h1:mt-2">
+      Recursion
+    </h1>
+    <div class="flex">
+      <div class="bg-emerald-600 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-xl px-3 py-1 uppercase font-light tracking-widest shadow-sm shadow-emerald-700/5 cursor-pointer  text-xs">
+  Computer Science
+</div>
+    </div>
+  </header><article class="prose mx-auto bg-slate-900 bg-opacity-5 dark:prose-invert lg:prose-lg">
+    <p>Recursion is a programming technique where a function calls itself multiple times in order to solve a problem.</p>
+<p>The idea is that the problem can be broken down into multiple subproblems that are resolved the same way.</p>
+<p>To do so, we create a function that breaks down the problem into smaller chunks and call itself with new ‘chunk’ until it reaches the base case.
+The base case is the point where the function returns a value rather than calling itself.</p>
+<p>As you can imagine, the function can’t call itself indefinitely, otherwise, [[Stack Overflow|it would overflow the stack!]]</p>
+<p>A simple example is how to calculate the factorial of a number.</p>
+<p>The factorial of <code>n</code> is the sum of the product of the integers from 1 to <code>n</code> and is written <code>n!</code>.
+For example, the factorial of 5 is written <code>5!</code> and calculated like so <code>5!=5×4×3×2×1=120</code></p>
+<p>To calculate a factorial this recursively, we would do the following;</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">function</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">factorial</span><span style="color: #ABB2BF"> (</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF">:</span><span style="color: #E5C07B">number</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">&#x3C;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">||</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">!</span><span style="color: #E5C07B">Number</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">isInteger</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">number</span><span style="color: #ABB2BF">) ){</span></span>
+<span class="line"><span style="color: #ABB2BF">	 </span><span style="color: #C678DD">throw</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">new</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">Error</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">'Number must be a positive integer'</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF"> }</span></span>
+<span class="line"><span style="color: #ABB2BF"> </span><span style="color: #C678DD">if</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">===</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">){</span></span>
+<span class="line"><span style="color: #ABB2BF">   </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #7F848E">// This is our base case</span></span>
+<span class="line"><span style="color: #ABB2BF"> }</span></span>
+<span class="line"><span style="color: #ABB2BF"> </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">*</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">factorial</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">n</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// The function calls itself</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #7F848E">/* In the example of 5, the steps would be:</span></span>
+<span class="line"><span style="color: #7F848E">factorial(5)</span></span>
+<span class="line"><span style="color: #7F848E">5 * factorial (4)</span></span>
+<span class="line"><span style="color: #7F848E">5 * 4 * factorial(3)</span></span>
+<span class="line"><span style="color: #7F848E">5 * 4 * 3 * factorial(2)</span></span>
+<span class="line"><span style="color: #7F848E">5 * 4 * 3 * 2 * factorial(1)</span></span>
+<span class="line"><span style="color: #7F848E">5 * 4 * 3 * 2 * 1 * factorial(0)</span></span>
+<span class="line"><span style="color: #7F848E">5 * 4 * 3 * 2 * 1 * 1 = 120</span></span>
+<span class="line"><span style="color: #7F848E">*/</span></span></code></pre>
+<h2 id="performance-iteration-vs-recursion">Performance: Iteration vs. Recursion</h2>
+<p>Recursive solutions tend to be a lot less performant than [[Iteration|their iterative counter part.]]
+On that simple factorial calculation, the iterative counterpart is [[Benchmarking using Deno|up to <strong>15 times faster</strong> on my laptop]].</p>
+<p>So why would you use a recursive solution?</p>
+<ul>
+<li>Some problems are inherently recursive by nature, like navigating through data tree structure such a reading files of a folder and subfolders,</li>
+<li>The recursive solutions are arguably easier to understand and shorter,</li>
+</ul>
+<p>See you soon,
+Alo.</p>
+  </article>
+    <footer class="flex justify-center items-center p-8 gap-8 py-16">
+  <div class="justify-self-start text-xl font-extrabold dark:text-white text-slate-800">
+    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
+    <p class="uppercase tracking-wider text-sm font-medium opacity-70">
+      A bit better than yesterday
+    </p>
+  </div>
+  <div class="flex gap-4">
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="mail"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      email
+    </p>
+  </div>
+</div>
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="github"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      Github
+    </p>
+  </div>
+</div>
+    <div class="group relative flex flex-cols items-center justify-center">
+  <div class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group">
+    <i data-feather="twitter"></i>
+  </div>
+  <div class="absolute top-full h-0 group-hover:h-8 transition-all flex justify-center items-center overflow-hidden">
+    <p class="uppercase text-xs tracking-widest center text-emerald-900 dark:text-slate-50/50">
+      Twitter
+    </p>
+  </div>
+</div>
+  </div>
+</footer>
+  <script>
+    // @ts-ignore
+    feather.replace();
+  </script>
+</body></html>
