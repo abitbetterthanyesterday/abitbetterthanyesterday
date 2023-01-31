@@ -1,4 +1,4 @@
-const { default: plugin } = require("tailwindcss");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,6 +7,9 @@ module.exports = {
   plugins: [require("@tailwindcss/typography")],
   theme: {
     extend: {
+      fontFamily: {
+        display: ["Comfortaa", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         brand: {
           primary: {
