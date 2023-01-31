@@ -1,21 +1,22 @@
 ---
+import { getCollection } from "astro:content";
 import Tag from "../components/Tag.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = await Astro.glob("../content/*.(md|mdx)");
+const allPosts = await getCollection("blog");
 ---
 
 <BaseLayout title="Welcome to Astro.">
   <main
-    class="max-w-4xl mx-auto flex-grow py-8 prose dark:prose-invert flex flex-col gap-8"
+    class="prose mx-auto flex max-w-4xl flex-grow flex-col gap-8 py-8 dark:prose-invert"
   >
-    <section class="font-[Comfortaa] sm:text-right mx-auto">
-      <h1 class="text-5xl uppercase tracking-wide shadow-emerald-900/90 mb-0">
+    <section class="mx-auto font-[Comfortaa] sm:text-right">
+      <h1 class="mb-0 text-5xl uppercase tracking-wide shadow-emerald-900/90">
         A Bit Better Than Yesterday<span
           class="text-emerald-600 dark:text-amber-500">.</span
         >
       </h1>
       <h2
-        class="text-base font-extralight lowercase whitespace-nowrap text-whitetracking-wider mt-2 w-full mb-0 pr-1"
+        class="text-whitetracking-wider mt-2 mb-0 w-full whitespace-nowrap pr-1 text-base font-extralight lowercase"
       >
         Learning and sharing, one bit at a time
       </h2>
@@ -24,17 +25,17 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
     <section>
       <br class="leading-tighter max-w-prose" />
       <h2 class="font-bold">
-        Welcome <span class="text-5xl animate-bounce">👋</span>
+        Welcome <span class="animate-bounce text-5xl">👋</span>
       </h2>
       <p>
         I am <span
-          class="font-extrabold tracking-wide border-b border-emerald-600 dark:border-amber-500 font-[Comfortaa]"
+          class="border-b border-emerald-600 font-[Comfortaa] font-extrabold tracking-wide dark:border-amber-500"
           >Aloys</span
         >, a developer based in Brisbane, in Australia.
       </p>
       <p>
         <span
-          class="font-extrabold border-b border-emerald-600 dark:border-amber-500 font-[Comfortaa]"
+          class="border-b border-emerald-600 font-[Comfortaa] font-extrabold dark:border-amber-500"
           >A Bit Better Than Yesterday</span
         > is my personal web corner, where I share my thoughts, learning, opinions
         and projects.
@@ -52,14 +53,14 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
         {
           allPosts.slice(0, 5).map((post) => (
             <li
-              class="border-b border-emerald-600/30 py-1
-              flex items-center justify-between"
+              class="flex items-center justify-between
+              border-b border-emerald-600/30 py-1"
             >
-              <a href={`blog/${post.frontmatter.slug}`}>
-                {post.frontmatter.title}
+              <a href={`blog/${post.data.slug}`}>
+                {post.data.title}
 
                 <div class="flex gap-2">
-                  {post.frontmatter.tags.map((tag: string) => (
+                  {post.data.tags.map((tag: string) => (
                     <a href="/tag">
                       <Tag tag={tag} />
                     </a>
@@ -72,9 +73,9 @@ const allPosts = await Astro.glob("../content/*.(md|mdx)");
       </ul>
       <a
         href="/blog"
-        class="bg-emerald-900 text-emerald-50 py-2 px-4 rounded-md mt-4 tracking-wide no-underline justify-self-start inline-block align-vertical group hover:bg-emerald-800"
+        class="align-vertical group mt-4 inline-block justify-self-start rounded-md bg-emerald-900 py-2 px-4 tracking-wide text-emerald-50 no-underline hover:bg-emerald-800"
         >See all the articles published<i
-          class="inline bottom-px relative group-hover:animate-bounce group-hover:bottom-0 transition ml-2"
+          class="relative bottom-px ml-2 inline transition group-hover:bottom-0 group-hover:animate-bounce"
           data-feather="arrow-right"></i>
       </a>
     </section>
