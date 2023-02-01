@@ -6,7 +6,7 @@ const routes = generateRoutes(currentUrl);
 ---
 
 <nav
-  class="xs:px-12 mx-auto grid w-full max-w-7xl grid-cols-2 justify-between px-0 pt-4 pb-24 sm:pt-12 md:grid-cols-3"
+  class="xs:px-12 mx-auto grid w-full max-w-7xl grid-cols-2 justify-between px-0 py-4 sm:pt-12 md:grid-cols-3"
 >
   <div
     class="justify-self-start text-xl font-extrabold text-slate-800 dark:text-white"
@@ -62,7 +62,7 @@ const routes = generateRoutes(currentUrl);
       >
         <ul>
           {
-            routes.map(({ url, navTitle, isActive }) => (
+            routes.map(({ url, navTitle }) => (
               <li class="pb-12">
                 <a
                   href={url}
