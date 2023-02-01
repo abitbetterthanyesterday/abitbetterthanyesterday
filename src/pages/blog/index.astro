@@ -8,7 +8,7 @@ const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="about">
-  <main class="mx-auto max-w-7xl">
+  <main class="mx-auto max-w-7xl pt-12">
     <div class="relative mb-8">
       <i class="absolute top-3 left-4 h-6 text-slate-400" data-feather="search"
       ></i>
@@ -18,7 +18,7 @@ const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
         placeholder="Search"
       />
     </div>
-    <ul class="flex gap-4">
+    <ul class="flex flex-wrap gap-2 md:gap-4">
       {
         allTags.map((tag) => (
           <li>
