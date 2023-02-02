@@ -1,129 +1,17 @@
 ---
-import { generateRoutes } from "../routes";
-// import ThemeToggle from './ThemeToggle.astro';
-const currentUrl = new URL(Astro.request.url).pathname;
-const routes = generateRoutes(currentUrl);
+import DesktopNavigationLinks from "./DesktopNavigationLinks.astro";
+import Logo from "./Logo.astro";
+import MobileHamburger from "./MobileHamburger.astro";
+import ThemeToggleButton from "./ThemeToggleButton.astro";
 ---
 
 <nav
   class="xs:px-12 mx-auto grid w-full max-w-7xl grid-cols-2 justify-between px-0 py-4 sm:pt-12 md:grid-cols-3"
 >
-  <div
-    class="justify-self-start text-xl font-extrabold text-slate-800 dark:text-white"
-  >
-    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
-    <p class="text-sm font-medium uppercase tracking-wider opacity-70">
-      A bit better than yesterday
-    </p>
-  </div>
-
-  <div
-    class="relative hidden flex-col items-center justify-center gap-x-3 overflow-hidden px-2 py-2 sm:flex-row md:flex"
-  >
-    {
-      routes.map(({ url, navTitle, isActive }) => (
-        <a
-          href={url}
-          class={`grow-1 shrink-1 uppercase tracking-wider text-slate-800/60 dark:text-slate-50/60 ${
-            isActive
-              ? "border-emerald-800 font-bold text-slate-800/100 dark:border-amber-500 dark:text-slate-50/100"
-              : "border-transparent hover:border-emerald-800/20 dark:hover:border-amber-500/20"
-          } border-b-4 px-2 py-px transition hover:text-slate-800 dark:hover:text-slate-50`}
-        >
-          {navTitle}
-        </a>
-      ))
-    }
-  </div>
-
+  <Logo />
+  <DesktopNavigationLinks />
   <div class="flex justify-end gap-8">
-    <button
-      id="dark-mode-toggle"
-      class="cursor-pointer rounded-lg border-2 border-transparent p-2 transition hover:scale-105"
-    >
-      <span class="block text-slate-800 hover:text-emerald-800 dark:hidden"
-        ><i data-feather="moon"></i>
-      </span>
-      <span class="hidden hover:text-amber-500 dark:block"
-        ><i data-feather="sun"></i>
-      </span>
-    </button>
-
-    <div class="relative z-50 flex items-center justify-center md:hidden">
-      <i data-feather="menu" id="menu-toggle"></i>
-      <div
-        class="fixed top-0 right-0 hidden h-screen w-screen flex-grow bg-black/70"
-        id="overlay"
-      >
-      </div>
-      <div
-        class="after:bg-emrald-700 fixed top-0 right-0 z-50 flex w-screen -translate-y-full flex-col bg-slate-50 p-12 pb-4 text-brand-primary-dark transition-transform after:absolute after:bottom-0 after:left-0 after:h-2 after:w-full after:bg-emerald-700 dark:bg-brand-primary dark:text-slate-50 dark:after:bg-amber-600"
-        id="drawer"
-      >
-        <ul>
-          {
-            routes.map(({ url, navTitle }) => (
-              <li class="pb-12">
-                <a
-                  href={url}
-                  class="relative flex items-center gap-2 font-display text-3xl font-medium uppercase tracking-wide before:absolute before:top-full before:h-2 before:w-8 before:bg-emerald-700 dark:before:bg-amber-600"
-                >
-                  {navTitle}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
+    <ThemeToggleButton />
+    <MobileHamburger />
   </div>
 </nav>
-
-<script>
-  /* Literally stolen from the astro docs :) */
-  type Theme = "dark" | "light";
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })() as Theme;
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-
-  window.localStorage.setItem("theme", theme);
-
-  const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle("dark");
-
-    const isDark = element.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  };
-
-  document
-    .getElementById("dark-mode-toggle")
-    ?.addEventListener("click", handleToggleClick);
-</script>
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const overlay = document.getElementById("overlay");
-  const drawer = document.getElementById("drawer");
-
-  menuToggle?.addEventListener("click", () => {
-    drawer?.classList.toggle("-translate-y-full");
-    overlay?.classList.toggle("hidden");
-  });
-
-  overlay?.addEventListener("click", () => {
-    drawer?.classList.add("-translate-y-full");
-    overlay?.classList.add("hidden");
-  });
-</script>

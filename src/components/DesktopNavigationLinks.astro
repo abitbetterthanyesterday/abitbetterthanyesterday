@@ -1,0 +1,25 @@
+---
+import { generateRoutes } from "../routes";
+
+const currentUrl = new URL(Astro.request.url).pathname;
+const routes = generateRoutes(currentUrl);
+---
+
+<div
+  class="relative hidden flex-row items-center justify-center gap-x-3 overflow-hidden px-2 py-2 md:flex"
+>
+  {
+    routes.map(({ url, navTitle, isActive }) => (
+      <a
+        href={url}
+        class={`grow-1 shrink-1 uppercase tracking-wider text-slate-800/60 dark:text-slate-50/60 ${
+          isActive
+            ? "border-emerald-800 font-bold text-slate-800/100 dark:border-amber-500 dark:text-slate-50/100"
+            : "border-transparent hover:border-emerald-800/20 dark:hover:border-amber-500/20"
+        } border-b-4 px-2 py-px transition hover:text-slate-800 dark:hover:text-slate-50`}
+      >
+        {navTitle}
+      </a>
+    ))
+  }
+</div>

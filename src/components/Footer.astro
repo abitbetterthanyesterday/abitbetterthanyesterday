@@ -1,18 +1,12 @@
 ---
 import FooterSocialMedialButton from "./FooterSocialMedialButton.astro";
+import Logo from "./Logo.astro";
 ---
 
 <footer
   class="flex flex-col items-center justify-center gap-8 py-16 md:flex-row md:p-8"
 >
-  <div
-    class="justify-self-start text-xl font-extrabold text-slate-800 dark:text-white"
-  >
-    <p class="border-b-2 border-emerald-800 dark:border-amber-500">Aloys</p>
-    <p class="text-sm font-medium uppercase tracking-wider opacity-70">
-      A bit better than yesterday
-    </p>
-  </div>
+  <Logo />
   <div class="flex gap-4">
     <FooterSocialMedialButton title="email" icon="mail" />
     <FooterSocialMedialButton title="Github" icon="github" />
