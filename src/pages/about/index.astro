@@ -1,24 +1,13 @@
 ---
+import AboutCollapseSection from '../../components/AboutCollapseSection.astro';
 import AboutLayout from "../../layouts/AboutLayout.astro";
 ---
 
 <AboutLayout>
   <h1>About</h1>
+  <p>What would like to know more about?</p>
 
-  <p>Hi, I'm Aloys, or simply Alo.</p>
-
-  <button
-    class="flex items-center gap-2"
-    data-collapse-button
-    data-target="section-1"
-  >
-    As a person <i
-      data-feather="arrow-right-circle"
-      data-rotate-section-1
-      class="rotate-90 transition-transform"></i>
-  </button>
-
-  <div data-collapse-section-1 class="overflow-hidden transition-all">
+  <AboutCollapseSection title="Myself, as a person" key={1}>
     <p>Let's start with the most important bit: the non-work related stuff.</p>
 
     <p>I enjoy and practice outdoor sports quite a bit.</p>
@@ -27,12 +16,11 @@ import AboutLayout from "../../layouts/AboutLayout.astro";
       In the past, I spent a lot of time in the Alps, practicing acrobatic
       paragliding, skiing or simply tramping up the mountains.
     </p>
-  </div>
+  </AboutCollapseSection>
 
-  <h2>As a developer</h2>
 
+  <AboutCollapseSection title ={"Myself, as a developer"} key={2}>
   <p>I am currently working as front-end developper in Brisbane.</p>
-
   <p>
     In the past, I mainly worked as a fullstack developper - but my area of
     expertise remains in the front end.
@@ -58,9 +46,9 @@ import AboutLayout from "../../layouts/AboutLayout.astro";
     back-end framework to limit context switching.
   </p>
   <p>I also had the chance to dabble in Rust when working in San Francisco.</p>
-  <p>~/perso/gh~/perso/gh</p>
+</AboutCollapseSection>
 
-  <h2>Next goals</h2>
+  <AboutCollapseSection title="Next goals" key={3}>
 
   <p>This year, I am experimenting with the 12 Weeks Year.</p>
   <p>
@@ -76,7 +64,9 @@ import AboutLayout from "../../layouts/AboutLayout.astro";
   </p>
   <p>- Loose 6 kgs</p>
   <p>- Financial</p>
+  </AboutCollapseSection>
 
+  <AboutCollapseSection title="About this website" key={4}>
   <p>
     I have few projects going on at the minute, one of thenm being the website
     you're currently on.
@@ -85,11 +75,15 @@ import AboutLayout from "../../layouts/AboutLayout.astro";
     For the past few years, I meant to open a digital-garden-like website, and
     here it is.
   </p>
+  
+
   <p></p>
   <p>
     This site is powered by Astro, and it's where I spend most of my outside of
     work
   </p>
+
+</AboutCollapseSection>
 
   <p>Feel free to poke around my website and stay as long as you wish.</p>
   <p>I publish my thoughts, learnings and mistakes.</p>
@@ -100,32 +94,4 @@ import AboutLayout from "../../layouts/AboutLayout.astro";
   <p>Alo.</p>
 </AboutLayout>
 
-<script>
-  const buttons = [
-    ...document.querySelectorAll("[data-collapse-button]"),
-  ] as HTMLButtonElement[];
 
-  for (const button of buttons) {
-    const collapseElement = document.querySelector(
-      `[data-collapse-${button.dataset.target}]`
-    ) as HTMLDivElement;
-
-    const rotateElement = document.querySelector(
-      `[data-rotate-${button.dataset.target}]`
-    ) as HTMLDivElement;
-
-    collapseElement.classList.toggle(
-      `max-h-[${collapseElement.scrollHeight}px]`
-    );
-    // We set the initial max-height, otherwise the animation won't work
-
-    button.addEventListener("click", () => {
-      collapseElement.classList.toggle(
-        `max-h-[${collapseElement.scrollHeight}px]`
-      );
-      collapseElement.classList.toggle("max-h-0");
-      rotateElement.classList.toggle("rotate-90");
-      rotateElement.classList.toggle("rotate-0");
-    });
-  }
-</script>
