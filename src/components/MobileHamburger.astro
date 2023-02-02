@@ -1,0 +1,50 @@
+---
+import { generateRoutes } from "../routes";
+
+const currentUrl = new URL(Astro.request.url).pathname;
+const routes = generateRoutes(currentUrl);
+---
+
+<div class="relative z-50 flex items-center justify-center md:hidden">
+  <i data-feather="menu" id="menu-toggle"></i>
+  <div
+    class="fixed top-0 right-0 hidden h-screen w-screen flex-grow bg-black/70"
+    id="overlay"
+  >
+  </div>
+  <div
+    class="after:bg-emrald-700 fixed top-0 right-0 z-50 flex w-screen -translate-y-full flex-col bg-slate-50 p-12 pb-4 text-brand-primary-dark transition-transform after:absolute after:bottom-0 after:left-0 after:h-2 after:w-full after:bg-emerald-700 dark:bg-brand-primary dark:text-slate-50 dark:after:bg-amber-600"
+    id="drawer"
+  >
+    <ul>
+      {
+        routes.map(({ url, navTitle }) => (
+          <li class="pb-12">
+            <a
+              href={url}
+              class="relative flex items-center gap-2 font-display text-3xl font-medium uppercase tracking-wide before:absolute before:top-full before:h-2 before:w-8 before:bg-emerald-700 dark:before:bg-amber-600"
+            >
+              {navTitle}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const overlay = document.getElementById("overlay");
+  const drawer = document.getElementById("drawer");
+
+  menuToggle?.addEventListener("click", () => {
+    drawer?.classList.toggle("-translate-y-full");
+    overlay?.classList.toggle("hidden");
+  });
+
+  overlay?.addEventListener("click", () => {
+    drawer?.classList.add("-translate-y-full");
+    overlay?.classList.add("hidden");
+  });
+</script>
