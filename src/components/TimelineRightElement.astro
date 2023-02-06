@@ -1,0 +1,17 @@
+---
+const {icon,date} = Astro.props;
+---
+<div class="flex group">
+   <div class="flex flex-grow-0 flex-col items-center">
+     <div>
+       <div class="rounded-full bg-slate-50 flex ring-2 ring-orange-400 ring-offset-4 ring-offset-brand-primary-dark">
+          <i data-feather={icon} class="h-8 w-8 p-2 text-slate-800"></i>
+       </div>
+     </div>
+     <div class="h-full w-1 bg-slate-500"></div>
+   </div>
+   <div class="flex-grow-1 min-h-[6rem] px-8 prose dark:prose-invert">
+    <p class="uppercase tracking-wide text-sm opacity-90 font-bold pt-1">{date}</p>
+    <slot/>
+   </div>
+ </div>
