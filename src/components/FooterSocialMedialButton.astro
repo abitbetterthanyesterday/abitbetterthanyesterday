@@ -1,8 +1,8 @@
 ---
-const { icon, title } = Astro.props;
+const { icon, title, link } = Astro.props;
 ---
 
-<div class="group relative flex flex-cols items-center justify-center">
+<a class="group relative flex flex-cols items-center justify-center" href={link} id="link" target="_blank">
   <div
     class="p-2 bg-emerald-900 text-emerald-50 dark:text-slate-50 dark:bg-brand-primary-light rounded-full shadow-sm cursor-pointer group-hover:scale-105 border-transparent border-2 group-hover:border-green-500 dark:group-hover:border-amber-500 transition-all relative group"
   >
@@ -17,4 +17,5 @@ const { icon, title } = Astro.props;
       {title}
     </p>
   </div>
-</div>
+</a>
+
