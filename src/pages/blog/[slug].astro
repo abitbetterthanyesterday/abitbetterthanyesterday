@@ -15,21 +15,29 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
-  <header class="prose mx-auto w-full py-12 dark:prose-invert lg:prose-lg">
+  <header class="prose mx-auto py-12 dark:prose-invert lg:prose-xl max-w-4xl">
     <a
       href="/blog"
-      class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark"
-      >Go back</a
+      class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark self-start justify-self-start align-self-start flex w-fit gap-2 items-center"
+      >
+      
+
+      <i data-feather="arrow-left-circle" class="w-6 h-6 inline-block"></i>
+      <span>
+      Go back
+</span>
+      </a
     >
+
     <h1 class="prose-h1:mt-2">
       {entry.data.title}
     </h1>
-    <div class="flex">
+    <div class="flex gap-2">
       {entry.data.tags.map((tag: string) => <Tag tag={tag} />)}
     </div>
   </header>
 
-  <article class="prose mx-auto dark:prose-invert lg:prose-lg">
+  <article class="prose mx-auto dark:prose-invert lg:prose-lg max-w-4xl">
     <Content />
   </article>
 </BaseLayout>

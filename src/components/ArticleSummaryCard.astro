@@ -13,27 +13,18 @@ const {
 ---
 
 <article
-  class="group/card relative box-border rounded-3xl border-transparent shadow-md transition-all hover:border-emerald-500 dark:hover:border-amber-300"
+  class="group/card relative box-border rounded-3xl  transition-all hover:ring-4  dark:ring-amber-300 ring-emerald-500 ring-offset-4 ring-offset-slate-50 dark:ring-offset-brand-primary-dark"
 >
-  <div
-    class="absolute -left-[1.5px] -bottom-[1.5px] z-0 h-0 w-0 origin-center overflow-hidden rounded-3xl group-hover/card:h-[calc(100%_+_3px)] group-hover/card:w-[calc(100%_+_3px)]"
-  >
-    <div
-      class="absolute -right-[45%] -top-[25%] aspect-square h-[150%] animate-spin rounded-full bg-gradient-to-r from-emerald-300 to-emerald-800 dark:bg-gradient-to-r dark:from-amber-900 dark:via-orange-300 dark:to-yellow-300"
-      style="animation-duration: 2000ms"
-    >
-    </div>
-  </div>
   <a
     href={`blog/${slug}`}
-    class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-3xl bg-white transition-all dark:bg-brand-primary-dark"
+    class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-3xl  transition-all "
   >
     <div
-      class="relative z-0 -mb-20 overflow-hidden before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-white/20 before:to-white before:content-[''] dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5 dark:group-hover/card:before:to-brand-primary-dark"
+      class="relative z-0 -mb-20 before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-slate-50/20 before:to-slate-50 before:content-[''] dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5  dark:group-hover/card:before:to-brand-primary-dark  overflow-hidden"
     >
       <img
-        class="bg-primary-light h-56 w-full bg-brand-primary-dark bg-white grayscale transition duration-1000 group-hover/card:scale-105 group-hover/card:grayscale-0"
-        src=`https://picsum.photos/seed/${slug}/900/514`
+        class="h-72 w-full grayscale transition duration-1000 group-hover/card:scale-105 group-hover/card:grayscale-0 rounded-3xl overflow-hidden"
+        src=`https://picsum.photos/seed/${slug}/900/600`
       />
     </div>
     <div

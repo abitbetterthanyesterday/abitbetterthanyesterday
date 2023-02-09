@@ -1,50 +1,59 @@
 ---
-const {title,key} = Astro.props;
+const { title, key } = Astro.props;
 ---
-  <h2
-    class="flex items-center gap-2 mb-0 mt-0 "
-    data-collapse-button
-    data-target=`section-${key}`
-  >
-  {title}
-  <i
-      data-feather="arrow-right-circle"
-      data-rotate=`section-${key}`
-      class="rotate-0 transition-transform"></i>
-  </h2>
 
-  <div data-collapse=`section-${key}` class="overflow-hidden transition-all">
-   <slot/>
-  </div>
+<h2
+  class="mb-0 mt-0 flex cursor-pointer items-center hover:bg-slate-200 dark:hover:bg-brand-primary-light py-4 px-2 rounded transition"
+  data-collapse-button
+  data-target=`section-${key}`
+>
+  <i
+    data-feather="arrow-right-circle"
+    data-rotate=`section-${key}`
+    class="rotate-0 transition-transform mr-4"></i>
+  {title}
+</h2>
+
+<div data-collapse=`section-${key}` class="overflow-hidden transition-all ">
+  <slot />
+</div>
 
 <script>
-const buttons = [
-  ...document.querySelectorAll("[data-collapse-button]"),
-] as HTMLButtonElement[];
+  const buttons = [
+    ...document.querySelectorAll("[data-collapse-button]"),
+  ] as HTMLButtonElement[];
 
-for (const button of buttons) {
-   if([...document.querySelectorAll(`[data-collapse='${button.dataset.target}']`)].length > 1){
-      throw new Error(`Error, multiple collapse section have the same key ${button.dataset.target}`);
-   }
+  for (const button of buttons) {
+    if (
+      [
+        ...document.querySelectorAll(
+          `[data-collapse='${button.dataset.target}']`
+        ),
+      ].length > 1
+    ) {
+      throw new Error(
+        `Error, multiple collapse section have the same key ${button.dataset.target}`
+      );
+    }
 
-  const collapseElement = document.querySelector(
-    `[data-collapse='${button.dataset.target}']`
-  ) as HTMLDivElement;
+    const collapseElement = document.querySelector(
+      `[data-collapse='${button.dataset.target}']`
+    ) as HTMLDivElement;
 
-  const rotateElement = document.querySelector(
-    `[data-rotate='${button.dataset.target}']`
-  ) as HTMLDivElement;
+    const rotateElement = document.querySelector(
+      `[data-rotate='${button.dataset.target}']`
+    ) as HTMLDivElement;
 
-  // We set the initial max-height, otherwise the animation won't work
-  collapseElement.classList.toggle(`max-h-0`);
+    // We set the initial max-height, otherwise the animation won't work
+    collapseElement.classList.toggle(`max-h-0`);
 
-  button.addEventListener("click", () => {
-    collapseElement.classList.toggle(
-      `max-h-[${collapseElement.scrollHeight}px]`
-    );
-    collapseElement.classList.toggle("max-h-0");
-    rotateElement.classList.toggle("rotate-90");
-    rotateElement.classList.toggle("rotate-0");
-  });
-}
+    button.addEventListener("click", () => {
+      collapseElement.classList.toggle(
+        `max-h-[${collapseElement.scrollHeight}px]`
+      );
+      collapseElement.classList.toggle("max-h-0");
+      rotateElement.classList.toggle("rotate-90");
+      rotateElement.classList.toggle("rotate-0");
+    });
+  }
 </script>

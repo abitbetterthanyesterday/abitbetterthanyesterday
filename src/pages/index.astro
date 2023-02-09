@@ -7,19 +7,18 @@ const allPosts = await getCollection("blog");
 
 <BaseLayout title="Welcome to Astro.">
   <main
-    class="prose mx-auto flex max-w-4xl flex-grow flex-col gap-8 py-8 pt-16 dark:prose-invert md:pt-24"
-  >
-    <section class="mx-auto font-display sm:text-right">
-      <h1 class="mb-0 text-5xl uppercase tracking-wide shadow-emerald-900/90">
+    class="prose mx-auto flex max-w-4xl flex-grow flex-col gap-8 py-8 pt-16 dark:prose-invert md:pt-24 lg:prose-xl">
+    <section class="mx-auto font-display sm:text-right prose-xl:prose-h1:mb-0 border-l-8 border-emerald-600 dark:border-amber-500">
+      <span class="mb-0 uppercase tracking-wide shadow-emerald-900/90 font-bold text-8xl dark:text-slate-50 text-slate-800">
         A Bit Better Than Yesterday<span
           class="text-emerald-600 dark:text-amber-500">.</span
         >
-      </h1>
-      <h2
-        class="text-whitetracking-wider mt-2 mb-0 w-full whitespace-nowrap pr-1 text-base font-extralight lowercase"
+      </span>
+      <span
+        class="text-slate-700 dark:text-slate-100 tracking-wider inline-block mt-8 mb-0 w-full whitespace-nowrap pr-1 text-base lg:text-2xl font-extralight lowercase "
       >
         Learning and sharing, one bit at a time
-      </h2>
+      </span>
     </section>
 
     <section>
@@ -47,19 +46,21 @@ const allPosts = await getCollection("blog");
       </p>
     </section>
 
-    <section class="prose-a:no-underline">
+    <section class="prose-a:no-underline prose-ul:pl-0">
       <h2>Latest articles</h2>
-      <ul class="px-0">
+      <div class="not-prose">
+      <ul class="px-0 pl-0">
         {
           allPosts.slice(0, 5).map((post) => (
+            <>
             <li
               class="flex items-center justify-between
-              border-b border-emerald-600/30 py-1"
+               border-emerald-600/30 py-1 px-4 hover:bg-slate-200 dark:hover:bg-brand-primary-light rounded-lg transition"
             >
-              <a href={`blog/${post.data.slug}`}>
+              <a href={`blog/${post.slug}`} class="px-2 flex-grow py-4">
                 {post.data.title}
 
-                <div class="flex gap-2">
+                <div class="flex gap-2" >
                   {post.data.tags.map((tag: string) => (
                     <a href="/tag">
                       <Tag tag={tag} />
@@ -68,12 +69,15 @@ const allPosts = await getCollection("blog");
                 </div>
               </a>
             </li>
+            <div class="w-full h-px bg-slate-300 my-px"></div>
+            </>
           ))
         }
       </ul>
+      </div>
       <a
         href="/blog"
-        class="align-vertical group mt-4 inline-block justify-self-start rounded-md bg-emerald-900 py-2 px-4 tracking-wide text-emerald-50 no-underline hover:bg-emerald-800"
+        class="align-vertical group mt-6 inline-block justify-self-start rounded-md bg-emerald-900 py-2 px-4 tracking-wide text-emerald-50 no-underline hover:bg-emerald-800"
         >See all the articles published<i
           class="relative bottom-px ml-2 inline transition group-hover:bottom-0 group-hover:animate-bounce"
           data-feather="arrow-right"></i>

@@ -16,17 +16,19 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>aBitBetterThanYesterday:{title}</title>
     <script is:inline src="/feather.min.js"
     ></script>
   </head>
   <body
-    class="flex flex-col min-h-screen min-w-screen bg-slate-200 dark:bg-brand-primary dark:text-slate-50 px-5"
+    class="flex flex-col min-h-screen min-w-screen bg-slate-50 dark:bg-brand-primary dark:text-slate-50 px-5 relative"
   >
     <Navbar class="flex-grow-0" />
+    <main class="flex-grow">
     <slot />
+</main>
     <Footer class="flex-grow-0" />
   </body>
   <script is:inline>
