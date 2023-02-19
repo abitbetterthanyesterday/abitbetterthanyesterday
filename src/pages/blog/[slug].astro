@@ -15,19 +15,14 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
-  <header class="prose mx-auto py-12 dark:prose-invert lg:prose-xl max-w-4xl">
+  <header class="prose mx-auto max-w-4xl py-12 dark:prose-invert 2xl:prose-xl">
     <a
       href="/blog"
-      class="my-12 cursor-pointer rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark self-start justify-self-start align-self-start flex w-fit gap-2 items-center"
-      >
-      
-
-      <i data-feather="arrow-left-circle" class="w-6 h-6 inline-block"></i>
-      <span>
-      Go back
-</span>
-      </a
+      class="align-self-start my-12 flex w-fit cursor-pointer items-center gap-2 self-start justify-self-start rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark"
     >
+      <i data-feather="arrow-left-circle" class="inline-block h-6 w-6"></i>
+      <span> Go back</span>
+    </a>
 
     <h1 class="prose-h1:mt-2">
       {entry.data.title}
@@ -37,7 +32,7 @@ const { Content } = await entry.render();
     </div>
   </header>
 
-  <article class="prose mx-auto dark:prose-invert lg:prose-lg max-w-4xl">
+  <article class="prose mx-auto max-w-4xl dark:prose-invert lg:prose-lg">
     <Content />
   </article>
 </BaseLayout>

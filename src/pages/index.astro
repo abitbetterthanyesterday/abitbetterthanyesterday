@@ -7,15 +7,20 @@ const allPosts = await getCollection("blog");
 
 <BaseLayout title="Welcome to Astro.">
   <main
-    class="prose mx-auto flex max-w-4xl flex-grow flex-col gap-8 py-8 pt-16 dark:prose-invert md:pt-24 lg:prose-xl">
-    <section class="mx-auto font-display sm:text-right text-center prose-xl:prose-h1:mb-0 pb-4 border-b-8 border-emerald-600 dark:border-amber-500 not-prose">
-      <span class="mb-0 uppercase tracking-wide shadow-emerald-900/90 font-bold text-5xl lg:text-8xl dark:text-slate-50 text-slate-800 ">
+    class="prose mx-auto flex max-w-4xl flex-grow flex-col gap-8 py-8 pt-16 dark:prose-invert md:pt-24 2xl:prose-xl"
+  >
+    <section
+      class="prose-xl:prose-h1:mb-0 not-prose mx-auto border-b-8 border-emerald-600 pb-4 text-center font-display dark:border-amber-500 sm:text-right"
+    >
+      <span
+        class="mb-0 text-5xl font-bold uppercase tracking-wide text-slate-800 shadow-emerald-900/90 dark:text-slate-50 lg:text-8xl"
+      >
         A Bit Better Than Yesterday<span
           class="text-emerald-600 dark:text-amber-500">.</span
         >
       </span>
       <span
-        class="text-slate-700 dark:text-slate-100 tracking-wider inline-block mb-0 w-full whitespace-nowrap pr-1 text-xs lg:text-base font-extralight lowercase "
+        class="mb-0 inline-block w-full whitespace-nowrap pr-1 text-xs font-extralight lowercase tracking-wider text-slate-700 dark:text-slate-100 lg:text-base"
       >
         Learning and sharing, one bit at a time
       </span>
@@ -49,31 +54,31 @@ const allPosts = await getCollection("blog");
     <section class="prose-a:no-underline prose-ul:pl-0">
       <h2>Latest articles</h2>
       <div class="not-prose">
-      <ul class="px-0 pl-0">
-        {
-          allPosts.slice(0, 5).map((post) => (
-            <>
-            <li
-              class="flex items-center justify-between
-               border-emerald-600/30 py-1 px-4 hover:bg-slate-200 dark:hover:bg-brand-primary-light rounded-lg transition"
-            >
-              <a href={`blog/${post.slug}`} class="px-2 flex-grow py-4">
-                {post.data.title}
+        <ul class="px-0 pl-0">
+          {
+            allPosts.slice(0, 5).map((post) => (
+              <>
+                <li
+                  class="flex items-center justify-between
+               rounded-lg border-emerald-600/30 py-1 px-4 transition hover:bg-slate-200 dark:hover:bg-brand-primary-light"
+                >
+                  <a href={`blog/${post.slug}`} class="flex-grow px-2 py-4">
+                    {post.data.title}
 
-                <div class="flex gap-2" >
-                  {post.data.tags.map((tag: string) => (
-                    <a href="/tag">
-                      <Tag tag={tag} />
-                    </a>
-                  ))}
-                </div>
-              </a>
-            </li>
-            <div class="w-full h-px bg-slate-300 my-px"></div>
-            </>
-          ))
-        }
-      </ul>
+                    <div class="flex gap-2">
+                      {post.data.tags.map((tag: string) => (
+                        <a href="/tag">
+                          <Tag tag={tag} />
+                        </a>
+                      ))}
+                    </div>
+                  </a>
+                </li>
+                <div class="my-px h-px w-full bg-slate-300" />
+              </>
+            ))
+          }
+        </ul>
       </div>
       <a
         href="/blog"

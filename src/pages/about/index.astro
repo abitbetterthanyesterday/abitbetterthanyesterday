@@ -34,7 +34,9 @@ const VIAStrength: Strength[] = [
 
 <AboutLayout>
   <h1>About</h1>
-  <p class="text-4xl opacity-70">What would like to know more about?</p>
+  <p class="font-thin opacity-70 sm:text-lg md:text-2xl 2xl:text-4xl">
+    What would like to know more about?
+  </p>
 
   <span class="py-4"></span>
   <AboutCollapseSection title="Myself, as a person" key={1}>
@@ -44,14 +46,30 @@ const VIAStrength: Strength[] = [
       Australia 🇦🇺🦘🐨 since 2014.
     </p>
     <p>I enjoy and practice <strong>outdoor sports</strong> quite a lot.</p>
-    <p>Right now, I tend to spend my weekends either <strong>kitesurfing</strong> or <strong>surfing</strong>.</p>
     <p>
-      In the past, I spent a lot of time in the Alps, <strong>practicing acrobatic
-      paragliding, skiing or simply tramping up the mountains</strong>.
+      Right now, I tend to spend my weekends either <strong>kitesurfing</strong>
+      or <strong>surfing</strong>.
     </p>
-    <p>I also lived with my partner M, <strong>on Zef, a Mottle 33' sailboat for almost two years</strong>.</p>
-    <p>I <strong>read a lot</strong>, fictions, non-fictions. Usually, the non-fiction stuff is to wind down after work days.</p>
-    <p><u>I try to make the most out my days, it's both a blessing and a curse.</u></p>
+    <p>
+      In the past, I spent a lot of time in the Alps, <strong
+        >practicing acrobatic paragliding, skiing or simply tramping up the
+        mountains</strong
+      >.
+    </p>
+    <p>
+      I also lived with my partner M, <strong
+        >on Zef, a Mottle 33' sailboat for almost two years</strong
+      >.
+    </p>
+    <p>
+      I <strong>read a lot</strong>, fictions, non-fictions. Usually, the
+      non-fiction stuff is to wind down after work days.
+    </p>
+    <p>
+      <u
+        >I try to make the most out my days, it's both a blessing and a curse.</u
+      >
+    </p>
     <p>Beyond that, believe it or not, we live quite a simple life!</p>
   </AboutCollapseSection>
 
@@ -83,12 +101,10 @@ const VIAStrength: Strength[] = [
   </AboutCollapseSection>
 
   <AboutCollapseSection title={"Myself, as a developer"} key={2}>
-    <p>I am working as <strong>
-front-end developper
-      </strong> in Brisbane.</p>
+    <p>I am working as <strong> front-end developper</strong> in Brisbane.</p>
     <p>
-      In the past, I worked as a <strong>fullstack developper</strong> - but my area of expertise
-      remains in the front end. </p>
+      In the past, I worked as a <strong>fullstack developper</strong> - but my area
+      of expertise remains in the front end.
     </p>
 
     <p>
@@ -97,7 +113,8 @@ front-end developper
 
     <p>
       On the front side, I had the chance to work in production with all the
-      <strong>main frameworks</strong>: Vue, React, Svelte, Angular and even AngularJS.
+      <strong>main frameworks</strong>: Vue, React, Svelte, Angular and even
+      AngularJS.
     </p>
     <p>
       I don't fret over vanilla JS, but I do see the value of reaching one to a
@@ -105,47 +122,70 @@ front-end developper
         >convention</strong
       >.
     </p>
-    <p>Having said that, I am looking forward to more web components! <strong>Lit</strong> is on my curiosity list.</p>
+    <p>
+      Having said that, I am looking forward to more web components! <strong
+        >Lit</strong
+      > is on my curiosity list.
+    </p>
     <p>
       Speaking of JS, I rarely used JavaScript anymore - I have switched to
       <strong>TypeScript for 99% of my work</strong> for a few years now.
     </p>
 
     <p>
-      For the backend, <strong>my tool of choice as a freelancer has historically been Laravel</strong> as it
-      gets the job done - but these days, <s
+      For the backend, <strong
+        >my tool of choice as a freelancer has historically been Laravel</strong
+      > as it gets the job done - but these days, <s
         >I would probably reach out to a JS back-end framework to limit context
         switching</s
       >
       <b>I would choose serverless technologies coupled with Prisma</b>.
     </p>
     <p>
-      I also had the chance to dabble in <strong>Rust</strong> when working in San Francisco,
-      which has really improved my coding. I would love to spend more time
-      working with technologies such as Go or Rust, but most of the time I would
-      grab <strong>Deno or Node to get the job done</strong>.
+      I also had the chance to dabble in <strong>Rust</strong> when working in San
+      Francisco, which has really improved my coding. I would love to spend more
+      time working with technologies such as Go or Rust, but most of the time I would
+      grab
+      <strong>Deno or Node to get the job done</strong>.
     </p>
     <p>
       I am always curious to learn more and I have spent time trying different
       technologies.
     </p>
     <p>
-      I strive to write <strong>code as maintainable and clean as possible</strong> - although
-      it's always challenging in real life with business constraints.
+      I strive to write <strong
+        >code as maintainable and clean as possible</strong
+      > - although it's always challenging in real life with business constraints.
     </p>
     <p>
       I enjoy testing as it creates a buffer before coding which allows to
-      'plan' the code. If possible, I would always practice a loose <strong>TDD</strong>.</p>
-      
-     <p> When it comes to testing, I have tried many different
-      approach and I think I'm starting to get a good grasp on how to test user
-      interface. My weapons of choice are <strong>Cypress</strong> and <strong>Jest</strong>, coupled with the
-      <strong>Testing Library.
-         </strong>
+      'plan' the code. If possible, I would always practice a loose <strong
+        >TDD</strong
+      >.
+    </p>
 
-    <p>Funnily enough, I am not a very 'techy' person. You won't find me gaming or wearing the latest smartwatch. Hey, I don't even have a TV (or streaming services!). I leave my phone behind whenever the occasion arise!</p>
-    <p>But I love coding to craft solutions. I find the job of software developer very, very rewarding.</p> 
-    <p>My years as freelancer were very fulfilling: I have seen the impact that writing code can have on people.</p>
+    <p>
+      When it comes to testing, I have tried many different approach and I think
+      I'm starting to get a good grasp on how to test user interface. My weapons
+      of choice are <strong>Cypress</strong> and <strong>Jest</strong>, coupled
+      with the
+      <strong>Testing Library.</strong>
+
+      <p>
+        Funnily enough, I am not a very 'techy' person. You won't find me gaming
+        or wearing the latest smartwatch. Hey, I don't even have a TV (or
+        streaming services!). I leave my phone behind whenever the occasion
+        arise!
+      </p>
+      <p>
+        But I love coding to craft solutions. I find the job of software
+        developer very, very rewarding.
+      </p>
+      <p>
+        My years as freelancer were very fulfilling: I have seen the impact that
+        writing code can have on people.
+      </p>
+    </p>
   </AboutCollapseSection>
 
   <AboutCollapseSection title="Next goals" key={3}>
@@ -159,18 +199,27 @@ front-end developper
     <p>The goals for my next 12 weeks are:</p>
 
     <ul>
-      <li>Getting this website off the ground: I have meant to do so for two years
-         now!
+      <li>
+        Getting this website off the ground: I have meant to do so for two years
+        now!
       </li>
-      <li>Finish a side project. This side project being 'Get out' - and you'll hear more about it in the blog section</li>
-      <li>Loose 6 kilogramms. I intend to run a marathon later this year, I want to put all the odds in my favor.</li>
+      <li>
+        Finish a side project. This side project being 'Get out' - and you'll
+        hear more about it in the blog section
+      </li>
+      <li>
+        Loose 6 kilogramms. I intend to run a marathon later this year, I want
+        to put all the odds in my favor.
+      </li>
       <li>Some financial which I won't share here, for privacy reasons</li>
-   </ul>
+    </ul>
   </AboutCollapseSection>
 
   <AboutCollapseSection title="About this website" key={4}>
     <p>Feel free to poke around my website and stay as long as you wish.</p>
-    <p>This is a space for me to publish my thoughts, learnings and mistakes.</p>
+    <p>
+      This is a space for me to publish my thoughts, learnings and mistakes.
+    </p>
     <p>
       I have few projects going on at the minute, one of them being the website
       you're currently on.
@@ -180,31 +229,48 @@ front-end developper
       here it is.
     </p>
     <p>
-      This site is powered by <strong>Astro</strong>. I will dedicate a post about it in the blog section.
+      This site is powered by <strong>Astro</strong>. I will dedicate a post
+      about it in the blog section.
     </p>
   </AboutCollapseSection>
-
-  <section
-    class="mt-12 flex-grow rounded bg-slate-200 p-14 text-xl shadow dark:bg-brand-primary-light"
-  >
-    <h2 class="pb-8">👋 Hey you! Want to connect?</h2>
-    <p>I am always keen to connect with people.</p>
-    If there something you would like to chat about, a mistake I have published,
-    a different opinion, an opportunity to collaborate or simply to go for a surf
-    session.
-    <p>Feel free to reach out!</p>
-
-    <div
-      class="flex flex-col items-center justify-center pt-4 text-4xl prose-a:no-underline"
-    >
-      <a href="https://mailhide.io/e/H8JLpqXh" target="_blank"
-        >👉 Click here to get my email address 👈</a
-      >
-      <p class="text-sm">
-        (I have hidden my contact details for security reasons)
-      </p>
-    </div>
-
-    <p class="h-0 pr-8 text-right font-display text-2xl">Alo</p>
-  </section>
 </AboutLayout>
+
+<script>
+  const buttons = [
+    ...document.querySelectorAll("[data-collapse-button]"),
+  ] as HTMLButtonElement[];
+
+  for (const button of buttons) {
+    if (
+      [
+        ...document.querySelectorAll(
+          `[data-collapse='${button.dataset.target}']`
+        ),
+      ].length > 1
+    ) {
+      throw new Error(
+        `Error, multiple collapse section have the same key ${button.dataset.target}`
+      );
+    }
+
+    const collapseElement = document.querySelector(
+      `[data-collapse='${button.dataset.target}']`
+    ) as HTMLDivElement;
+
+    const rotateElement = document.querySelector(
+      `[data-rotate='${button.dataset.target}']`
+    ) as HTMLDivElement;
+
+    // We set the initial max-height, otherwise the animation won't work
+    collapseElement.classList.toggle(`max-h-0`);
+
+    button.addEventListener("click", () => {
+      collapseElement.classList.toggle(
+        `max-h-[${collapseElement.scrollHeight}px]`
+      );
+      collapseElement.classList.toggle("max-h-0");
+      rotateElement.classList.toggle("rotate-90");
+      rotateElement.classList.toggle("rotate-0");
+    });
+  }
+</script>
