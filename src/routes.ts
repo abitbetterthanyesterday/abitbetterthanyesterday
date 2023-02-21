@@ -23,7 +23,14 @@ export const generateRoutes = (currentUrl: string): Route[] =>
   ].map((route) => ({
     ...route,
     get isActive() {
-      //TODO FIX ME: doesn't match the suburl for example blog/1/ won't match /blog
-      return this.url === currentUrl;
+      // This is very hacky, but I couldn't find a better way to do it so far...
+      if (currentUrl.split('/').includes("blog")){
+         return this.url === RoutesUrl.blog;
+      }
+      if(currentUrl.split('/').includes("about")){
+         return this.url === RoutesUrl.about;
+      }
+
+      return this.url === RoutesUrl.home;
     },
   }));

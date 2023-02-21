@@ -60,7 +60,7 @@ const allPosts = await getCollection("blog");
               <>
                 <li
                   class="flex items-center justify-between
-               rounded-lg border-emerald-600/30 py-1 px-4 transition hover:bg-slate-200 dark:hover:bg-brand-primary-light"
+               rounded-lg border-emerald-600/30 py-1 px-4 transition hover:bg-slate-100 dark:hover:bg-brand-primary-light/50"
                 >
                   <a href={`blog/${post.slug}`} class="flex-grow px-2 py-4">
                     {post.data.title}
@@ -74,7 +74,7 @@ const allPosts = await getCollection("blog");
                     </div>
                   </a>
                 </li>
-                <div class="my-px h-px w-full bg-slate-300" />
+                <div class="my-1 h-px w-full dark:bg-brand-primary-light  bg-slate-200" />
               </>
             ))
           }
@@ -82,7 +82,7 @@ const allPosts = await getCollection("blog");
       </div>
       <a
         href="/blog"
-        class="align-vertical group mt-6 inline-block justify-self-start rounded-md bg-emerald-900 py-2 px-4 tracking-wide text-emerald-50 no-underline hover:bg-emerald-800"
+        class="align-vertical group mt-6 inline-block justify-self-start rounded-md bg-emerald-600 dark:bg-brand-primary-light py-2 px-4 tracking-wide text-emerald-50 no-underline hover:bg-emerald-800 ring-offset-4 hover:ring-2 ring-emerald-600 dark:ring-amber-500 ring-offset-slate-50 dark:ring-offset-brand-primary hover:shadow-md transition"
         >See all the articles published<i
           class="relative bottom-px ml-2 inline transition group-hover:bottom-0 group-hover:animate-bounce"
           data-feather="arrow-right"></i>
@@ -90,7 +90,7 @@ const allPosts = await getCollection("blog");
     </section>
     <section>
       <h2>Projects</h2>
-      <p class="text-slate-600">
+      <p class="text-slate-500/50 text-md">
         I have been quite busy lately, but stay tune I will add some showcases
         of the work I have conducted over the years.
       </p>
