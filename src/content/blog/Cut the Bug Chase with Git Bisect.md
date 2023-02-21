@@ -1,10 +1,11 @@
 ---
 title: Cut the Bug Chase with Git Bisect
-status: publish
+status: published
 tags:
   - Development
   - Git
 created_at: 2022-12-22T22:51:00.000Z
+published_at: 2023-01-12T00:11:00.000Z
 last_modified_at: 2023-01-05T07:08:00.000Z
 draft: false
 lang: en-AU

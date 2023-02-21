@@ -1,10 +1,11 @@
 ---
 title: Read files recursively in Deno
-status: publish
+status: published
 tags:
   - Deno
 created_at: 2023-01-11T19:28:00.000Z
 last_modified_at: 2023-01-11T19:28:00.000Z
+published_at: 2023-01-12T00:11:00.000Z
 lang: en-AU
 description: >-
 

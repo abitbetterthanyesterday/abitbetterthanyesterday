@@ -8,18 +8,18 @@ const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="about">
-  <main class="mx-auto max-w-7xl pt-12">
+  <main class="mx-auto max-w-5xl pt-12">
     <div class=" mb-8 flex">
       <div class="relative">
-      <i class="absolute top-3 left-4 h-8 text-slate-400" data-feather="search"
+      <i class="absolute top-3 left-4 h-5 w-5 text-slate-400" data-feather="search"
       ></i>
       <input
       id="search"
         type="text"
-        class="text-md lg:text-lg rounded-xl bg-slate-200  px-5 py-4 pl-12 text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/95 dark:bg-brand-primary-light"
+        class="text-sm lg:text-md rounded-xl bg-slate-200/90  px-5 py-3 pl-12 text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/95 dark:bg-brand-primary-light"
         placeholder="Search"
       />
-      <span class="absolute top-3 right-4 h-8 text-emerald-200 dark:bg-amber-600 dark:text-amber-200 bg-emerald-600  rounded-full px-2 py-1" data-search-results-count 
+      <span class="absolute top-3 right-4 h-5 text-emerald-200 dark:bg-amber-600 text-sm dark:text-amber-200 bg-emerald-600  rounded-full px-2 py-1 flex justify-center items-center" data-search-results-count 
       >{allPosts.length}</span>
       </div>
     </div>

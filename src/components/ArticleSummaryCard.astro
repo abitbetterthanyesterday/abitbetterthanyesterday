@@ -13,30 +13,34 @@ const {
 ---
 
 <article
-  class="group/card relative box-border rounded-3xl  transition-all hover:ring-4  dark:ring-amber-300 ring-emerald-500 ring-offset-4 ring-offset-slate-50 dark:ring-offset-brand-primary-dark"
+  class="group/card relative box-border rounded-3xl  transition-all hover:ring-4  dark:ring-amber-300 ring-emerald-600 ring-offset-4 ring-offset-slate-50 dark:ring-offset-brand-primary-dark"
 >
   <a
     href={`blog/${slug}`}
     class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-3xl  transition-all "
   >
     <div
-      class="relative z-0 -mb-20 before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-slate-50/20 before:to-slate-50 before:content-[''] dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5  dark:group-hover/card:before:to-brand-primary-dark  overflow-hidden"
+      class="relative z-0 -mb-20 before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-slate-900/20 before:to-slate-50/20 before:content-[''] dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5  dark:group-hover/card:before:to-brand-primary-dark  rounded-2xl overflow-hidden group-hover/card:shadow-md shadow-inner"
+      
     >
       <img
-        class="h-72 w-full grayscale transition duration-1000 group-hover/card:scale-105 group-hover/card:grayscale-0 rounded-3xl overflow-hidden"
+        class="h-64 w-full grayscale transition duration-1000 group-hover/card:scale-105 group-hover/card:grayscale-0 rounded-2xl overflow-hidden"
         src=`https://picsum.photos/seed/${slug}/900/600`
       />
     </div>
     <div
-      class="relative z-10 flex-grow p-3 grayscale group-hover/card:grayscale-0 sm:p-8"
+      class="relative z-10 flex-grow grayscale group-hover/card:grayscale-0 "
     >
-      <div class="relative z-10 flex justify-start gap-2">
+      <div class="relative z-10 flex justify-start gap-2 px-4">
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
-      <div class="py-12">
-        <h2 class="text-slate-400">5th September 2013 - 10 minutes read</h2>
+      <div class="py-12 flex flex-col gap-4 p-3">
+         <div class="flex opacity-50 text-sm justify-between items-center">
+         <h2 >5th September 2013</h2>
+         <h3 class="flex text-sm gap-2"><i data-feather="clock" class="relative top-px left-1 h-4 w-4 opacity-30"/>10 minutes</h3>
+         </div>
         <h1
-          class="prose mt-0 mb-0 text-5xl group-hover/card:text-emerald-700 dark:text-slate-300 dark:group-hover/card:text-amber-400"
+          class="prose mt-0 mb-0 text-3xl group-hover/card:text-emerald-700 dark:text-slate-300 dark:group-hover/card:text-amber-400"
         >
           {title}
         </h1>
