@@ -5,37 +5,15 @@ tags:
   - Development
   - Deno
 created_at: 2023-01-12T02:50:00.000Z
-published_at: 2023-01-12T00:11:00.000Z
 last_modified_at: 2023-01-12T02:50:00.000Z
+publish_at: '2023-01-12 12:50'
 lang: en-AU
-description: ""
----
-
-  We are on page `= this`
-
-
-  Deno is great
-   
-  I absolutely love it, and I love the fact that it will push `node` to become
-  better
-
-
-
-  Deno comes with some really cool out of the box tools, such as a benchmarking
-  tool
-
-
-
-  Benchmarking is important if you want to measure the impact of a code change
-  on the performance of your code base
-
-
-
-  I always advocate to avoid performance optimisation unless performance 
 slug: benchmarking-using-deno
----
+published_at: 2023-02-22T05:47:02.762Z
+description: ''
 
-We are on page `= this`.
+--- 
+# Benchmarking using Deno
 Deno is great. 
 I absolutely love it, and I love the fact that it will push `node` to become better.
 

@@ -5,46 +5,14 @@ tags:
   - Development
   - Git
 created_at: 2022-12-22T22:51:00.000Z
-published_at: 2023-01-12T00:11:00.000Z
 last_modified_at: 2023-01-05T07:08:00.000Z
 draft: false
 lang: en-AU
-description: >-
-
-
-  Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
-
-  Me: _"Sure, when did it stop compiling?"_
-
-  Manager: _"Sometimes in the last 
-
-
-   2 months
-  "_
-
-
-  !Drawing 2022-12-23 08
-
-  52
-
-  10
-
-  excalidraw
-
-
-  In an ideal world, you have test suites running often and covering your code
-  base thoroughly
-
-
-
-  This allows you to be notified of issues quickly and act upon them
-
-
-  Often, you can catch the
 slug: cut-the-bug-chase-with-git-bisect
----
+published_at: 2023-02-22T05:47:02.763Z
+description: ''
 
-
+--- 
 Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
 Me: _"Sure, when did it stop compiling?"_
 Manager: _"Sometimes in the last ... 2 months."_
@@ -70,7 +38,7 @@ _"Eh, we have noticed that there is an issue with X, we are not sure when it got
 
 I'm like: _"Yep, let me grab my **Git Bisect**".__
 
-# Binary search algorithm
+# Binary search Algorithm
 
 Before we mention how git bisect works, we need to define what is the binary search algorithm.
 
@@ -83,12 +51,12 @@ You cut the sample in half, and check in which half the target is.
 Then you halve that half again (bit of a tongue-twister that one).
 You repeat until you find the number.
 
-## Visual example
+## Visual Example
 
 If you are more of a visual learner, you can watch binary search on this [code pen made by Raphael Pora](https://codepen.io/rpora/pen/GWqrVO) (thank you).
 Otherwise, you can continue reading.
 
-## 'In words' example
+## 'In Words' Example
 
 Coming back to the 'guess my number from 0  to 100', let's say our number is 11.
 Using the binary search algorithm, we will do the following steps:
@@ -109,7 +77,7 @@ That's binary search. Easier than it sounds.
 
 # Git Bisect
 
-## The concept
+## The Concept
 
 Git Bisect uses the binary search algorithm to find out the commit that introduced the issue.
 
@@ -168,7 +136,7 @@ Date: ages ago
 
 If you want to find out more, I encourage you to [read the documentation](https://git-scm.com/docs/git-bisect)
 
-# Bonus: automate the process
+# Bonus: Automate the Process
 
 Here's a cool trick for the ~~lazy~~ smart developer.
 

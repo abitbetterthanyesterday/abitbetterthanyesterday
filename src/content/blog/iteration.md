@@ -4,29 +4,14 @@ status: published
 tags:
   - Computer Science
 created_at: 2023-01-12T00:11:00.000Z
-published_at: 2023-01-12T00:11:00.000Z
 last_modified_at: 2023-01-12T00:11:00.000Z
 lang: en-AU
-description: >-
-
-  Iteration is a programming technique where a solution is found by repeatedly
-  executing a block of code, typically as part of a loop, until we reach the
-  solution
-
-
-
-  A simple example is how to calculate the factorial of a number
-
-
-
-  The factorial of `n` is the sum of the product of the integers from 1 to `n`
-  and is written `n!`
-
-
-  For example, the factorial of 5 is written `5!` and calculated like so `5
 slug: iteration
----
+published_at: 2023-02-22T05:47:02.739Z
+description: ''
 
+--- 
+# Iteration
 Iteration is a programming technique where a solution is found by repeatedly executing a block of code, typically as part of a loop, until we reach the solution.
 
 A simple example is how to calculate the factorial of a number.
@@ -62,8 +47,8 @@ result = 120 * 1 = 120;
 
 ## Performance: Iteration vs. Recursion
 
-Iterative solutions tend to be a lot less performant than [[Recursion |their recursive counter part.]]
-On that simple factorial calculation, the iterative counterpart is up to [[Benchmarking using Deno|**15 times faster** on my laptop.]]
+Iterative solutions tend to be a lot less performant than their recursive counter part.
+On that simple factorial calculation, the iterative counterpart is up to [**15 times faster** on my laptop.](./benchmarking-using-deno)
 
 So why would you use a recursive?
 - Some problems are inherently recursive by nature, like navigating through tree data structure such a reading files of a folder and subfolders,
