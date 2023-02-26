@@ -34,3 +34,5 @@ export const generateRoutes = (currentUrl: string): Route[] =>
       return this.url === RoutesUrl.home;
     },
   }));
+
+export const isBlogPost = (url: string) => url.includes("/blog/");
