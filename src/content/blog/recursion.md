@@ -2,7 +2,7 @@
 title: Recursion
 status: published
 tags:
-  - Computer Science
+  - CS
 created_at: 2023-01-12T00:11:00.000Z
 last_modified_at: 2023-01-12T00:11:00.000Z
 lang: en-AU

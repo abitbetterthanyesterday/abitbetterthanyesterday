@@ -4,29 +4,39 @@ import ArticleSummaryCard from "../../components/ArticleSummaryCard.astro";
 import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 const allPosts = await getCollection("blog");
-const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const allTags = [
+  ...new Set(
+    allPosts
+      .map((post) => post.data.tags)
+      .flat()
+      .map((t) => t?.toLowerCase())
+  ),
+];
 ---
 
 <BaseLayout title="about">
   <main class="mx-auto max-w-5xl pt-12">
-    <div class=" mb-8 flex">
-      <div class="relative">
-      <i class="absolute top-3 left-4 h-5 w-5 text-slate-400" data-feather="search"
-      ></i>
-      <input
-      id="search"
-        type="text"
-        class="text-sm lg:text-md rounded-xl bg-slate-200/90  px-5 py-3 pl-12 text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/95 dark:bg-brand-primary-light"
-        placeholder="Search"
-      />
-      <span class="absolute top-3 right-4 h-5 text-emerald-200 dark:bg-amber-600 text-sm dark:text-amber-200 bg-emerald-600  rounded-full px-2 py-1 flex justify-center items-center" data-search-results-count 
-      >{allPosts.length}</span>
+    <div class="mb-8 flex pt-12 pb-6">
+      <div class="relative flex-grow">
+        <i
+          class="absolute top-4 left-4 h-5 w-5 text-slate-400"
+          data-feather="search"></i>
+        <input
+          id="search"
+          type="text"
+          class="w-full rounded-xl bg-slate-200/90 px-5 py-3 pl-12 text-sm text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/90 dark:bg-brand-primary-light dark:text-slate-50 lg:text-lg"
+          placeholder="Hey, what are you looking for? You can search by title or #tag"
+        />
+        <span
+          class="absolute top-4 right-4 flex h-5 items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-sm text-emerald-200 dark:bg-amber-600 dark:text-amber-200"
+          data-search-results-count>{allPosts.length}</span
+        >
       </div>
     </div>
-    <ul class="flex flex-wrap gap-2 md:gap-4">
+    <ul class="mb-2 flex flex-wrap justify-center gap-2 md:gap-4">
       {
         allTags.map((tag) => (
-          <li>
+          <li id={`tag-${tag}`}>
             <Tag tag={tag} />
           </li>
         ))
@@ -40,6 +50,7 @@ const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
             <div
               data-blog-card
               data-title={entry.data.title}
+              data-tags={entry.data.tags.join(" ")}
               class="relative flex animate-fade opacity-0"
               style={{ animationDelay: `${index * 200}ms` }}
             >
@@ -53,32 +64,127 @@ const allTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 </BaseLayout>
 
 <script>
-   const blogsCards = [...document.querySelectorAll('[data-blog-card]')] as HTMLDivElement[]
+  const tags = [
+    ...document.querySelectorAll("[id^='tag-']"),
+  ] as HTMLAnchorElement[];
 
-   (document.getElementById('search') as HTMLInputElement).addEventListener("input", (e) => {
+  tags.forEach((tag) => {
+    tag.addEventListener("click", (e) => {
+      e.preventDefault();
+      const innerTag = tag.querySelector("div") as HTMLDivElement;
+      innerTag.classList.contains("selected")
+        ? innerTag.classList.remove(
+            "selected",
+            "bg-emerald-600",
+            "text-emerald-200",
+            "dark:bg-amber-600",
+            "dark:text-amber-200"
+          )
+        : innerTag.classList.add(
+            "selected",
+            "bg-emerald-600",
+            "text-emerald-200",
+            "dark:bg-amber-600",
+            "dark:text-amber-200"
+          );
+
+      const search = (e.target as HTMLAnchorElement).textContent as string;
+      const searchInput = document.getElementById("search") as HTMLInputElement;
+      innerTag.classList.contains("selected")
+        ? (searchInput.value += ` #${search.trim()} `)
+        : (searchInput.value = searchInput.value.replace(
+            ` #${search.trim()} `,
+            ""
+          ));
+
+      searchInput.dispatchEvent(new Event("input"));
+    });
+  });
+</script>
+<script>
+  const blogsCards = [
+    ...document.querySelectorAll("[data-blog-card]"),
+  ] as HTMLDivElement[];
+
+  (document.getElementById("search") as HTMLInputElement).addEventListener(
+    "input",
+    (e) => {
       let searchResultCount = 0;
       // @ts-ignore
-      const search = e.target.value;
-      blogsCards.forEach((card) => {
-         const matchSearch = (card.dataset.title as string).toLowerCase().includes(search.toLowerCase());
-         card.classList.remove('animate-fade','opacity-0');
-         if (matchSearch){
-            card.classList.remove('hidden')
-            searchResultCount++;
-         } else {
-            card.classList.add('hidden')
-         }
-      })
-   
+      const search = e.target.value.replace(/#\w+/g, "");
+      // @ts-ignore
+      const tags = e.target.value.match(/#\w+/g) || [];
+      // @ts-ignore
+      const tagsWithoutHash = tags.map((tag: string) =>
+        tag.replaceAll("#", "").trim()
+      );
 
-      const countDisplay = document.querySelector('[data-search-results-count]') as HTMLSpanElement
-      if(search.length === 0){
-         countDisplay.textContent = blogsCards.length;
-         return;
+      blogsCards.forEach((card) => {
+        const matchSearch =
+          search.trim().length === 0
+            ? true
+            : (card.dataset.title as string)
+                .toLowerCase()
+                .includes(search.toLowerCase().trim());
+        let matchTags = tagsWithoutHash.length === 0;
+
+        card.classList.remove("animate-fade", "opacity-0");
+        const cardTags = card.dataset
+          .tags!.split(" ")
+          .map((t) => t.toLowerCase());
+
+        for (const tag of tagsWithoutHash) {
+          if (cardTags.includes(tag)) {
+            matchTags = true;
+            break;
+          }
+        }
+
+        if (matchSearch && matchTags) {
+          card.classList.remove("hidden");
+          searchResultCount++;
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+
+      const countDisplay = document.querySelector(
+        "[data-search-results-count]"
+      ) as HTMLSpanElement;
+      if (search.length === 0) {
+        countDisplay.textContent = blogsCards.length.toFixed(0);
       }
 
-      countDisplay.textContent = searchResultCount.toString()
+      countDisplay.textContent = searchResultCount.toString();
 
-   });
+      const tagsLi = [
+        ...document.querySelectorAll("[id^='tag-']"),
+      ] as HTMLAnchorElement[];
+      const innerTags = tagsLi.map((tag) =>
+        tag.querySelector("div")
+      ) as HTMLDivElement[];
 
+      innerTags.forEach((tag) => {
+        console.log(tagsWithoutHash.map((t) => t.toLowerCase()));
+        console.log(tag.textContent!.trim().toLowerCase());
+        tagsWithoutHash
+          .map((t) => t.toLowerCase())
+          .includes(tag.textContent!.trim().toLowerCase())
+          ? tag.classList.add(
+              "selected",
+              "bg-emerald-600",
+              "text-emerald-200",
+              "dark:bg-amber-600",
+              "dark:text-amber-200"
+            )
+          : tag.classList.remove(
+              "selected",
+              "bg-emerald-600",
+              "text-emerald-200",
+              "dark:bg-amber-600",
+              "dark:text-amber-200"
+            );
+      });
+    }
+  );
 </script>

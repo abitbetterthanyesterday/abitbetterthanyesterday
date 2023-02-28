@@ -24,15 +24,16 @@ export const generateRoutes = (currentUrl: string): Route[] =>
     ...route,
     get isActive() {
       // This is very hacky, but I couldn't find a better way to do it so far...
-      if (currentUrl.split('/').includes("blog")){
-         return this.url === RoutesUrl.blog;
+      if (currentUrl.split("/").includes("blog")) {
+        return this.url === RoutesUrl.blog;
       }
-      if(currentUrl.split('/').includes("about")){
-         return this.url === RoutesUrl.about;
+      if (currentUrl.split("/").includes("about")) {
+        return this.url === RoutesUrl.about;
       }
 
       return this.url === RoutesUrl.home;
     },
   }));
 
-export const isBlogPost = (url: string) => url.includes("/blog/");
+export const isBlogPost = (url: string) =>
+  url.includes("/blog/") && url !== "/blog/";
