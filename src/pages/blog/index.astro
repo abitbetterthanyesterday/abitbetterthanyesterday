@@ -24,7 +24,7 @@ const allTags = [
         <input
           id="search"
           type="text"
-          class="w-full rounded-xl bg-slate-200/90 px-5 py-3 pl-12 text-sm text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/90 dark:bg-brand-primary-light dark:text-slate-50 lg:text-lg"
+          class="w-full rounded-xl bg-slate-200/90 px-5 py-3 pl-12 text-sm text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/90 dark:bg-brand-primary-light dark:text-slate-50 dark:outline-amber-500 lg:text-lg"
           placeholder="Hey, what are you looking for? You can search by title or #tag"
         />
         <span
@@ -36,7 +36,10 @@ const allTags = [
     <ul class="mb-2 flex flex-wrap justify-center gap-2 md:gap-4">
       {
         allTags.map((tag) => (
-          <li id={`tag-${tag}`}>
+          <li
+            id={`tag-${tag}`}
+            class="ring-emerad-500 block rounded-full hover:ring-2 dark:ring-amber-500"
+          >
             <Tag tag={tag} />
           </li>
         ))
