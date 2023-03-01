@@ -67,37 +67,65 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"Benchmarking using Deno.md": {
-  id: "Benchmarking using Deno.md",
+"benchmarking-using-deno.md": {
+  id: "benchmarking-using-deno.md",
   slug: "benchmarking-using-deno",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"Cut the Bug Chase with Git Bisect.md": {
-  id: "Cut the Bug Chase with Git Bisect.md",
+"css-counter.md": {
+  id: "css-counter.md",
+  slug: "css-counter",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"cut-the-bug-chase-with-git-bisect.md": {
+  id: "cut-the-bug-chase-with-git-bisect.md",
   slug: "cut-the-bug-chase-with-git-bisect",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"Iteration.md": {
-  id: "Iteration.md",
+"hex-to-rgb-to-hsl-in-deno.md": {
+  id: "hex-to-rgb-to-hsl-in-deno.md",
+  slug: "hex-to-rgb-to-hsl-in-deno",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"ignoring-files-when-formatting-with-deno.md": {
+  id: "ignoring-files-when-formatting-with-deno.md",
+  slug: "ignoring-files-when-formatting-with-deno",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"iteration.md": {
+  id: "iteration.md",
   slug: "iteration",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"Read files recursively in Deno.md": {
-  id: "Read files recursively in Deno.md",
+"read-files-recursively-in-deno.md": {
+  id: "read-files-recursively-in-deno.md",
   slug: "read-files-recursively-in-deno",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"Recursion.md": {
-  id: "Recursion.md",
+"recursion.md": {
+  id: "recursion.md",
   slug: "recursion",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+},
+"til-web-image-format-which-one-to-choose.md": {
+  id: "til-web-image-format-which-one-to-choose.md",
+  slug: "til-web-image-format-which-one-to-choose",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">

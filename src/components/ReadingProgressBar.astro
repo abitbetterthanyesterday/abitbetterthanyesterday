@@ -1,18 +1,27 @@
 ---
-import { isBlogPost } from '../routes';
+import { isBlogPost } from "../routes";
 // Astro url
-const shouldShow = isBlogPost(Astro.request.url)? 'block' : 'hidden';
+const shouldShow = isBlogPost(Astro.request.url) ? "block" : "hidden";
 ---
 
-<div class="sticky top-0 w-full overflow-hidden h-2">
-   <div id="reading-progress-bar" class={`h-2 w-full absolute bg-amber-500 right-full ${shouldShow}`}></div>
+<div class="sticky top-0 z-50 -mx-5 h-1 w-screen">
+  <div
+    id="reading-progress-bar"
+    class={`h-2 w-full absolute bg-amber-500 right-full ${shouldShow} shadow-md`}
+  >
+    <div class="absolute -top-0 -right-1 h-2 w-2 rounded-full bg-amber-500">
+    </div>
+  </div>
 </div>
 
 <script>
-document.addEventListener(("scroll"), () => {
-   // Calculate the scroll percentage
-   const progress = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    (document.getElementById("reading-progress-bar") as HTMLDivElement).style.transform = `translateX(${progress}%)`
-});
+  document.addEventListener("scroll", () => {
+    // Calculate the scroll percentage
+    const progress =
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+      100;
+    (
+      document.getElementById("reading-progress-bar") as HTMLDivElement
+    ).style.transform = `translateX(${progress}%)`;
+  });
 </script>
-
