@@ -20,19 +20,23 @@ const allTags = [
 
 <BaseLayout title="about">
   <main class="mx-auto max-w-5xl pt-12">
-    <div class="mb-8 flex pt-12 pb-6">
+    <div class="mb-8 flex pt-12 ">
       <div class="relative flex-grow">
         <i
-          class="absolute top-4 left-4 h-5 w-5 text-slate-400"
+          class="absolute top-3 left-4 h-5 w-5 text-slate-400 md:top-4"
           data-feather="search"></i>
         <input
           id="search"
           type="text"
           class="w-full rounded-xl bg-slate-200/90 px-5 py-3 pl-12 text-sm text-slate-800 shadow-inner outline-emerald-600 placeholder:text-slate-400/90 dark:bg-brand-primary-light dark:text-slate-50 dark:outline-amber-500 lg:text-lg"
-          placeholder="Hey, what are you looking for? You can search by title or #tag"
+          placeholder="Hey, what are you looking for?"
         />
+        <div class="mt-4 text-slate-500/80 flex justify-center items-center gap-2 dark:hover:text-slate-50 transition hover:text-slate-800">
+         <i data-feather="info" class='h-5 w-5'></i>
+          You can search by title or #tag
+        </div>
         <span
-          class="absolute top-4 right-4 flex h-5 items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-sm text-emerald-200 dark:bg-amber-600 dark:text-amber-200"
+          class="absolute top-3 right-4 flex h-5 items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-sm text-emerald-200 dark:bg-amber-600 dark:text-amber-200 md:top-4"
           data-search-results-count>{allPosts.length}</span
         >
       </div>
