@@ -12,10 +12,10 @@ const routes = generateRoutes(currentUrl);
     routes.map(({ url, navTitle, isActive }) => (
       <a
         href={url}
-        class={`grow-1 shrink-1 uppercase tracking-wider dark:text-slate-50/60 ${
+        class={`grow-1 shrink-1 uppercase tracking-wider ${
           isActive
-            ? "border-emerald-800 font-bold text-slate-800/100 dark:border-amber-500 dark:text-slate-50/100"
-            : "border-transparent hover:border-emerald-800/20 dark:hover:border-amber-500/20 text-slate-500/60"
+            ? "border-emerald-800 font-bold text-slate-800 dark:border-amber-500 dark:text-slate-50"
+            : "border-transparent hover:border-emerald-800/20 dark:hover:border-amber-500/20 text-slate-500/80"
         } border-b-4 px-3 py-2 transition hover:text-slate-800 dark:hover:text-slate-50 lg:text-xl`}
       >
         {navTitle}

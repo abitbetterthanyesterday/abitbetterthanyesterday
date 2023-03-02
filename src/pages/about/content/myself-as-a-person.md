@@ -16,6 +16,6 @@ I also lived with my partner **on Zef, a Mottle 33' sailboat for almost two year
 
 I **read a lot**, fictions, non-fictions. Usually, the fiction stuff is to wind down after work days.
 
-<u>I try to make the most out my days, it's both a blessing and a curse.</u>
+*I try to make the most out my days, it's both a blessing and a curse.*
 
 Beyond that, believe it or not, we live quite a simple life!
