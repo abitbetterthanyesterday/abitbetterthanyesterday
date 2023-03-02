@@ -16,13 +16,13 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title}>
   <header class="prose mx-auto max-w-4xl py-12 dark:prose-invert 2xl:prose-xl">
-    <a
-      href="/blog"
-      class="align-self-start my-12 flex w-fit cursor-pointer items-center gap-2 self-start justify-self-start rounded-xl bg-brand-secondary py-2 px-4 text-lg font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary-light hover:text-brand-secondary-dark"
+    <button
+    id="back-button"
+      class="align-self-start my-12 flex w-fit cursor-pointer items-center gap-2 self-start justify-self-start rounded-xl bg-brand-primary-light dark:bg-slate-700 py-2 px-4 text-sm font-light uppercase tracking-wide text-brand-secondary-light no-underline transition hover:bg-brand-secondary hover:text-brand-secondary-light dark:hover:bg-slate-500"
     >
       <i data-feather="arrow-left-circle" class="inline-block h-6 w-6"></i>
       <span> Go back</span>
-    </a>
+    </button>
 
     <h1 class="prose-h1:mt-2">
       {entry.data.title}
@@ -36,3 +36,10 @@ const { Content } = await entry.render();
     <Content />
   </article>
 </BaseLayout>
+
+<script>
+   const button = document.getElementById('back-button') as HTMLButtonElement;
+   button.addEventListener('click', () => {
+    history.back();
+   });
+</script>

@@ -35,5 +35,7 @@ export const generateRoutes = (currentUrl: string): Route[] =>
     },
   }));
 
-export const isBlogPost = (url: string) =>
-  url.includes("/blog/") && url !== "/blog/";
+export const isBlogPost = (url: string) => {
+  const regexp = new RegExp(/blog\/.+/);
+  return regexp.test(url);
+};
