@@ -9,7 +9,7 @@ const {
   post: {
 body,
     slug,
-    data: { tags, title }
+    data: { tags, title, published_at }
   },
 } = Astro.props;
 
@@ -38,7 +38,7 @@ const readingTime = (body.trim().split(/\s+/).length / WORDS_PER_MINUTE).toFixed
       </div>
       <div class="flex flex-col gap-4 p-3 py-12">
         <div class="flex items-center justify-between text-sm opacity-50">
-          <h2>5th September 2013</h2>
+          <h2>{new Date(published_at).toLocaleDateString(undefined,{dateStyle: 'long'})}<h2>
           <h3 class="flex gap-2 text-sm">
             <i
               data-feather="clock"

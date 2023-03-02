@@ -1,9 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import ArticleSummaryCard from "../../components/ArticleSummaryCard.astro";
 import Tag from "../../components/Tag.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const allPosts = await getCollection("blog");
+const sortByPublishedDate = (a:CollectionEntry<"blog">, b:CollectionEntry<"blog">) => {
+  return new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime();
+};
+
+const allPosts = (await getCollection("blog")).sort(sortByPublishedDate);
 const allTags = [
   ...new Set(
     allPosts
