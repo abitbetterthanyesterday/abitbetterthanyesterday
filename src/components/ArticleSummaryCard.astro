@@ -1,15 +1,20 @@
 ---
+import type { CollectionEntry  } from "astro:content";
 import Tag from "./Tag.astro";
 interface Props {
   post: CollectionEntry<"blog">;
+  length:string,
 }
 const {
   post: {
+body,
     slug,
-    data: { tags, title },
+    data: { tags, title }
   },
 } = Astro.props;
-console.log(Astro.props)
+
+const WORDS_PER_MINUTE = 100;
+const readingTime = (body.trim().split(/\s+/).length / WORDS_PER_MINUTE).toFixed(0);
 ---
 
 <article
@@ -38,7 +43,7 @@ console.log(Astro.props)
             <i
               data-feather="clock"
               class="relative top-px left-1 h-4 w-4 opacity-30"></i>
-              <span id="reading-time">- min</span>
+              <span id="reading-time">{readingTime} min</span>
           </h3>
         </div>
         <h1
@@ -50,11 +55,3 @@ console.log(Astro.props)
     </div>
   </a>
 </article>
-
-<script>
-   const readingTimeSpan = document.getElementById('reading-time') as HTMLSpanElement
-
-   // const readingTime = Math.round(readingTimeSpan.textContent.length / 200)
-
-
-</script>
