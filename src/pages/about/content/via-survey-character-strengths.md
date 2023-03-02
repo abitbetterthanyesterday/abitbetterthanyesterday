@@ -13,8 +13,8 @@ It is a great way to discover your strengths and exploit them.
 
 These are my results, my top 5 strengths:
 
-- [Curiosity]("https://www.viacharacter.org/character-strengths/curiosity")
-- [Humor]("https://www.viacharacter.org/character-strengths/humor")
-- [Love of Learning]("https://www.viacharacter.org/character-strengths/love-of-learning"),
-- [Zest]("https://www.viacharacter.org/character-strengths/zest")
-- [Bravery]("https://www.viacharacter.org/character-strengths/bravery")
+- [Curiosity](https://www.viacharacter.org/character-strengths/curiosity)
+- [Humor](https://www.viacharacter.org/character-strengths/humor)
+- [Love of Learning](https://www.viacharacter.org/character-strengths/love-of-learning),
+- [Zest](https://www.viacharacter.org/character-strengths/zest)
+- [Bravery](https://www.viacharacter.org/character-strengths/bravery)

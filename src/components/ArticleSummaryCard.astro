@@ -1,15 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry  } from "astro:content";
 import Tag from "./Tag.astro";
 interface Props {
   post: CollectionEntry<"blog">;
+  length:string,
 }
 const {
   post: {
+body,
     slug,
-    data: { tags, title },
+    data: { tags, title, published_at }
   },
 } = Astro.props;
+
+const WORDS_PER_MINUTE = 100;
+const readingTime = (body.trim().split(/\s+/).length / WORDS_PER_MINUTE).toFixed(0);
 ---
 
 <article
@@ -20,11 +25,11 @@ const {
     class="relative z-10 flex h-full flex-col gap-8 overflow-hidden rounded-3xl transition-all"
   >
     <div
-      class="relative z-0 -mb-20 overflow-hidden rounded-2xl shadow-inner before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-slate-900/20 before:to-slate-50/20 before:content-[''] group-hover/card:shadow-md dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5 dark:group-hover/card:before:to-brand-primary-dark"
+      class="relative z-0 -mb-20 overflow-hidden rounded-2xl shadow-inner before:absolute before:z-50 before:h-full before:w-full before:bg-gradient-to-b before:from-slate-900/20 before:to-slate-50/20 before:content-[''] group-hover/card:shadow-md dark:before:from-brand-primary-dark/50 dark:before:to-brand-primary-dark dark:group-hover/card:before:from-brand-primary-dark/5 dark:group-hover/card:before:to-brand-primary-dark h-72 sm:h-64 w-full"
     >
       <img
         class="h-72 w-full overflow-hidden rounded-2xl grayscale transition duration-1000 group-hover/card:scale-105 group-hover/card:grayscale-0 sm:h-64"
-        src=`https://picsum.photos/seed/${slug}/900/600`
+        src=`https://picsum.photos/seed/${slug}/800/600`
       />
     </div>
     <div class="relative z-10 flex-grow grayscale group-hover/card:grayscale-0">
@@ -33,11 +38,12 @@ const {
       </div>
       <div class="flex flex-col gap-4 p-3 py-12">
         <div class="flex items-center justify-between text-sm opacity-50">
-          <h2>5th September 2013</h2>
+          <h2>{new Date(published_at).toLocaleDateString(undefined,{dateStyle: 'long'})}<h2>
           <h3 class="flex gap-2 text-sm">
             <i
               data-feather="clock"
-              class="relative top-px left-1 h-4 w-4 opacity-30"></i>10 minutes
+              class="relative top-px left-1 h-4 w-4 opacity-30"></i>
+              <span id="reading-time">{readingTime} min</span>
           </h3>
         </div>
         <h1

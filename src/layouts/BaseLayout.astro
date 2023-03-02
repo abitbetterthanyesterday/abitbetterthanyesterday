@@ -26,7 +26,7 @@ const { title } = Astro.props;
     />
     <script is:inline>
       // This prevents the page from flashing when rendering in the browser.
-      document.body.style.display = "hidden";
+      document.documentElement.style.display = "hidden";
       const theme = (() => {
         if (
           typeof localStorage !== "undefined" &&
@@ -45,7 +45,7 @@ const { title } = Astro.props;
       } else {
         document.documentElement.classList.add("dark");
       }
-      document.body.style.display = "auto";
+      document.documentElement.style.display = "auto";
     </script>
     <script is:inline src="/feather.min.js"></script>
   </head>
