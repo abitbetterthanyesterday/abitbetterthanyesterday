@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Tag from "./Tag.astro";
 interface Props {
   post: CollectionEntry<"blog">;
@@ -10,6 +9,7 @@ const {
     data: { tags, title },
   },
 } = Astro.props;
+console.log(Astro.props)
 ---
 
 <article
@@ -37,7 +37,8 @@ const {
           <h3 class="flex gap-2 text-sm">
             <i
               data-feather="clock"
-              class="relative top-px left-1 h-4 w-4 opacity-30"></i>10 minutes
+              class="relative top-px left-1 h-4 w-4 opacity-30"></i>
+              <span id="reading-time">- min</span>
           </h3>
         </div>
         <h1
@@ -49,3 +50,11 @@ const {
     </div>
   </a>
 </article>
+
+<script>
+   const readingTimeSpan = document.getElementById('reading-time') as HTMLSpanElement
+
+   // const readingTime = Math.round(readingTimeSpan.textContent.length / 200)
+
+
+</script>
