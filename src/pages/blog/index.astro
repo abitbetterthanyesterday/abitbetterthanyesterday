@@ -55,7 +55,7 @@ const allTags = [
               data-title={entry.data.title}
               data-tags={entry.data.tags.join(" ")}
               class="relative flex animate-fade opacity-0"
-              style={{ animationDelay: `${index * 200}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <ArticleSummaryCard post={entry} />
             </div>
@@ -167,26 +167,31 @@ const allTags = [
         tag.querySelector("div")
       ) as HTMLDivElement[];
 
+      const initialTagColours = [
+        "bg-slate-500",
+        "text-emerald-50",
+        "dark:text-slate-50",
+        "dark:bg-brand-primary-light",
+      ];
+      const selectedTagColours = [
+        "bg-emerald-600",
+        "text-emerald-200",
+        "dark:bg-amber-600",
+        "dark:text-amber-200",
+      ];
+
       innerTags.forEach((tag) => {
-        console.log(tagsWithoutHash.map((t) => t.toLowerCase()));
-        console.log(tag.textContent!.trim().toLowerCase());
-        tagsWithoutHash
-          .map((t) => t.toLowerCase())
-          .includes(tag.textContent!.trim().toLowerCase())
-          ? tag.classList.add(
-              "selected",
-              "bg-emerald-600",
-              "text-emerald-200",
-              "dark:bg-amber-600",
-              "dark:text-amber-200"
-            )
-          : tag.classList.remove(
-              "selected",
-              "bg-emerald-600",
-              "text-emerald-200",
-              "dark:bg-amber-600",
-              "dark:text-amber-200"
-            );
+        const shouldSelect: boolean = tagsWithoutHash
+          .map((t: string) => t.toLowerCase())
+          .includes(tag.textContent!.trim().toLowerCase());
+
+        if (shouldSelect) {
+          tag.classList.add(...selectedTagColours);
+          tag.classList.remove(...initialTagColours);
+        } else {
+          tag.classList.add(...initialTagColours);
+          tag.classList.remove(...selectedTagColours);
+        }
       });
     }
   );
