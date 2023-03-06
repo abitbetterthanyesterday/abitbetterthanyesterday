@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "12c57eec3287e565",
+        "id": "871790f8bcbcd8a9",
         "type": "tabs",
         "children": [
           {
-            "id": "fe74e9daa34d4081",
+            "id": "04789625918c54d8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/How I organise my component file in React.md",
+                "file": "blog/how-to-test-file-reading-in-deno.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/How I organise my component file in React.md",
+                "file": "blog/how-to-test-file-reading-in-deno.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/How I organise my component file in React.md",
+                "file": "blog/how-to-test-file-reading-in-deno.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/How I organise my component file in React.md"
+                "file": "blog/how-to-test-file-reading-in-deno.md"
               }
             }
           }
@@ -154,10 +153,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1c8dfd334bb3271d",
+  "active": "04789625918c54d8",
   "lastOpenFiles": [
-    "blog/css-counter.md",
+    "blog/iteration.md",
+    "blog/writing-tests-in-deno-to-find-a-sneaky-special-character-bug.md",
+    "blog/read-files-recursively-in-deno.md",
+    "blog/til-web-image-format-which-one-to-choose.md",
+    "blog/recursion.md",
+    "blog/ignoring-files-when-formatting-with-deno.md",
+    "blog/how-to-test-file-reading-in-deno.md",
     "blog/How I organise my component file in React.md",
+    "blog/hex-to-rgb-to-hsl-in-deno.md",
+    "blog/cut-the-bug-chase-with-git-bisect.md",
+    "blog/css-counter.md",
+    "blog/benchmarking-using-deno.md",
     "20_areas/logs/230306.md",
     "10_projects/Get out/Get out.md",
     "Excalidraw/Get out 2023-03-05 15.58.20.excalidraw.md",
@@ -173,16 +182,6 @@
     "30_resources/00 Index.md",
     "30_resources/8 Ways to Drastically Boost Your Developer Productivity.md",
     "50_work/Server-id.md",
-    "30_resources/Learn in Public.md",
-    "30_resources/IP address subnet.md",
-    "30_resources/IANA and IP address class.md",
-    "30_resources/NAT.md",
-    "20_areas/30_blog/TIL Bubbling and capturing.md",
-    "20_areas/30_blog/TIL PNG vs JPEG.md",
-    "20_areas/30_blog/Typescript assertion inline.md",
-    "20_areas/30_blog/Define a backend.md",
-    "20_areas/30_blog/TIL CSS Clamp.md",
-    "20_areas/30_blog/TIL Javascript class.md",
     "30_resources/📗 runbooks/recipes < 10 min",
     "30_resources/📗 runbooks",
     "30_resources/zetteltasken/Literature",

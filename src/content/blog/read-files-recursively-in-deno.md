@@ -1,31 +1,34 @@
 ---
-title: Read files recursively in Deno
 status: published
+created_at: 2023-02-28T16:41:28
+last_modified_at: 2023-03-07T08:44:34
+published_at: 2023-02-28T10:47:02.762Z
 tags:
   - Deno
-created_at: 2023-01-11T19:28:00.000Z
-last_modified_at: 2023-01-11T19:28:00.000Z
+description: ''
+draft: true
 lang: en-AU
 slug: read-files-recursively-in-deno
-published_at: 2023-02-22T05:47:02.762Z
-description: ''
+title: Read Files Recursively in Deno
+---
 
---- 
-# Read files recursively in Deno
-[I love CI/CD pipelines](./why-you-cant-afford-to-not-have-a-cicd-pipeline). A lot. 
+# Read Files Recursively in Deno
+
+[I love CI/CD pipelines](./why-you-cant-afford-to-not-have-a-cicd-pipeline). A lot.
 
 It is often the very first thing I do when starting a project.
 
 One of the reasons I love CI/CD pipelines so much is that they lower the 'entry cost' of doing work on the project.
 
 In Atomic Habits, one of James Clear's rules to make a habit happens is to make it easy.
+
 Following that rule, I have created a script that scans my Obsidian vault and finds, processes, and publishes notes directly on my blog. This makes sharing on my blog a lot easier.
- 
+
 In order to retrieve my articles in subfolders, I need to be able to read files recursively in a given folder. It is very easy with Deno.
 
 [Deno](https://deno.land/) comes with great utilities straight out of the box to work with the file system, such as `Deno.readDir`.
 
-This is how I do it, using a recursive algorithm.  If you want to know more about [read this article](./recursion).  I explain in simple terms what recursion is as opposed to [iteration](./iteration) and measure their [performance using Deno's benchmarking tool.](./benchmarking-using-deno)
+This is how I do it, using a recursive algorithm. If you want to know more about [read this article](./recursion). I explain in simple terms what recursion is as opposed to [iteration](./iteration) and measure their [performance using Deno's benchmarking tool.](./benchmarking-using-deno)
 
 ```ts
 import {join} from "https://deno.land/std@0.171.0/path/mod.ts"; // path.join
@@ -58,5 +61,6 @@ Note that Deno allows you to use async/await at the top level, which is a very n
 
 That's it! It's very straightforward.
 
-See you soon,
-Alo.
+See you soon 👋
+
+Alo
