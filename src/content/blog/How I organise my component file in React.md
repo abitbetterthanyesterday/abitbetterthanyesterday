@@ -8,7 +8,7 @@ draft: false
 lang: en-AU
 published_at: 2023-03-06T10:47:02.736Z
 slug: how-i-organise-my-component-file
-title: ''
+title: How I organise my components in React
 ---
 
 # How I Organise My Components in React
