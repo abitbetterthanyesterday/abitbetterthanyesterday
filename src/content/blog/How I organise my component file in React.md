@@ -1,14 +1,14 @@
 ---
 status: published
-created_at: 2023-03-06 12:36
-last_modified_at: 2023-03-06 13:31
+created_at: 2023-03-06T12:36:02.000Z
+last_modified_at: 2023-03-06T13:33:00.000Z
 tags: [react]
 description: ''
-draft: true
+draft: false
 lang: en-AU
-published_at: 2022-02-22T05:47:02.736Z
+published_at: 2023-03-06T10:47:02.736Z
 slug: how-i-organise-my-component-file
-title: How I Organise My Components in React
+title: ''
 ---
 
 # How I Organise My Components in React
