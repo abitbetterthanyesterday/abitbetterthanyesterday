@@ -180,4 +180,5 @@ The next big topic is 'how do I organise my **front end projects as a whole**?'.
 Hint: I am still searching for the silver bullet solution 😄
 
 See you soon 👋,
+
 Alo.
