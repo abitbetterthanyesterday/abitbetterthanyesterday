@@ -1,0 +1,137 @@
+{
+  "main": {
+    "id": "5aa11a924a99697e",
+    "type": "split",
+    "children": [
+      {
+        "id": "6be0d6391fa32296",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1451d1e74b3bec77",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "10_projects/12WY/12W22P1/12W22P1W1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5860636d3c1f4d86",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "66db9d74469b7bd1",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "e70d10704b28bfc7",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "988192d2166882ca",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "81c3284cf18173c8",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "e6b4239a55356953",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f8da5f3769b6feed",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "10_projects/12WY/12W22P1/12W22P1W1.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "729bccc62c041a6b",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "10_projects/12WY/12W22P1/12W22P1W1.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "7a31ba688058e7ca",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "10_projects/12WY/12W22P1/12W22P1W1.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "1451d1e74b3bec77",
+  "lastOpenFiles": [
+    "30_resources/📰 logs/daily/230106.md",
+    "30_resources/📰 logs/daily/230105.md",
+    "20_areas/20.10_logs/daily/2022-03-18.md",
+    "10_projects/12WY/12W22P1/12WY22P1G1 Launch personal website with a blog.md",
+    "10_projects/12WY/12W22P1/12W22P1W1.md",
+    "30_resources/📰 logs/daily/230104.md",
+    "10_projects/12WY/230103 Vision.md",
+    "10_projects/12WY/230103 3Y Goals.md",
+    "00_inbox/2022-10-18.md",
+    "00_inbox/230103 12W.md"
+  ]
+}

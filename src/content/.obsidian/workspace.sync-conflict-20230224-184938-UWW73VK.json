@@ -1,0 +1,213 @@
+{
+  "main": {
+    "id": "2f4f0f62c6b32f3f",
+    "type": "split",
+    "children": [
+      {
+        "id": "69b44e22ee055288",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7d1f595fd1b7f7f0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "30_resources/202302241616.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef9bdaa40f5b15a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "65b8ed00d2f03235",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ead248107d97a0ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c8dfd334bb3271d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#DB",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5741886c98c60d7f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8917355b9573c6fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a089c2b2c7f87864",
+        "type": "tabs",
+        "dimension": 58.59449192782527,
+        "children": [
+          {
+            "id": "b5580e4baaa2c86a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "30_resources/202302241616.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "919b83e0f46a9187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "30_resources/202302241616.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c5e7ab97cfa34b3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5bc3230d84ca283a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "30_resources/202302241616.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "682cd19308bb69a5",
+        "type": "tabs",
+        "dimension": 41.40550807217474,
+        "children": [
+          {
+            "id": "ac9fec7f84873690",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false
+    }
+  },
+  "active": "ead248107d97a0ed",
+  "lastOpenFiles": [
+    "30_resources/202302241714.md",
+    "30_resources/202302241715.md",
+    "30_resources/202302241713.md",
+    "30_resources/202302241710.md",
+    "30_resources/202302241476.md",
+    "30_resources/202302241547.md",
+    "30_resources/202302241467.md",
+    "30_resources/202302241718.md",
+    "30_resources/202302241406.md",
+    "30_resources/202302241450.md",
+    "30_resources/202302241439.md",
+    "30_resources/202302241720.md",
+    "30_resources/202302241412.md",
+    "10_projects/Get out/Get out.md",
+    "30_resources/202302241725.md",
+    "30_resources/202302241724.md",
+    "30_resources/202302241722.md",
+    "30_resources/202302241721.md",
+    "30_resources/202302241568.md",
+    "30_resources/00 Index.md",
+    "30_resources/202302241415.md",
+    "30_resources/202302241723.md",
+    "Untitled.md",
+    "30_resources/202302241414.md",
+    "30_resources/202302241719.md",
+    "30_resources/202302241410.md",
+    "Pasted image 20230224150321.png",
+    "30_resources/zetteltasken/Permanent",
+    "30_resources/zetteltasken/Literature",
+    "30_resources/zetteltasken/Fleeting notes",
+    "30_resources/zetteltasken",
+    "30_resources/wiki/programming/people",
+    "30_resources/wiki/programming/inspiration",
+    "30_resources/wiki/programming/essays",
+    "30_resources/wiki/programming/VMWare",
+    "30_resources/wiki/programming/Software design pattern",
+    "30_resources/wiki/programming/D3",
+    "30_resources/30.60_programming/Untitled.canvas",
+    "Untitled.canvas"
+  ]
+}

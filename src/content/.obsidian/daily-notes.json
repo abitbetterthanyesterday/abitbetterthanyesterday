@@ -1,0 +1,6 @@
+{
+  "autorun": true,
+  "folder": "20_areas/logs",
+  "template": "20_areas/zz-templates/Daily Template",
+  "format": "YYMMDD"
+}
