@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "2f4f0f62c6b32f3f",
+    "type": "split",
+    "children": [
+      {
+        "id": "12c57eec3287e565",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe74e9daa34d4081",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/How I organise my component file in React.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef9bdaa40f5b15a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "65b8ed00d2f03235",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ead248107d97a0ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c8dfd334bb3271d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "organize",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5741886c98c60d7f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8917355b9573c6fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a089c2b2c7f87864",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5580e4baaa2c86a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "blog/How I organise my component file in React.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "919b83e0f46a9187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "blog/How I organise my component file in React.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c5e7ab97cfa34b3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5bc3230d84ca283a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "blog/How I organise my component file in React.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "1c8dfd334bb3271d",
+  "lastOpenFiles": [
+    "blog/css-counter.md",
+    "blog/How I organise my component file in React.md",
+    "20_areas/logs/230306.md",
+    "10_projects/Get out/Get out.md",
+    "Excalidraw/Get out 2023-03-05 15.58.20.excalidraw.md",
+    "Untitled.canvas",
+    "10_projects/Get out/Get Out MVP part1 - Create a form to save favorable condition for kitesurfing.md",
+    "20_areas/logs/230305.md",
+    "20_areas/30_blog/TIL is dev-null.md",
+    "30_resources/Retrieve the number of arguments in bash.md",
+    "30_resources/Check the last command in bash.md",
+    "30_resources/Equality check in Bash.md",
+    "20_areas/30_blog/ BLoC.md",
+    "30_resources/Debugger.md",
+    "30_resources/00 Index.md",
+    "30_resources/8 Ways to Drastically Boost Your Developer Productivity.md",
+    "50_work/Server-id.md",
+    "30_resources/Learn in Public.md",
+    "30_resources/IP address subnet.md",
+    "30_resources/IANA and IP address class.md",
+    "30_resources/NAT.md",
+    "20_areas/30_blog/TIL Bubbling and capturing.md",
+    "20_areas/30_blog/TIL PNG vs JPEG.md",
+    "20_areas/30_blog/Typescript assertion inline.md",
+    "20_areas/30_blog/Define a backend.md",
+    "20_areas/30_blog/TIL CSS Clamp.md",
+    "20_areas/30_blog/TIL Javascript class.md",
+    "30_resources/📗 runbooks/recipes < 10 min",
+    "30_resources/📗 runbooks",
+    "30_resources/zetteltasken/Literature",
+    "30_resources/zetteltasken",
+    "00_inbox/Pasted image 20230301143550.png",
+    "40_archives/2022/weekly review 1",
+    "40_archives/2022/weekly review",
+    "40_archives/2022/meeting notes 1",
+    "40_archives/2022/meeting notes",
+    "40_archives/2022/daily 1",
+    "40_archives/2022/daily",
+    "20_areas/zz-files/Pasted image 20230224150321.png",
+    "20_areas/zz-files/Pasted image 20211104221103.png",
+    "20_areas/zz-files/Pasted image 20211111094838.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.01.00.png",
+    "20_areas/zz-files/Pasted image 20211111095425.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.03.28.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.38.47.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 10.34.23.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 10.26.10.png",
+    "30_resources/30.60_programming/Untitled.canvas"
+  ]
+}

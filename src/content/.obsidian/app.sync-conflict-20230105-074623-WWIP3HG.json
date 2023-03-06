@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "spellcheck": true,
+  "vimMode": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00_inbox",
+  "livePreview": true
+}
