@@ -1,39 +1,46 @@
 ---
-title: Cut the Bug Chase with Git Bisect
 status: published
+created_at: 2023-02-28T16:41:28
+last_modified_at: 2023-03-07T08:42:55
+published_at: 2023-02-18T10:47:02.763Z
 tags:
   - Development
   - Git
-created_at: 2022-12-22T22:51:00.000Z
-last_modified_at: 2023-01-05T07:08:00.000Z
+description: ''
 draft: false
 lang: en-AU
 slug: cut-the-bug-chase-with-git-bisect
-published_at: 2023-02-22T05:47:02.763Z
-description: ''
+title: Binary search Algorithm
+---
 
---- 
 Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
+
 Me: _"Sure, when did it stop compiling?"_
-Manager: _"Sometimes in the last ... 2 months."_
+
+Manager: _"Sometimes in the last … 2 months."_
 
 !Drawing 2022-12-23 08.52.10.excalidraw
 
 In an ideal world, you have test suites running often and covering your code base thoroughly.
 
 This allows you to be notified of issues quickly and act upon them.
+
 Often, you can catch them even before it gets merged your main branch.
+
 At the very least, you know roughly when and why the issue has appeared.
 
 However, often we do not work in the perfect code base and it's okay.
+
 Business constraints gets in the way, and we have to skip tests, forego the refactoring phase or work with legacy code wrote by a dev who left 17 years ago.
 
 This is real life, and we have to compose with it.
-I would argue that  being able to operate with less-than-perfect code base is a very valuable skill.
+
+I would argue that being able to operate with less-than-perfect code base is a very valuable skill.
 
 !Cut the Bug Chase with Git Bisect 2022-12-23 10.38.38.excalidraw
 
 So, when my manager came and say:
+
 _"Eh, we have noticed that there is an issue with X, we are not sure when it got introduced, sometimes in the last 2 months. It needs to be fixed before release in two days"_
 
 I'm like: _"Yep, let me grab my **Git Bisect**".__
@@ -43,22 +50,27 @@ I'm like: _"Yep, let me grab my **Git Bisect**".__
 Before we mention how git bisect works, we need to define what is the binary search algorithm.
 
 In french, we talk about the "dichotomy method".
+
 Sounds fancy, but it's pretty simply.
 
 Binary search is the same idea of playing the game "Guess what number I'm thinking of, between 0 and 100" and using the 'in the middle' strategy.
 
 You cut the sample in half, and check in which half the target is.
+
 Then you halve that half again (bit of a tongue-twister that one).
+
 You repeat until you find the number.
 
 ## Visual Example
 
 If you are more of a visual learner, you can watch binary search on this [code pen made by Raphael Pora](https://codepen.io/rpora/pen/GWqrVO) (thank you).
+
 Otherwise, you can continue reading.
 
 ## 'In Words' Example
 
-Coming back to the 'guess my number from 0  to 100', let's say our number is 11.
+Coming back to the 'guess my number from 0 to 100', let's say our number is 11.
+
 Using the binary search algorithm, we will do the following steps:
 
 1. Is it 50 ? No, lower.
@@ -82,13 +94,17 @@ That's binary search. Easier than it sounds.
 Git Bisect uses the binary search algorithm to find out the commit that introduced the issue.
 
 All you have to tell Git Bisect: "Hey, I know that commit A is good, and the current commit is bad".
+
 That's the equivalent of our range. We know that the issue has been introduced between A and HEAD.
 
 Git Bisect will find the 'middle' commit between A and HEAD and ask you: "Does this commit contains the issue?"
+
 Let's call that 'middle' commit M.
 
 You reply "Yes, all good" or "Nah, the issue is still here".
+
 If yes, the issue has been introduced between A and M.
+
 If no, the issue has been introduced between M and HEAD.
 
 And we repeat the process until we find the faulty commit.
@@ -96,11 +112,12 @@ And we repeat the process until we find the faulty commit.
 ## How to
 
 The process is very simple, all you need to do to get started is to tell git bisect a good commit, and a bad commit.
+
 This will provide the range to search.
 
 Git will then take you step by step through the process.
 
-```
+```sh
 
 git bisect start // Start the bisect method
 git bisect bad // HEAD (current) is bad
@@ -112,7 +129,7 @@ git bisect good 123asd // commit 123asd was good
 
 Now Git will take you to the 'middle' commit. You can check whether the issue is present or not, and let git know about it.
 
-```
+```sh
 
 git bisect good // or `git bisect bad` if the issue is still present
 
@@ -120,7 +137,7 @@ git bisect good // or `git bisect bad` if the issue is still present
 
 Repeat until you find the culprit.
 
-```
+```sh
 git bisect good 
 
 // Git has found the culprit!
@@ -150,5 +167,34 @@ In my case, the issue we had was a package of our monorepo was not compiling.
 
 We use `webpack` to compile our package, so it is easily testable with a script.
 
-```
+```sh
 // build.sh
+---
+#!/usr/bin/sh
+webpack --config ./webpack.prod.ts
+---
+
+// Webpack returns 0 if successful, so it is inline with Git Bisect
+```
+
+Now, all I had to do was:
+
+```sh
+git bisect bad
+git bisect good 123asd
+git bisect run ./build.sh
+```
+
+All you need to do now, is to enjoy a coffee knowing that the computer is doing the heavy lifting for you.
+
+Find the commit and… curse because the commit is humongus!
+
+**Time to discuss the idea of atomic commit with the team!**
+
+See you soon,
+
+Alo.
+
+See you soon 👋
+
+Alo

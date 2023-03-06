@@ -1,14 +1,14 @@
 ---
 status: published
-created_at: 2023-03-06T12:36:02.000Z
-last_modified_at: 2023-03-06T13:33:00.000Z
+created_at: 2023-03-06T13:49:53
+last_modified_at: 2023-03-07T08:40:57
+published_at: 2023-03-06T10:47:02.736Z
 tags: [react]
 description: ''
 draft: false
 lang: en-AU
-published_at: 2023-03-06T10:47:02.736Z
 slug: how-i-organise-my-component-file
-title: How I organise my components in React
+title: How I Organise My Components in React
 ---
 
 # How I Organise My Components in React
@@ -180,4 +180,5 @@ The next big topic is 'how do I organise my **front end projects as a whole**?'.
 Hint: I am still searching for the silver bullet solution 😄
 
 See you soon 👋,
+
 Alo.

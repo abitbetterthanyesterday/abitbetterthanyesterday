@@ -1,28 +1,30 @@
 ---
-alias: null
 status: published
-created_at: 2023-02-28T21:53:00.000Z
-last_modified_at: 2023-02-28T22:28:00.000Z
+created_at: 2023-03-06T12:34:52
+last_modified_at: 2023-03-07T08:41:17
+published_at: 2023-02-26T22:30:20.985Z
 tags:
-  - js
   - ts
-  - short
   - deno
-title: Writing tests in Deno to find a sneaky special character bug
-publish_at: '2022-12-23 12:10'
-lang: en-AU
-published_at: 2023-02-28T22:30:20.985Z
+alias: null
 description: ''
+draft: true
+lang: en-AU
+publish_at: '2022-12-23 12:10'
 slug: writing-tests-in-deno-to-find-a-sneaky-special-character-bug
+title: Writing-tests-in-deno-to-find-a-sneaky-special-character-bug
+---
 
---- 
-As part of the CI/CD of [ABitBetterThanYesterday](https://abitbetterthanyester.day) I'm working on an autopublish command line utility in Deno. 
+# Writing-tests-in-deno-to-find-a-sneaky-special-character-bug
 
-Long story short, I created a function to read the git root of a certain directory. 
+As part of the CI/CD of [ABitBetterThanYesterday](https://abitbetterthanyester.day) I'm working on an autopublish command line utility in Deno.
+
+Long story short, I created a function to read the git root of a certain directory.
 
 But it was not working as planned. I was hitting a sneaky bug due to a newline characters sneaking into my string. I thought I'd share how I solve the issue by doing what I should have done to start with: writing a good unit test.
 
 The function looked like this:
+
 ```ts
 /**
  * Given a directory, return the git root of the directory if there is one
@@ -64,15 +66,18 @@ async function checkoutNewGitBranch(
 // ERROR: The directory does not exist!
 ```
 
-I was confused.  
+I was confused.
 
 I tried printing out the result of `getGitRootDirectory` and I knew the directory existed.
 
-My tests were mocking the result of that function, so I couldn't really rely on it. 
+My tests were mocking the result of that function, so I couldn't really rely on it.
+
 That's a good example of why mocking can be dangerous. Mocks must be handled carefully. **A faulty mock you loose crucial visibility**.
 
 I didn't have a unit test on the function itself.
-It's a simple function, I dont need a test for this? *Wrong*
+
+It's a simple function, I dont need a test for this? _Wrong_
+
 So I took a step back and wrote a unit test for `getGitRootDirectory`. It was a very simple unit test that I should have written to start with. Using the current directory, I knew the root git directory: it was the same directory!
 
 ```ts
@@ -101,6 +106,7 @@ describe("Git autopublishing", () => {
 ```
 
 Damn it! There is a new line character `\n` at the end!
+
 It didn't show up in the console.
 
 That's a quick fix: simply remove that newline character.
@@ -144,9 +150,11 @@ JSON.stringigify(await getGitRootDirectory(Deno.cwd()));
 ```
 
 The takeaway here are:
+
 - Use `JSON.stringify` to compare strings or decel special characters,
 - When searching for a bug, don't hesitate to take a step back and write a test,
 - Mocking is great, but every mock is potentially hiding bugs. Be mindful about your mocks,
 
-See you soon,
+See you soon 👋
+
 Alo

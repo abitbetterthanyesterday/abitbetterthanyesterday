@@ -22,7 +22,7 @@
     },
     "Insert YAML attributes": {
       "Inserts the given YAML attributes into the YAML frontmatter. Put each attribute on a single line.": true,
-      "Text to insert": "status:\ntags: \ndraft: true"
+      "Text to insert": "status:\ntags: \ndraft: true\npublished_at:\ndescription: ''"
     },
     "Move Tags to Yaml": {
       "Move all tags to Yaml frontmatter of the document.": true,
@@ -35,7 +35,7 @@
     },
     "YAML Key Sort": {
       "Sorts the YAML keys based on the order and priority specified. Note: may remove blank lines as well.": true,
-      "YAML Key Priority Sort Order": "status\ncreated_at\nlast_modified_at\ntags",
+      "YAML Key Priority Sort Order": "status\ncreated_at\nlast_modified_at\npublished_at\ntags",
       "Priority Keys at Start of YAML": true,
       "YAML Sort Order for Other Keys": "Ascending Alphabetical"
     },
@@ -45,7 +45,7 @@
       "Date Created Key": "created_at",
       "Date Modified": true,
       "Date Modified Key": "last_modified_at",
-      "Format": "YYYY-MM-DD HH:mm"
+      "Format": "YYYY-MM-DDTHH:mm:ss"
     },
     "YAML Title": {
       "Inserts the title of the file into the YAML frontmatter. Gets the title from the first H1 or filename if there is no H1.": true,
@@ -88,8 +88,8 @@
       "Re-indexes footnote keys and footnote, based on the order of occurrence (NOTE: This rule deliberately does *not* preserve the relation between key and footnote, to be able to re-index duplicate keys.)": false
     },
     "Auto-correct Common Misspellings": {
-      "Uses a dictionary of common misspellings to automatically convert them to their proper spellings. See [auto-correct map](https://github.com/platers/obsidian-linter/tree/master/src/utils/auto-correct-misspellings.ts) for the full list of auto-corrected words.": true,
-      "Ignore Words": ""
+      "Uses a dictionary of common misspellings to automatically convert them to their proper spellings. See [auto-correct map](https://github.com/platers/obsidian-linter/tree/master/src/utils/auto-correct-misspellings.ts) for the full list of auto-corrected words.": false,
+      "Ignore Words": "Alo"
     },
     "Convert Bullet List Markers": {
       "Converts common bullet list marker symbols to markdown list markers.": true
