@@ -1,0 +1,68 @@
+{
+  "customFolder": "Day Planners",
+  "mode": 1,
+  "mermaid": false,
+  "notesToDates": [
+    {
+      "notePath": "30_resources/📰 logs/daily/230113.md",
+      "date": "Fri Jan 13 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230116.md",
+      "date": "Mon Jan 16 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230117.md",
+      "date": "Tue Jan 17 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230119.md",
+      "date": "Thu Jan 19 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230120.md",
+      "date": "Fri Jan 20 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230124.md",
+      "date": "Tue Jan 24 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230125.md",
+      "date": "Wed Jan 25 2023"
+    },
+    {
+      "notePath": "30_resources/30.20_logs/daily/230130.md",
+      "date": "Mon Jan 30 2023"
+    },
+    {
+      "notePath": "30_resources/30.20_logs/daily/230207.md",
+      "date": "Tue Feb 07 2023"
+    },
+    {
+      "notePath": "30_resources/30.20_logs/daily/230208.md",
+      "date": "Wed Feb 08 2023"
+    },
+    {
+      "notePath": "20_areas/20.10_logs/230214.md",
+      "date": "Tue Feb 14 2023"
+    },
+    {
+      "notePath": "20_areas/20.10_logs/230215.md",
+      "date": "Wed Feb 15 2023"
+    },
+    {
+      "notePath": "20_areas/20.10_logs/230216.md",
+      "date": "Thu Feb 16 2023"
+    },
+    {
+      "notePath": "20_areas/20.10_logs/230220.md",
+      "date": "Mon Feb 20 2023"
+    }
+  ],
+  "completePastItems": true,
+  "circularProgress": true,
+  "nowAndNextInStatusBar": true,
+  "showTaskNotification": true,
+  "timelineZoomLevel": 4
+}

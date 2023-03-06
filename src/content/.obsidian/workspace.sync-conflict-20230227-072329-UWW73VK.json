@@ -1,0 +1,177 @@
+{
+  "main": {
+    "id": "2f4f0f62c6b32f3f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d67033f7eb44efb1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14681971ee656d96",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef9bdaa40f5b15a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "65b8ed00d2f03235",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ead248107d97a0ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c8dfd334bb3271d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#cs",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5741886c98c60d7f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8917355b9573c6fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a089c2b2c7f87864",
+        "type": "tabs",
+        "dimension": 58.59449192782527,
+        "children": [
+          {
+            "id": "b5580e4baaa2c86a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "919b83e0f46a9187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c5e7ab97cfa34b3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5bc3230d84ca283a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "682cd19308bb69a5",
+        "type": "tabs",
+        "dimension": 41.40550807217474,
+        "children": [
+          {
+            "id": "ac9fec7f84873690",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false
+    }
+  },
+  "active": "14681971ee656d96",
+  "lastOpenFiles": [
+    "30_resources/202302241476.md",
+    "bell curve.md",
+    "30_resources/202302241720.md",
+    "30_resources/202302262041.md",
+    "30_resources/202302241454.md",
+    "30_resources/202302241435.md",
+    "30_resources/202302241601.md",
+    "20_areas/20.10_logs/daily/2022-03-14.md",
+    "30_resources/202302241607.md",
+    "30_resources/00 Index.md"
+  ]
+}

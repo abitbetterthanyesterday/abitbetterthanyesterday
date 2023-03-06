@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "2f4f0f62c6b32f3f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1bad27a3a011524",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "04cb8d049e534975",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef9bdaa40f5b15a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "65b8ed00d2f03235",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ead248107d97a0ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c8dfd334bb3271d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "marathon",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5741886c98c60d7f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "8917355b9573c6fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a089c2b2c7f87864",
+        "type": "tabs",
+        "dimension": 58.59449192782527,
+        "children": [
+          {
+            "id": "b5580e4baaa2c86a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "919b83e0f46a9187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c5e7ab97cfa34b3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5bc3230d84ca283a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "682cd19308bb69a5",
+        "type": "tabs",
+        "dimension": 41.40550807217474,
+        "children": [
+          {
+            "id": "ac9fec7f84873690",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "markdown-importer:Open format converter": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false
+    }
+  },
+  "active": "04cb8d049e534975",
+  "lastOpenFiles": [
+    "30_resources/Check the last command in bash.md",
+    "30_resources/Equality check in Bash.md",
+    "30_resources/Retrieve the number of arguments in bash.md",
+    "30_resources/Omit<Type,Keys>.md",
+    "30_resources/What is a NFT?.md",
+    "30_resources/What is a block in a blockchain?.md",
+    "30_resources/Pick<Type, Keys>.md",
+    "20_areas/30_blog/Nullish Coalescing Operator (??) vs. Logical Or.md",
+    "30_resources/Pattern matching operator in Rust (?).md",
+    "20_areas/30_blog/Get-out: Building an application using Remix.run.md",
+    "30_resources/What is the blockchain?.md",
+    "20_areas/30_blog/Web Image Format JPEG, PNG, WebP - Which one to choose ?.md",
+    "30_resources/Required<Type>.md",
+    "30_resources/Partial<Type>.md",
+    "20_areas/logs/230301.sync-conflict-20230302-010254-UWW73VK.md",
+    "30_resources/zetteltasken/Literature",
+    "30_resources/zetteltasken",
+    "30_resources/Carousel.md",
+    "30_resources/Debugger.md",
+    "30_resources/IANA and IP address class.md",
+    "30_resources/Actix.md",
+    "30_resources/8 Ways to Drastically Boost Your Developer Productivity.md",
+    "20_areas/30_blog/RIP Obsidan2Astro (YAGNI).md",
+    "30_resources/Automating repetitive tasks.md",
+    "20_areas/30_blog/I have signed up for a marathon.md",
+    "20_areas/30_blog/Writing tests in Deno to find a sneaky special character bug.md",
+    "Pasted image 20230301143550.png",
+    "30_resources/IP address subnet.md",
+    "30_resources/D3js Result - drop shadow.md",
+    "30_resources/📗 runbooks/recipes < 10 min",
+    "30_resources/📗 runbooks",
+    "20_areas/zz-files/Pasted image 20230224150321.png",
+    "40_archives/2022/weekly review",
+    "40_archives/2022/meeting notes",
+    "40_archives/2022/daily",
+    "20_areas/10_logs",
+    "Fleeting notes",
+    "40_archives/PersonalCRM",
+    "20_areas/zz-files/Pasted image 20211104221103.png",
+    "20_areas/zz-files/Pasted image 20211111094838.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.01.00.png",
+    "20_areas/zz-files/Pasted image 20211111095425.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.03.28.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 11.38.47.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 10.34.23.png",
+    "20_areas/zz-files/Screen Shot 2021-12-15 at 10.26.10.png",
+    "30_resources/30.60_programming/Untitled.canvas",
+    "Untitled.canvas"
+  ]
+}

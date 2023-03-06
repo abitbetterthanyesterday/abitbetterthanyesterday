@@ -1,0 +1,24 @@
+{
+  "customFolder": "Day Planners",
+  "mode": 1,
+  "mermaid": false,
+  "notesToDates": [
+    {
+      "notePath": "30_resources/📰 logs/daily/230113.md",
+      "date": "Fri Jan 13 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230116.md",
+      "date": "Mon Jan 16 2023"
+    },
+    {
+      "notePath": "30_resources/📰 logs/daily/230118.md",
+      "date": "Wed Jan 18 2023"
+    }
+  ],
+  "completePastItems": true,
+  "circularProgress": true,
+  "nowAndNextInStatusBar": true,
+  "showTaskNotification": true,
+  "timelineZoomLevel": 4
+}
