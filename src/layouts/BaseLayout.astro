@@ -25,6 +25,11 @@ const { title } = Astro.props;
       href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/within.min.css"
     />
     <script is:inline>
+      import { inject } from "@vercel/analytics";
+
+      inject();
+    </script>
+    <script is:inline>
       // This prevents the page from flashing when rendering in the browser.
       document.documentElement.style.display = "hidden";
       const theme = (() => {
@@ -50,7 +55,7 @@ const { title } = Astro.props;
     <script is:inline src="/feather.min.js"></script>
   </head>
   <body
-    class="m-0 flex min-h-screen flex-col overscroll-none bg-slate-50 p-0 px-5 dark:bg-brand-primary dark:text-slate-50 w-screen overflow-x-hidden"
+    class="m-0 flex min-h-screen w-screen flex-col overflow-x-hidden overscroll-none bg-slate-50 p-0 px-5 dark:bg-brand-primary dark:text-slate-50"
   >
     <ReadingProgressBar />
     <Navbar />
