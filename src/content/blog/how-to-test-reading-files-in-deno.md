@@ -10,7 +10,7 @@ last_modified_at: 2023-01-23T22:42:00.000Z
 publish_at: '2023-01-24 08:03'
 slug: how-to-test-reading-files-in-deno
 lang: en-AU
-published_at: 2023-03-20T06:16:36.568Z
+published_at: 2023-03-20T05:48:27.206Z
 description: ''
 
 --- 
