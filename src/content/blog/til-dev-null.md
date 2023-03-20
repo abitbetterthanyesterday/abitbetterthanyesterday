@@ -16,6 +16,21 @@ title: TIL /dev/null
 description: ''
 
 --- 
+status: published
+created_at: 2023-03-16 15:30
+last_modified_at: 2023-03-20 13:02
+published_at: 2023-03-20 13:02
+tags:
+- computer science
+- linux
+- til
+aliases: [TIL /dev/null]
+draft: false
+lang: en-AU
+slug: til-dev-null
+title: TIL /dev/null
+---
+
 # TIL /dev/null
 
 `/dev/null` is a special file present on every Linux system. You can only write to `/dev/null`, not read.

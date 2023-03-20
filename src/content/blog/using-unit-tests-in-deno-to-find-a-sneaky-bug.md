@@ -16,6 +16,17 @@ lang: en-AU
 description: ''
 
 --- 
+alias: 
+status: published
+created_at: 2023-03-01 07:53
+last_modified_at: 2023-03-01 08:28
+draft: false
+tags: [js, ts, short, deno]
+title: "Using tests to find a sneaky bug"
+published_at: 2022-12-23 12:10
+slug: 'using-unit-tests-in-deno-to-find-a-sneaky-bug'
+lang: en-AU
+---
 As part of the CI/CD of [ABitBetterThanYesterday](https://abitbetterthanyester.day) I'm working on an autopublish command line utility in Deno. 
 
 Long story short, I created a function to read the git root of a certain directory. 

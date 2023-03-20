@@ -12,6 +12,17 @@ slug: hex-to-rgb-to-hsl-in-deno
 description: ''
 
 --- 
+title: "Hex to HSL"
+status: published
+draft: false
+tags:
+- CSS
+created_at: 2023-01-12 19:37
+last_modified_at: 2023-01-12 19:37
+published_at: 2023-01-12 19:37
+lang: en-AU
+slug: hex-to-rgb-to-hsl-in-deno
+---
 # Hex to RGB to HSL in Deno
 
 Lately, I've been working a lot with HSL, especially after reading Refactoring UI.

@@ -12,6 +12,17 @@ slug: read-files-recursively-in-deno
 description: ''
 
 --- 
+title: "Read files recursively in Deno"
+status: published
+draft: false
+tags:
+- Deno
+created_at: 2023-01-12 05:28
+published_at: 2023-01-12 05:28
+last_modified_at: 2023-01-12 05:28
+lang: en-AU
+slug: read-files-recursively-in-deno
+---
 # Read files recursively in Deno
 I love CI/CD pipelines. A lot. 
 

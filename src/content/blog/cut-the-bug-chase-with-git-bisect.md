@@ -13,6 +13,19 @@ slug: cut-the-bug-chase-with-git-bisect
 description: ''
 
 --- 
+title: Cut the Bug Chase with Git Bisect
+status: published
+tags:
+  - Development
+  - Git
+created_at: 2022-12-23 08:51
+last_modified_at: 2023-01-05 17:08
+published_at: 2023-01-05 17:08
+draft: false
+lang: en-AU
+slug: cut-the-bug-chase-with-git-bisect
+---
+
 Manager: _"Hey, we have noticed that X doesn't compile, can you look at it?"_
 Me: _"Sure, when did it stop compiling?"_
 Manager: _"Sometimes in the last ... 2 months."_

@@ -13,6 +13,18 @@ slug: gratitude
 description: ''
 
 --- 
+title: "I'm Grateful"
+status: published
+draft: false
+tags:
+- Gratitude
+- Short
+created_at: 2023-01-12 19:25
+last_modified_at: 2021-12-10 12:13
+published_at: 2021-12-10 12:13
+lang: en-AU
+slug: gratitude
+---
 As I am writing this I'm sitting on top of two timber logs, at the Col du Joly.
 I pulled out my laptop to write a bit of code, for a client.
 

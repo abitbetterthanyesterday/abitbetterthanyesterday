@@ -12,6 +12,18 @@ slug: ignoring-files-when-formatting-with-deno
 description: ''
 
 --- 
+title: "Ignoring Files when formatting with Deno"
+status: published
+draft: false
+tags:
+- deno
+created_at: 2023-01-24 10:25
+last_modified_at: 2023-01-24 10:25
+published_at: 2023-01-24 10:25
+lang: en-AU
+slug: ignoring-files-when-formatting-with-deno
+---
+
 # Ignoring Files when Formatting with Deno
 
 In [How to test reading files in Deno](./how-to-test-reading-files-in-deno), I explained how I created a dummy folder structure with notes inside to test the script that allows me to publish my Obsidian vault.

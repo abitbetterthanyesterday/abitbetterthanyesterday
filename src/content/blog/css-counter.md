@@ -12,6 +12,17 @@ slug: css-counter
 description: ''
 
 --- 
+title: "CSS counter"
+status: published
+draft: false
+tags:
+- css
+created_at: 2023-01-12 22:51
+last_modified_at: 2023-01-12 22:50
+published_at: 2023-01-12 22:50
+lang: en-AU
+slug: css-counter
+---
 # CSS Counter
 
 Counter are another of these obscur CSS property that you don't know about until you come across it.
