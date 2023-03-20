@@ -1,28 +1,26 @@
 ---
+title: Hex to HSL
 status: published
-created_at: 2023-02-28T16:41:28
-last_modified_at: 2023-03-07T08:42:41
-published_at: 2023-01-07T10:47:02.758Z
+draft: false
 tags:
   - CSS
-description: ''
-draft: true
+created_at: 2023-01-12T09:37:00.000Z
+last_modified_at: 2023-01-12T09:37:00.000Z
+published_at: 2023-01-12T09:37:00.000Z
 lang: en-AU
-publish_at: '2023-01-12 19:37'
 slug: hex-to-rgb-to-hsl-in-deno
-title: Hex to RGB to HSL in Deno
----
+description: ''
 
+--- 
 # Hex to RGB to HSL in Deno
 
 Lately, I've been working a lot with HSL, especially after reading Refactoring UI.
 
-While there is nothing wrong with Hex, HSL allows me to refine my colors easily.
+While there is nothing wrong with Hex, HSL allows me to refine my colors easily. 
 
 ## How to Turn Hex into HSL?
 
 In order to turn Hex into HSL, we need to do a two step process:
-
 1. Transform Hex into RGB
 2. Transform RGB into HSL
 
@@ -30,28 +28,20 @@ Hex is based on the hexadecimal number system, hence the name.
 
 ### Hexadecimal Number System
 
-Most of us will be familiar with the decimal system.
-
+Most of us will be familiar with the decimal system. 
 It is 10-based. In order words, it only has 10 numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
-
-That's the way we interact with numbers in our daily life.
+That's the way we interact with numbers in our daily life. 
 
 The hexadecimal number system is a bit different. It's based on a 16 numbers system (_hexa_decimal).
 
 The numbers 0 to 9 are represented by the numbers 0 to 9, like in the decimal system.
-
 But the numbers 10 to 15 are represented by letters:
 
 A - 10
-
 B - 11
-
 C - 12
-
 D - 13
-
 E - 14
-
 F - 15
 
 Note that 16 doesn't exist, since we count from 0, there are only 16 numbers.
@@ -59,9 +49,7 @@ Note that 16 doesn't exist, since we count from 0, there are only 16 numbers.
 ## Describing Colors with Numbers: RGB
 
 Any color can be broken down into three parts RGB: **Red,** **Green**, and **Blue**.
-
-The values of each color can range from 0 (black) to 255 (white).
-
+The values of each color can range from 0 (black)  to 255 (white).
 By combining these three colors, we have access to over 16 million colors.
 
 A hex code is simply a notation to define the levels of **Red**, **Green**, and **Blue** in the RGB color notation.
@@ -69,7 +57,6 @@ A hex code is simply a notation to define the levels of **Red**, **Green**, and 
 The first two characters after the `#` sign represent the level of **Red**, the following two pairs represent respectively the levels of **Green** and **Blue.**
 
 So in `#AA223F`, we have:
-
 - Red: `11`
 - Green: `AA`
 - Blue: `3F`
@@ -78,19 +65,17 @@ There is a catch: `11` in hexadecimal is not equal to `11` in decimal!
 
 ## From Hexadecimals to Decimals: a Bit of Maths
 
-To calculate a number, we sum each number, multiplied by its position to the power of the base number.
+To calculate a number, we sum each number, multiplied by its position to the power of the base number. 
 
 Phew, that sounds complex - but it's not. When using decimals, we don't really think about it, we just do it.
 
 To read `11` in decimals, the way real way to calculate it would be:
-
 1\*10^1+1\*10^0 = 1 * 10 + 1 = 11
 
 Well, in hexadecimal we can do the same thing, except the base will be 16, not 10.
-
 So 11 becomes: 1\*1^16 + 1\*16^0 = 16 + 1 = 17!
 
-In the same way, AA would be FF: 15\*1^16 + 16\*16^0 = 240 + 15 = 255!
+In the same way, AA would be FF:  15\*1^16 + 16\*16^0 = 240 + 15 = 255!
 
 ## Hex2RGB
 
@@ -121,7 +106,3 @@ function hexToHSL(hex:string) {
   return `${Math.floor(h*360)}, ${Math.floor(s*100)}%,${Math.floor(l*100)}%`;
 }
 ```
-
-See you soon 👋
-
-Alo
