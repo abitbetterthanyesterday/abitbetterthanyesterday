@@ -38,3 +38,7 @@ For being alive.
 And all the experiences that made me who I am and lead me to that moment.
 
 **These moments are make life worth living**
+
+See you soon 👋,
+
+Alo.

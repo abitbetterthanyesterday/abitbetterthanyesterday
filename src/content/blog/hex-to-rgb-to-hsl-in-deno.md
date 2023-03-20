@@ -106,3 +106,7 @@ function hexToHSL(hex:string) {
   return `${Math.floor(h*360)}, ${Math.floor(s*100)}%,${Math.floor(l*100)}%`;
 }
 ```
+
+See you soon 👋
+
+Alo

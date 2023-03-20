@@ -55,5 +55,6 @@ So why would you use a recursive?
 - Some problems are inherently recursive by nature, like navigating through tree data structure such a reading files of a folder and subfolders,
 - The recursive solutions are arguably easier to understand and shorter,
 
-See you soon,
+See you soon 👋,
+
 Alo.

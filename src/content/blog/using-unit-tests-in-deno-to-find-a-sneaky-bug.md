@@ -148,5 +148,6 @@ The takeaway here are:
 - When searching for a bug, don't hesitate to take a step back and write a test,
 - Mocking is great, but every mock is potentially hiding bugs. Be mindful about your mocks,
 
-See you soon,
-Alo
+See you soon 👋,
+
+Alo.

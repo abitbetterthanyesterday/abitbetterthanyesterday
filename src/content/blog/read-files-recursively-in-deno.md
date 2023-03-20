@@ -59,5 +59,6 @@ Note that Deno allows you to use async/await at the top level, which is a very n
 
 That's it! It's very straightforward.
 
-See you soon,
+See you soon 👋,
+
 Alo.

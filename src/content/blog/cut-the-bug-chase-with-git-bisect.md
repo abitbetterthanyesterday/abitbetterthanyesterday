@@ -174,5 +174,6 @@ Find the commit and... curse because the commit is humongus!
 
 **Time to discuss the idea of atomic commit with the team!**
 
-See you soon,
+See you soon 👋,
+
 Alo.
