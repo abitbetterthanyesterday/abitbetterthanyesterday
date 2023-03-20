@@ -12,17 +12,6 @@ slug: iteration
 description: ''
 
 --- 
-title: "Iteration"
-status: published
-draft: false
-tags:
-- Computer Science
-created_at: 2023-01-12 10:11
-published_at: 2023-01-12 10:11
-last_modified_at: 2023-01-12 10:11
-lang: en-AU
-slug: iteration
----
 # Iteration
 Iteration is a programming technique where a solution is found by repeatedly executing a block of code, typically as part of a loop, until we reach the solution.
 

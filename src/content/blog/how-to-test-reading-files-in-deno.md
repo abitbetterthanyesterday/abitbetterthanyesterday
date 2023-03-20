@@ -10,23 +10,10 @@ last_modified_at: 2023-01-23T22:42:00.000Z
 publish_at: '2023-01-24 08:03'
 slug: how-to-test-reading-files-in-deno
 lang: en-AU
-published_at: 2023-03-20T06:15:05.810Z
+published_at: 2023-03-20T06:16:36.568Z
 description: ''
 
 --- 
-title: How to test reading files in Deno
-status: draft
-draft: false
-tags:
-  - Deno
-  - Testing
-created_at: 2023-01-24 08:03
-last_modified_at: 2023-01-24 08:42
-publish_at: 2023-01-24 08:03
-slug: how-to-test-reading-files-in-deno
-lang: en-AU
----
-
 # How to Test Reading Files in Deno
 
 As described in Atomic Habits, to create an habit you should try to make it as obvious and easy as possible.

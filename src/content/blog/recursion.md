@@ -12,17 +12,6 @@ slug: recursion
 description: ''
 
 --- 
-title: "Recursion"
-status: published
-draft: false
-tags:
-- Computer Science
-created_at: 2023-01-12 10:11
-published_at: 2023-01-12 10:11
-last_modified_at: 2023-01-12 10:11
-lang: en-AU
-slug: recursion
----
 # Recursion
 
 Recursion is a programming technique where a function calls itself multiple times in order to solve a problem.

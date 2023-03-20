@@ -13,18 +13,6 @@ slug: benchmarking-using-deno
 description: ''
 
 --- 
-title: "Benchmarking using Deno"
-status: published
-draft: false
-tags:
-- Development
-- Deno
-created_at: 2023-01-12 12:50
-last_modified_at: 2023-01-12 12:50
-published_at: 2023-01-12 12:50
-lang: en-AU
-slug: benchmarking-using-deno
----
 # Benchmarking using Deno
 Deno is great. 
 I absolutely love it, and I love the fact that it will push `node` to become better.

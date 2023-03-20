@@ -12,18 +12,6 @@ slug: how-i-organise-my-component-file
 title: How I Organise My Components in React
 
 --- 
-status: published
-created_at: 2023-03-06 13:49
-last_modified_at: 2023-03-07 08:40
-published_at: 2023-03-06 10:47
-tags: [react]
-description: ''
-draft: false
-lang: en-AU
-slug: how-i-organise-my-component-file
-title: How I Organise My Components in React
----
-
 # How I Organise My Components in React
 
 What is great (and sometimes dreadful!) about React projects, is that there are as many project structures out there as there are developers.

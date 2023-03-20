@@ -12,19 +12,6 @@ lang: en-AU
 slug: til-web-image-format-which-one-to-choose
 
 --- 
-title: 'Web Image Format JPEG, PNG, WebP - Which one to choose ?'
-description: 'Which image format should you use?'
-status: published
-draft: false
-tags:
-  - web
-created_at: 2023-01-12 19:38
-last_modified_at: 2023-01-19 12:16
-published_at: 2023-01-12 19:37
-lang: en-AU
-slug: til-web-image-format-which-one-to-choose
----
-
 There are a lot of images format available for the Web!
 
 The most common are APNG, AVIF, GIF, JPEG, PNG, SVG and finally, WebP.
