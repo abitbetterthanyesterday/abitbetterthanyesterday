@@ -89,3 +89,20 @@ runtime: deno 1.29.2 (x86_64-unknown-linux-gnu)
 
 file:///home/abr/temp/refactor/main_bench.ts
 benchmark      time (avg)             (min … max)       p75       p99      p995
+------------------------------------------------- -----------------------------
+iterative   13.36 µs/iter  (12.98 µs … 144.79 µs)  13.02 µs  25.32 µs  28.93 µs
+recursive  210.47 µs/iter   (144.09 µs … 1.88 ms) 160.78 µs 973.94 µs   1.05 ms
+
+summary
+  iterative
+   15.75x faster than recursive
+```
+
+Iterative is **15.75x faster** than recursive.
+
+Cool stuff!
+
+See you soon 👋
+
+Alo
+

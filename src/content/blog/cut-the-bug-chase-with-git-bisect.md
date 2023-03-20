@@ -152,3 +152,28 @@ We use `webpack` to compile our package, so it is easily testable with a script.
 
 ```
 // build.sh
+--
+#!/usr/bin/sh
+webpack --config ./webpack.prod.ts
+--
+
+// Webpack returns 0 if successful, so it is inline with Git Bisect
+```
+
+Now, all I had to do was:
+
+```
+git bisect bad
+git bisect good 123asd
+git bisect run ./build.sh
+```
+
+All you need to do now, is to enjoy a coffee knowing that the computer is doing the heavy lifting for you.
+
+Find the commit and... curse because the commit is humongus!
+
+**Time to discuss the idea of atomic commit with the team!**
+
+See you soon 👋,
+
+Alo.
