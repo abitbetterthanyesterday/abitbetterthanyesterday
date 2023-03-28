@@ -1,6 +1,6 @@
 ---
 title: How to test reading files in Deno
-status: draft
+status: published
 draft: false
 tags:
   - Deno
@@ -16,24 +16,31 @@ description: ''
 --- 
 # How to Test Reading Files in Deno
 
-As described in Atomic Habits, to create an habit you should try to make it as obvious and easy as possible.
+As described in Atomic Habits, to create a habit you should try to make it as obvious and easy as possible.
 
-In the context of this blog, I am currently taking the time to create a publishing pipeline that makes creating content a breeze.
+In the context of this blog, I am currently taking the time to create a publishing pipeline that will make creating content a breeze.
 
-After toying about the idea of using Rust or Go, I chose **Deno** to write the program that transform my Obsidian notes into markdown files.
+After toying with the idea of using Rust or Go, I chose **Deno** to write the program that transforms my Obsidian notes into markdown files.
 
-To transform files, I need to read them first. With **Deno** it's very easy. Deno ships with core functionnality to interact with the file system.
+In order to parse and transform these files, I need to read them first. With **Deno** it's very easy. Deno ships with core functionalities to interact with the file system.
 
 In this case, I'm using [readDir](https://deno.land/api@v1.29.1?s=Deno.readDir) to recursively traverse my vault directory, collect notes and transform them as needed.
 
-How can I test this?
+The question is: How can I test this?
 
 My first thought was to keep my repo clean by generating files during the test and removing them at the end.
-However, it added complexity without really adding much value.
+However, it added complexity without adding much value.
 
-In an effort to remain KISS, I created a `_testFolder` that contains markdown files.
+In an effort to remain **KISS**, I created a `_testFolder` that contains multiple markdown files representing different scenarios: missing frontmatter, invalid frontmatter, no content...  
 
-The simplicity of this allow me to test different scenarios very easily.
+This has the advantage of letting me create and test as many *unhappy* paths as needed.
+It is always easy to test the **happy path** and get a good coverage report, but you have only validated that if everything lines up, it works.
+It is a great start, but you want your test to give **confidence** through testing what if the input is less than ideal?
+
+When testing, it is to try to cover as many *unhappy* paths as possible.
+
+The simplicity of this allows me to test different scenarios very easily.
+
 The content of each notes is designed to test different scenarios, such `noteWithoutFrontmatter.md` or `subfolder/noteInSubfolder.md`.
 
 Now I can write tests such as:
@@ -61,24 +68,29 @@ describe("Note", () => {
 
 On top of this, I keep a snapshot of each note in my test notes.
 
-This might be over-the-top, but it protects the notes from being inadvertently changed and help debug failing test: is the logic broken, or has the test file changed?
+This might be over-the-top, but it protects the notes from being inadvertently changed and helps debug failing tests: is the logic broken, or has the test file changed?
 
-To keep snapshots of my notes, I'm doing the brute force. I recursively read the notes in the `_testFolder` and take a snapshot of their content:
+To keep snapshots of my notes, I'm using brute force - which sounds bad, but it's  quite ffective since I don't intend to have more than 30-50 files at most.
+I recursively read the notes in the `_testFolder` and take a snapshot of their content:
 
 ```ts
 import { assertSnapshot } from "https://deno.land/std@0.168.0/testing/snapshot.ts";
 import {readDirRecursively} from "./utils";
 
-// This is utility function that return all notes within a folder, including subfolders.
+// This is a utility function that returns all notes within a folder, including subfolders.
 const notes = readDirRecursively('../_testFolder');
 
 for (const note of notes){
 	Deno.test(`${note} content has not changed`, async function (t): Promise<void> {
 	  const content = Deno.readTextFileSync(note.filePath);
-	  await assertSnapshot(t, content);
+	  await assertSnapshot(t, content);<<<<<<< autopublish-1679971392158
 	});
 }
 ```
+
+I might dedicate a whole post about this pipeline I'm working on. 
+
+It is currently in use, but it has evolved from a single script to a CLI - and I'm now considering using it as part of a broader CMS. Scope creep, hello!
 
 If you are curious about `readDirRecursively`, I have written [an article about it](./read-files-recursively-in-deno).
 
