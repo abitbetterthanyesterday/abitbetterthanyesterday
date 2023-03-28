@@ -22,7 +22,6 @@ Deno comes with some really cool out of the box tools, such as a benchmarking to
 Benchmarking is important if you want to measure the impact of a code change on the performance of your code base.
 
 I always advocate to avoid performance optimisation unless performance becomes an issue when developping an application.
-
 However, when developping libraries, performance is very important and could be a question of life and death for a package.
 
 [`Deno bench`](https://deno.land/manual@v1.29.1/tools/benchmarker) is the utility ship with `deno` to run benchmarks. 

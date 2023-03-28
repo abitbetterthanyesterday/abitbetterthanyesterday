@@ -10,7 +10,7 @@ last_modified_at: 2023-01-23T22:42:00.000Z
 publish_at: '2023-01-24 08:03'
 slug: how-to-test-reading-files-in-deno
 lang: en-AU
-published_at: 2023-03-28T02:43:12.152Z
+published_at: 2023-03-20T05:48:27.206Z
 description: ''
 
 --- 
@@ -40,6 +40,7 @@ It is a great start, but you want your test to give **confidence** through testi
 When testing, it is to try to cover as many *unhappy* paths as possible.
 
 The simplicity of this allows me to test different scenarios very easily.
+
 The content of each notes is designed to test different scenarios, such `noteWithoutFrontmatter.md` or `subfolder/noteInSubfolder.md`.
 
 Now I can write tests such as:
@@ -82,7 +83,7 @@ const notes = readDirRecursively('../_testFolder');
 for (const note of notes){
 	Deno.test(`${note} content has not changed`, async function (t): Promise<void> {
 	  const content = Deno.readTextFileSync(note.filePath);
-	  await assertSnapshot(t, content);
+	  await assertSnapshot(t, content);<<<<<<< autopublish-1679971392158
 	});
 }
 ```
