@@ -33,7 +33,7 @@ const readingTime = (body.trim().split(/\s+/).length / WORDS_PER_MINUTE).toFixed
       />
     </div>
     <div class="relative z-10 flex-grow grayscale group-hover/card:grayscale-0">
-      <div class="relative z-10 flex justify-start gap-2 px-4">
+      <div class="relative z-10 flex justify-start gap-2 px-4 flex-wrap">
         {tags.map((tag: string) => <Tag tag={tag} />)}
       </div>
       <div class="flex flex-col gap-4 p-3 py-12">
